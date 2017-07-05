@@ -1,0 +1,92 @@
+@import 'partials/reset.scss';
+@import 'partials/variables.scss';
+@import 'partials/mixins.scss';
+@import 'partials/fonts.scss';
+
+/* 
+
+general stuff
+
+*/
+
+.container {
+    width: 100%;
+    border: 1px solid red;
+    margin: 0 auto;
+    @include tablet {
+        width: 80vw;
+    }
+    @include desktop {
+        width: 70vw;
+        max-width: 1200px;
+    }
+}
+
+/*
+
+header style
+
+*/
+header {
+    h1 {
+        text-align: center;
+        font-size: 3em;
+        text-transform: uppercase
+    }
+    p {
+        text-align: center;
+        font-size: 1.2em;
+        text-transform: uppercase;
+    }
+}
+
+nav {
+    ul {
+        @include tablet {
+            display: flex;
+            justify-content: flex-end;
+        }
+        @include desktop {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        li {
+            a {
+                color: black;
+                text-transform: uppercase;
+            }
+            @include tablet {
+                text-align: right;
+                width: 15%;
+            }
+            @include desktop {
+                text-align: right;
+                width: 15%;
+                border: 1px solid green;
+            }
+        }
+    }
+}
+
+/*
+
+main style
+
+*/
+
+main {
+    h2 {
+        font-size: 2em;
+        text-align: center;
+    }
+    h3 {
+        font-size: 1.5em;
+    }
+    p {
+        &:first-letter {
+            font-size: 120%;
+            font-weight: bold;
+        }
+    }
+}
