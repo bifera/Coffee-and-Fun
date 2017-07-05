@@ -11,7 +11,6 @@ general stuff
 
 .container {
     width: 100%;
-    border: 1px solid red;
     margin: 0 auto;
     @include tablet {
         width: 80vw;
@@ -28,10 +27,24 @@ header style
 
 */
 header {
+    height: 60vh;
+    background-image: url(../img/headerMobileBg.jpg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 7vh;
+    @include tablet {
+        background-image: url(../img/headerTabletBg.jpg);
+    }
+    @include desktop {
+        padding-top: 10vh;
+        background-image: url(../img/headerDesktopBg.jpg);
+    }
     h1 {
         text-align: center;
         font-size: 3em;
-        text-transform: uppercase
+        line-height: 1;
+        text-transform: uppercase;
     }
     p {
         text-align: center;
@@ -41,7 +54,18 @@ header {
 }
 
 nav {
+    background-color: dimgrey;
+    display: none;
+    @include tablet {
+        display: block;
+    }
+    @include desktop {
+        display: block;
+        height: 7vh;
+    }
     ul {
+        width: 100%;
+        margin-top: 2.5vh;
         @include tablet {
             display: flex;
             justify-content: flex-end;
@@ -53,20 +77,26 @@ nav {
 
         li {
             a {
-                color: black;
+                color: white;
                 text-transform: uppercase;
             }
             @include tablet {
                 text-align: right;
-                width: 15%;
+                width: 25%;
             }
             @include desktop {
                 text-align: right;
-                width: 15%;
-                border: 1px solid green;
+                width: 20%;
             }
         }
     }
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin: 0 auto;
 }
 
 /*
@@ -76,9 +106,16 @@ main style
 */
 
 main {
+    section {
+        padding-top: 7vh;
+        &:not(.wrapper) {
+            min-height: 100vh;
+        }
+    }
     h2 {
         font-size: 2em;
         text-align: center;
+        margin-bottom: .5em;
     }
     h3 {
         font-size: 1.5em;
@@ -88,5 +125,58 @@ main {
             font-size: 120%;
             font-weight: bold;
         }
+    }
+}
+
+.wrapper {
+    min-height: 40vh;
+    overflow: hidden;
+    .wrapper-content {
+        width: 300%;
+        display: flex;
+        justify-content: flex-start;
+        .post {
+            width: 100vw;
+            @include tablet {
+                width: 80vw;
+            }
+            @include desktop {
+                width: 70vw;
+                max-width: 1200px;
+            }
+        }
+    }
+}
+/*
+
+footer style
+
+*/
+
+footer {
+    background-color: dimgrey;
+    min-height: 30vh;
+    max-height: 50vh;
+    position: relative;
+    .columns-ml-2 {
+        width: 100%;
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+        }
+        @include desktop {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+    p {
+        color: white;
+    }
+    .copyright {
+        position: absolute;
+        bottom: 2vh;
     }
 }
