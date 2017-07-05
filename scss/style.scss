@@ -119,54 +119,139 @@ main style
 main {
     section {
         padding-top: 7vh;
-        &:not(.wrapper) {
+        &:not(#products) {
             min-height: 100vh;
-        }
-    }
-    h2 {
-        font-size: 2em;
-        text-align: center;
-        margin-bottom: .5em;
-    }
-    h3 {
-        font-size: 1.5em;
-        padding-top: 2vh;
-        padding-left: 3vw;
-    }
-    p {
-        padding-top: 1vh;
-        padding-right: 3vw;
-        padding-left: 3vw;
-        text-align: justify;
-        &:first-of-type {
-            &:first-letter {
-                font-family: $headerFont;
-                font-size: 130%;
-                color: seagreen;
+            p {
+                padding-left: 3vw;
+                padding-right: 3vw;
             }
         }
-        &:last-of-type {
-            padding-bottom: 2vh;
+        h2 {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: .5em;
+        }
+        h3 {
+            font-size: 1.5em;
+            padding-top: 2vh;
+            padding-left: 3vw;
+            margin-bottom: 2vh;
+        }
+        p {
+            line-height: 1.8;
+            text-align: justify;
+            &:first-of-type {
+                &:first-letter {
+                    font-family: $headerFont;
+                    font-size: 130%;
+                    color: seagreen;
+                }
+            }
+            &:last-of-type {
+                padding-bottom: 2vh;
+            }
         }
     }
 }
 
-.wrapper {
-    min-height: 40vh;
-    overflow: hidden;
-    .wrapper-content {
-        width: 300%;
+.slider {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .wrapper-arrow {
+        font-weight: bold;
+        font-size: 3em;
+        color: seagreen;
+        margin-left: 2vw;
+        margin-right: 2vw;
+        @include tablet {
+            margin-left: 0;
+            margin-right: 0;
+            position: relative;
+            top: 10vh;
+            &:first-child {
+                right: 3vw;
+            }
+            &:last-child {
+                left: 3vw;
+            }
+        }
+        @include desktop {
+            margin-left: 0;
+            margin-right: 0;
+            position: relative;
+            top: 10vh;
+            &:first-child {
+                right: 5vw;
+            }
+            &:last-child {
+                left: 5vw;
+            }
+        }
+    }
+    .post-wrapper {
+        order: -1;
+        min-height: 40vh;
+        overflow: hidden;
+        .wrapper-content {
+            width: 300%;
+            display: flex;
+            justify-content: flex-start;
+            .post {
+                width: 100vw;
+                padding-left: 3vw;
+                padding-right: 3vw;
+                @include tablet {
+                    width: 80vw;
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+                @include desktop {
+                    width: 70vw;
+                    max-width: 1200px;
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+    @include tablet {
+        flex-wrap: nowrap;
+        .post-wrapper {
+            order: 0;
+        }
+    }
+    @include desktop {
+        flex-wrap: nowrap;
+        .post-wrapper {
+            order: 0;
+        }
+    }
+}
+
+
+
+
+.paragraph-wrapper {
+    div {
+        margin-top: 1vh;
+        margin-bottom: 5vh;
+        margin-left: 3vw;
+        margin-right: 3vw;
+        width: inherit;
+        height: 35vh;
+        border: 1px solid red;
+    }
+    @include desktop {
         display: flex;
-        justify-content: flex-start;
-        .post {
-            width: 100vw;
-            @include tablet {
-                width: 80vw;
-            }
-            @include desktop {
-                width: 70vw;
-                max-width: 1200px;
-            }
+        justify-content: space-between;
+        p {
+            padding-right: 0;
+            width: 45%;
+        }
+        div {
+            width: 40%;
+            margin-left: 0;
         }
     }
 }
