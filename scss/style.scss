@@ -21,6 +21,11 @@ general stuff
     }
 }
 
+.fixed {
+    position: fixed;
+    top: 0;
+}
+
 h1, h2, h3 {
     font-family: $headerFont;
 }
@@ -28,6 +33,11 @@ h1, h2, h3 {
 p, a {
     font-family: $primaryFont;
     line-height: 1.5;
+}
+
+hr {
+    width: 30vw;
+    margin: 0 auto;
 }
 
 /*
@@ -41,29 +51,59 @@ header {
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 7vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     @include tablet {
+        height: 65vh;
         background-image: url(../img/headerTabletBg.jpg);
     }
     @include desktop {
-        padding-top: 10vh;
+        height: 70vh;
         background-image: url(../img/headerDesktopBg.jpg);
     }
-    h1 {
-        text-align: center;
-        font-size: 3em;
-        line-height: 1;
-        text-transform: uppercase;
+    nav {
+        background-color: transparentize(dimgray, 0.8);
+        height: inherit;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        span.fa {
+            font-size: 1.8em;
+            color: antiquewhite;
+            @include tablet {
+                display: none;
+            }
+            @include desktop {
+                display: none;
+            }
+        }
+        a.logo {
+            display: block;
+            background-image: url(../img/anfrawer_logo_wh.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 80vw;
+            height: 56.3976vw;
+            @include desktop {
+                width: 30vw;
+                height: 21.1491vw;
+            }
+        }
     }
-    p {
-        text-align: center;
-        font-size: 1.2em;
-        text-transform: uppercase;
-    }
+
 }
 
-nav {
-    background-color: dimgrey;
+
+
+ul {
+    width: 100%;
+    background-color: transparentize(black, 0.8);
+    padding: 2vh 0;
     display: none;
     @include tablet {
         display: block;
@@ -71,10 +111,10 @@ nav {
     @include desktop {
         display: block;
     }
-    ul {
-        width: 100%;
-        margin-top: 1.5vh;
+    .menu {
+        display:none;
         @include tablet {
+            font-size: 1.1em;
             display: flex;
             justify-content: flex-end;
         }
@@ -82,9 +122,7 @@ nav {
             display: flex;
             justify-content: flex-end;
         }
-
         li {
-            padding-bottom: 1.5vh;
             a {
                 color: white;
                 text-transform: uppercase;
@@ -99,13 +137,8 @@ nav {
             }
         }
     }
-}
 
-.fixed {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    margin: 0 auto;
+
 }
 
 /*
@@ -113,12 +146,49 @@ nav {
 main style
 
 */
-
 main {
-    section {
-        padding-top: 7vh;
-        &:not(#products) {
-            min-height: 100vh;
+    section.main-info {
+        height: 40vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        @include tablet {
+            height: 35vh;
+            padding: 5vh 0;
+        }
+        @include desktop {
+            height: 30vh;
+            padding: 5vh 0;
+        }
+        h1 {
+            font-size: 2em;
+            text-align: center;
+            text-transform: uppercase;
+            @include tablet {
+                font-size: 2.7em;
+            }
+            @include desktop {
+                font-size: 3em;
+            }
+            & + p {
+                text-align: center;
+                @include tablet {
+                    font-size: 1.3em;
+                }
+                @include desktop {
+                    font-size: 1.3em;
+                }
+            }
+        }
+    }
+    section:not(.main-info) {
+        min-height: 100vh;
+        @include tablet {
+            padding: 5vh 0;
+        }
+        @include desktop {
+            padding: 5vh 0;
         }
         h2 {
             font-size: 2em;
@@ -127,25 +197,20 @@ main {
         }
         h3 {
             font-size: 1.5em;
+            text-transform: uppercase;
             padding-top: 2vh;
             margin-bottom: 2vh;
         }
         p {
             line-height: 1.8;
             text-align: justify;
-            &:first-of-type {
-                &:first-letter {
-                    font-family: $headerFont;
-                    font-size: 130%;
-                    color: seagreen;
-                }
-            }
             &:last-of-type {
                 padding-bottom: 2vh;
             }
         }
     }
 }
+
 
 .slider {
     display: flex;
@@ -184,7 +249,6 @@ main {
     }
     .post-wrapper {
         order: -1;
-        min-height: 40vh;
         overflow: hidden;
         .wrapper-content {
             width: 300%;
@@ -221,8 +285,6 @@ main {
 }
 
 
-
-
 .paragraph-wrapper {
     div {
         margin-bottom: 5vh;
@@ -240,6 +302,66 @@ main {
         div {
             width: 40%;
             margin-left: 0;
+        }
+    }
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+    }
+    @include desktop {
+        justify-content: space-between;
+        height: 75vh;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+    }
+    .row {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 100%;
+        height: 110vh;
+        @include tablet {
+            width: 48%;
+            height: 82.5vh;
+        }
+        @include desktop {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            height: 36vh;
+        }
+        div {
+            width: 100%;
+            height: 35vh;
+            @include tablet {
+                height: 25vh;
+            }
+            @include desktop {
+                height: 36vh;   
+            }
+            &.rect {
+                @include desktop {
+                    width: 36%;
+                }
+            }
+            &.narrow {
+                @include desktop {
+                    width: 23%;
+                }
+            }
+            &.wide {
+                @include desktop {
+                    width: 49.25%;
+                }
+            }
         }
     }
 }

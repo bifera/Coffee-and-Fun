@@ -5,14 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Anfrawer</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro:700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Oswald:500|PT+Sans" rel="stylesheet">
         <script src="https://use.fontawesome.com/b416a3a8ab.js"></script>
     </head>
     <body>
         <header>
-            <nav class="fixed">
-                <div class="container">
-                    <ul>
+            <nav>
+                <span class="fa fa-bars" id="menu-toggle"></span>
+                <ul id="menu-content">
+                    <div class="container menu">
                         <li>
                             <a href="#">Strona główna</a>
                         </li>
@@ -20,23 +21,29 @@
                             <a href="#products">Produkty</a>
                         </li>
                         <li>
-                            <a href="#about">O firmie</a>
+                            <a href="#about">O nas</a>
+                        </li>
+                        <li>
+                            <a href="#contact">B2B</a>
                         </li>
                         <li>
                             <a href="#contact">Kontakt</a>
                         </li>
-                    </ul>
-                </div>
+                    </div>
+                </ul>
+                <a class="logo" href="#"></a>
             </nav>
-            <h1>
-                Anfrawer
-            </h1>
-            <p>
-                Coffee and Cocoa Trade
-            </p>
         </header>
-        <hr />
         <main>
+            <section class="container main-info">
+                <h1>
+                    Importer zielonej&nbsp;kawy
+                </h1>
+                <p>
+                    Naszą misją jest dostarczanie wysokiej jakości zielonej kawy z Afryki na rynek europejski kupowanej tak, aby każdy farmer otrzymał uczciwą zapłatę.
+                </p>
+                <hr />
+            </section>
             <section class="container" id="products">
                 <h2>Produkty</h2>
                 <div class="slider">
@@ -71,9 +78,22 @@
                     </div>
                     <a href="#" class="wrapper-arrow">&gt;</a>
                 </div>
+                <div class="gallery">
+                    <div class="row">
+                        <div class="wide gallery-img01"></div>
+                        <div class="narrow gallery-img02"></div>
+                        <div class="narrow gallery-img03"></div>
+                    </div>
+                    <div class="row">
+                        <div class="narrow gallery-img04"></div>
+                        <div class="rect gallery-img05"></div>
+                        <div class="rect gallery-img06"></div>
+                    </div>
+                </div>
+                <hr />
             </section>
             <section class="container" id="about">
-                <h2>O firmie</h2>
+                <h2>O nas</h2>
                 <article>
                     <h3>
                         W poszukiwaniu dobrej kawy
@@ -86,7 +106,7 @@
                     </div>
                     <div class="paragraph-wrapper">
                         <p>
-                            Kawy szukam w Afryce i staram się znajdować miejsca dotychczas niekojarzone z taką produkcją. Docieram do miejsc, gdzie nie trafiają kupcy z wielkich firm i właśnie tam wyszukuję najciekawsze produkty. Każdy gatunek przed zakupem spróbowałem i jestem przekonany o jego dobrej jakości. Misją mojej firmy jest dostarczanie wysokiej jakości zielonej kawy z Afryki na rynek europejski kupowanej tak, aby każdy farmer otrzymał uczciwą zapłatę.
+                            Kawy szukam w Afryce i staram się znajdować miejsca dotychczas niekojarzone z taką produkcją. Docieram do miejsc, gdzie nie trafiają kupcy z wielkich firm i właśnie tam wyszukuję najciekawsze produkty. Każdy gatunek przed zakupem spróbowałem i jestem przekonany o jego dobrej jakości.
                         </p>
                         <div id="about-02"></div>
                     </div>

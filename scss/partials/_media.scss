@@ -1,3 +1,14 @@
 /* MEDIA */
 $tablet: "760px";
 $desktop: "1024px";
+
+/* images for gallery */
+
+@for $i from 1 through 6 {
+    div.gallery-img0#{$i} {
+        background-image: url(../img/gallery/image0#{$i}.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
