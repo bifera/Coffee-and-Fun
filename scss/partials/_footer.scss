@@ -1,0 +1,75 @@
+/*
+
+footer style
+
+*/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: dimgrey;
+    height: 100vh;
+    position: relative;
+    .columns {
+        width: 100%;
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+        }
+        @include desktop {
+            display: flex;
+            justify-content: space-between;
+        }
+        p {
+            padding-left: 3vw;
+            font-size: 1.3em;
+            &:first-child {
+                padding-bottom: 2vh;
+            }
+            &:last-child {
+                line-height: 2;
+                margin-bottom: 2vh;
+            }
+            .fa {
+                font-size: 2em;
+                padding-right: .5em;
+            }
+            a {
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
+    h2 {
+        font-size: 1.8em;
+        padding-left: 3vw;
+        padding-top: 3vh;
+        padding-bottom: 1.5vh;
+    }
+    p {
+        color: white;
+    }
+    .footer-image {
+        height: 55vh;
+        width: 100%;
+        background-image: $footerMobileImage;
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
+        @include tablet {
+            background-image: $footerTabletImage;
+        }
+        @include desktop {
+            background-image: $footerDesktopImage;
+            height: 65vh;
+        }
+    }
+    .copyright {
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 3vh;
+        width: 100%;
+        background-color: transparentize(black, 0.8);
+    }
+}

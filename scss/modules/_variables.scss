@@ -6,3 +6,19 @@ $headerFont: 'Oswald', sans-serif;
 /* MEDIA */
 $tablet: "760px";
 $desktop: "1024px";
+
+/* IMAGES */
+
+/* logo */
+
+$logoImageWhite: url(../img/anfrawer_logo_wh.png);
+
+/* header, sections, footer images */
+
+$headerMobileImage: url(../img/headerMobileBg.jpg);
+$headerTabletImage: url(../img/headerTabletBg.jpg);
+$headerDesktopImage: url(../img/headerDesktopBg.jpg);
+
+$footerMobileImage: url(../img/footerMobileBg.jpg);
+$footerTabletImage: url(../img/footerTabletBg.jpg);
+$footerDesktopImage: url(../img/footerDesktopBg.jpg);

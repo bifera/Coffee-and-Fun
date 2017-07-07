@@ -1,0 +1,77 @@
+/*
+
+slider for posts
+
+*/
+
+.slider {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .wrapper-arrow {
+        font-weight: bold;
+        font-size: 3em;
+        color: seagreen;
+        margin-left: 2vw;
+        margin-right: 2vw;
+        @include tablet {
+            margin-left: 0;
+            margin-right: 0;
+            position: relative;
+            top: 10vh;
+            &:first-child {
+                right: 3vw;
+            }
+            &:last-child {
+                left: 3vw;
+            }
+        }
+        @include desktop {
+            margin-left: 0;
+            margin-right: 0;
+            position: relative;
+            top: 10vh;
+            &:first-child {
+                right: 5vw;
+            }
+            &:last-child {
+                left: 5vw;
+            }
+        }
+    }
+    .post-wrapper {
+        order: -1;
+        overflow: hidden;
+        .wrapper-content {
+            width: 300%;
+            display: flex;
+            justify-content: flex-start;
+            .post {
+                width: 95vw;
+                @include tablet {
+                    width: 80vw;
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+                @include desktop {
+                    width: 70vw;
+                    max-width: 1200px;
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+    @include tablet {
+        flex-wrap: nowrap;
+        .post-wrapper {
+            order: 0;
+        }
+    }
+    @include desktop {
+        flex-wrap: nowrap;
+        .post-wrapper {
+            order: 0;
+        }
+    }
+}

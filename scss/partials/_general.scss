@@ -1,0 +1,36 @@
+/* 
+
+general stuff
+
+*/
+
+.container {
+    width: 95vw;
+    margin: 0 auto;
+    @include tablet {
+        width: 80vw;
+    }
+    @include desktop {
+        width: 70vw;
+        max-width: 1200px;
+    }
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+}
+
+h1, h2, h3 {
+    font-family: $headerFont;
+}
+
+p, a {
+    font-family: $primaryFont;
+    line-height: 1.5;
+}
+
+hr {
+    width: 30vw;
+    margin: 0 auto;
+}
