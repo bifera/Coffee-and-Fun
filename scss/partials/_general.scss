@@ -4,6 +4,11 @@ general stuff
 
 */
 
+body {
+    background-color: $primaryColor;
+    color: $textColor;
+}
+
 .container {
     width: 95vw;
     margin: 0 auto;
@@ -33,4 +38,5 @@ p, a {
 hr {
     width: 30vw;
     margin: 0 auto;
+    color: $secondaryColor;
 }

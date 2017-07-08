@@ -23,7 +23,7 @@ header {
         background-image: $headerDesktopImage;
     }
     nav {
-        background-color: transparentize(dimgray, 0.8);
+        background-color: transparentize($textColor, 0.8);
         height: inherit;
         width: 100%;
         display: flex;
@@ -31,8 +31,8 @@ header {
         justify-content: center;
         align-items: center;
         span.fa {
-            font-size: 1.8em;
-            color: antiquewhite;
+            font-size: 1.8rem;
+            color: $primaryColor;
             @include tablet {
                 display: none;
             }
@@ -64,7 +64,7 @@ page navigation
 
 ul {
     width: 100%;
-    background-color: transparentize(black, 0.8);
+    background-color: transparentize($textColor, 0.7);
     padding: 2vh 0;
     display: none;
     @include tablet {
@@ -76,7 +76,7 @@ ul {
     .menu {
         display:none;
         @include tablet {
-            font-size: 1.1em;
+            font-size: 1.33rem;
             display: flex;
             justify-content: flex-end;
         }
@@ -86,8 +86,11 @@ ul {
         }
         li {
             a {
-                color: white;
+                color: $primaryColor;
                 text-transform: uppercase;
+            }
+            &:hover {
+                text-decoration: underline;
             }
             @include tablet {
                 text-align: right;

@@ -8,7 +8,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: dimgrey;
+    background-color: transparentize($secondaryColor, 0.3);
     height: 100vh;
     position: relative;
     .columns {
@@ -37,7 +37,7 @@ footer {
             }
             a {
                 text-decoration: none;
-                color: white;
+                color: $primaryColor;
             }
         }
     }
@@ -48,7 +48,7 @@ footer {
         padding-bottom: 1.5vh;
     }
     p {
-        color: white;
+        color: $primaryColor;
     }
     .footer-image {
         height: 55vh;
@@ -70,6 +70,6 @@ footer {
         bottom: 0;
         margin-bottom: 3vh;
         width: 100%;
-        background-color: transparentize(black, 0.8);
+        background-color: transparentize($textColor, 0.8);
     }
 }

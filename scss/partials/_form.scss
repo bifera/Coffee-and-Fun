@@ -1,6 +1,6 @@
 form {
     width: 100%;
-    background-color: transparentize(darkslategray, 0.8);
+    background-color: transparentize($altColor, 0.6);
     padding: 1.5vh 1.5vw;
     @include desktop {
         height: 60vh;
@@ -50,7 +50,7 @@ form {
             font-family: $headerFont;
             width: 10rem;
             margin: 0 1vw;
-            background-color: grey;
+            background-color: transparentize($secondaryColor, 0.3);
             border-radius: 2%;
         }
     }
