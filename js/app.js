@@ -3,6 +3,7 @@ $(function(){
     var menuButton = $('#menu-toggle');
     var menuContent = $('#menu-content');
     var menuBackground = $('#menu-background');
+    var menuAnchor = menuContent.find('a');
 
     /*
     **
@@ -14,7 +15,16 @@ $(function(){
     /* mobile menu toggle */
     menuButton.on('click', function(){
         menuContent.fadeToggle();
-        menuBackground.fadeToggle(1200);
+        menuBackground.fadeToggle(600);
+        $(this).toggleClass("fa-close");
+        $(this).toggleClass("fa-bars");
+    });
+
+    menuAnchor.each(function(){
+        $(this).on('click', function(){
+            menuContent.fadeOut();
+            menuBackground.fadeOut();
+        }) 
     });
 
     /* desktop and tablet sticky menu */
@@ -47,5 +57,29 @@ $(function(){
 
     tablet.addListener(useStickyMenu);
     desktop.addListener(useStickyMenu);
+
+
+    /*
+    **
+    *** NAVIGATION EFFECTS ***
+    **
+    */
+
+    var buttonToTop = $('#arrow-up');
+
+    var headerImageBottom = $('nav').height();
+
+    function showButtonTop(){
+        $(window).on('scroll', function(){
+            var scrolledAmount = $(document).scrollTop();
+            if (scrolledAmount > headerImageBottom) {
+                buttonToTop.fadeIn();
+            } else {
+                buttonToTop.fadeOut();
+            }
+        });
+    }
+    
+    showButtonTop();
 
 });

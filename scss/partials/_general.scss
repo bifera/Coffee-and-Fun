@@ -21,11 +21,6 @@ body {
     }
 }
 
-.fixed {
-    position: fixed;
-    top: 0;
-}
-
 .padded {
     padding-top: 10vh;
 }
@@ -43,4 +38,18 @@ hr {
     width: 30vw;
     margin: 0 auto;
     color: $secondaryColor;
+}
+
+.up {
+    display: none;
+}
+
+.fixed-bottom {
+    position: fixed;
+    bottom: 1vw;
+    right: 2vw;
+    a {
+        font-size: 2rem;
+        color: $accentColor;
+    }
 }
