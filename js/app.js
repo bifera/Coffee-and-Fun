@@ -27,10 +27,16 @@ $(function(){
     function useStickyMenu(event){
         if (event.matches) {
             var menuBarPosition = menuBar.offset().top;
+            var headerImageBottom = $('main').offset().top;
             $(window).on('scroll', function(){
                 var scrolledAmount = $(document).scrollTop();
                 if (scrolledAmount > menuBarPosition) {
                     menuBar.addClass('sticky');
+                    if (scrolledAmount > headerImageBottom) {
+                        menuBar.addClass('darker');
+                    } else {
+                        menuBar.removeClass('darker');
+                    }
                 } else {
                     menuBar.removeClass('sticky');
                 }

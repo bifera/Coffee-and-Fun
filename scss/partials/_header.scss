@@ -109,6 +109,7 @@ page navigation
         }
         a {
             color: $primaryColor;
+            font-family: $headerFont;
             text-transform: uppercase;
         }
         &:hover {
@@ -116,6 +117,32 @@ page navigation
         }
     }
 }
+
+/*
+
+menu anchor hover effects
+
+*/
+
+.middle-out-underline {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 2px;
+    &::after {
+        content: "";
+        display: block;
+        margin: auto;
+        height: 2px;
+        width: 0;
+        background-color: transparent;
+        transition: width .45s ease, background-color .45s ease;
+    }
+    &:hover::after {
+        width: 100%;
+        background-color: $primaryColor;
+    }
+}
+
 
 /*
 
@@ -153,5 +180,7 @@ sticky menu for tablet & desktop
 }
 
 .darker {
-    background-color: transparentize($textColor, 0.025);
+    animation-name: darkenNavbar;
+    animation-duration: 1.2s;
+    animation-fill-mode: forwards;
 }

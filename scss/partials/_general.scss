@@ -26,6 +26,10 @@ body {
     top: 0;
 }
 
+.padded {
+    padding-top: 10vh;
+}
+
 h1, h2, h3 {
     font-family: $headerFont;
 }
