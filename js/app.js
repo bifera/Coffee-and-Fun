@@ -126,5 +126,49 @@ $(function(){
     }
 
     smoothScrolling();
-
+    
+    
+    /* post slider */
+    
+    var nextPostButton = $('#nextPost');
+    var prevPostButton = $('#previousPost');
+    var posts = $('.post');
+    var postsList = $('.wrapper-content');
+    var currentPostIndex = 1;
+    var postWidth = $('.post').eq(currentPostIndex).width();
+    
+    postsList.width(postWidth*(posts.length+2));
+    postsList.css('position', 'relative');
+    postsList.css('left', postWidth*(-1));
+    
+    postSlider();
+    
+    function postSlider(){
+        var firstPostClone = posts.first().clone(true);
+        var lastPostClone = posts.last().clone(true);
+        
+        postsList.append(firstPostClone);
+        postsList.prepend(lastPostClone);
+        
+        nextPostButton.on('click', {value: +1}, startTheSlider);
+        prevPostButton.on('click', {value: -1}, startTheSlider);
+        
+        function startTheSlider(event) {
+            currentPostIndex = currentPostIndex+event.data.value;
+            
+            if (currentPostIndex === posts.length+1) {
+                postsList.animate({left: (currentPostIndex*postWidth)*-1}, 1200, function(){
+                    postsList.css('left', (postWidth*-1));
+                });
+                currentPostIndex = 1;
+            } else if (currentPostIndex === 0) {
+                postsList.animate({left: (currentPostIndex*postWidth)*-1}, 1200, function(){
+                    postsList.css('left', (postWidth*(posts.length))*-1);
+                });
+                currentPostIndex = posts.length;
+            } else {
+                postsList.animate({left: (currentPostIndex*postWidth)*-1}, 1200);
+            }
+        }
+    }
 });
