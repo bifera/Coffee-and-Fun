@@ -14,27 +14,38 @@ $(function(){
 
     /* mobile menu toggle */
     menuButton.on('click', function(){
-        $(this).toggleClass("fa-close");
-        $(this).toggleClass("fa-bars");
         if (menuContent.is(':visible')) {
             menuContent.fadeOut(function(){
                 menuBackground.slideUp();
                 menuBar.addClass('shadow-bar');
+                menuButton.removeClass('fa-close').addClass('fa-bars');
             });
         } else {
             menuBackground.slideDown(600, function(){
                 menuContent.fadeIn();
                 menuBar.removeClass('shadow-bar').removeClass('darker');
+                menuButton.removeClass('fa-bars').addClass('fa-close');
             });   
         }
     });
 
-    menuAnchor.each(function(){
-        $(this).on('click', function(){
-            menuContent.fadeOut();
-            menuBackground.fadeOut();
-        });
-    });
+    /* hide menu when any anchor clicked */
+    var mobile = window.matchMedia("screen and (max-width: 759px)");
+    function hideClickedMenu(event){
+        if (event.matches) {
+            menuAnchor.each(function(){
+                $(this).on('click', function(){
+                    menuContent.fadeOut();
+                    menuBackground.fadeOut();
+                    menuButton.removeClass('fa-close').addClass('fa-bars');
+                });
+            });
+        }
+    }
+    
+    hideClickedMenu(mobile);
+    mobile.addListener(hideClickedMenu);
+
 
     /* desktop and tablet sticky menu */
 
@@ -85,8 +96,9 @@ $(function(){
     **
     */
 
+    /* return to top button */
+    
     var buttonToTop = $('#arrow-up');
-
     var headerImageBottom = $('nav').height();
 
     function showButtonTop(){
@@ -101,5 +113,18 @@ $(function(){
     }
 
     showButtonTop();
+
+    /* smooth scrolling */
+
+    function smoothScrolling(){
+        menuAnchor.on('click', function(e){
+            e.preventDefault();
+            var anchor = $(this).attr('href');
+            givenOffset = $(anchor).offset().top;
+            $('html, body').animate({scrollTop: givenOffset}, 1200);
+        });
+    }
+
+    smoothScrolling();
 
 });
