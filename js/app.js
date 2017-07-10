@@ -15,9 +15,14 @@ $(function(){
     /* mobile menu toggle */
     menuButton.on('click', function(){
         menuContent.fadeToggle();
-        menuBackground.fadeToggle(600);
+        menuBackground.slideToggle(600, function(){       
+            menuBar.toggleClass("shadow-bar");
+            menuBar.toggleClass("darker");
+        });
         $(this).toggleClass("fa-close");
         $(this).toggleClass("fa-bars");
+        
+        
     });
 
     menuAnchor.each(function(){
@@ -35,16 +40,11 @@ $(function(){
     function useStickyMenu(event){
         if (event.matches) {
             var menuBarPosition = menuBar.offset().top;
-            var headerImageBottom = $('nav').height();
             $(window).on('scroll', function(){
                 var scrolledAmount = $(document).scrollTop();
                 if (scrolledAmount > menuBarPosition) {
                     menuBar.addClass('sticky');
-                    if (scrolledAmount > headerImageBottom) {
-                        menuBar.addClass('darker');
-                    } else {
-                        menuBar.removeClass('darker');
-                    }
+
                 } else {
                     menuBar.removeClass('sticky');
                 }
@@ -58,6 +58,22 @@ $(function(){
     tablet.addListener(useStickyMenu);
     desktop.addListener(useStickyMenu);
 
+
+    /* menubar darkening */
+    
+    function darkenMenuBar(){
+        var headerImageBottom = $('nav').height();
+        $(window).on('scroll', function(){
+            var scrolledAmount = $(document).scrollTop();
+            if (scrolledAmount > headerImageBottom) {
+                menuBar.addClass('darker');
+            } else {
+                menuBar.removeClass('darker');
+            }
+        });
+    }
+    
+    darkenMenuBar();
 
     /*
     **
@@ -79,7 +95,7 @@ $(function(){
             }
         });
     }
-    
+
     showButtonTop();
 
 });
