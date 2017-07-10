@@ -14,22 +14,26 @@ $(function(){
 
     /* mobile menu toggle */
     menuButton.on('click', function(){
-        menuContent.fadeToggle();
-        menuBackground.slideToggle(600, function(){       
-            menuBar.toggleClass("shadow-bar");
-            menuBar.toggleClass("darker");
-        });
         $(this).toggleClass("fa-close");
         $(this).toggleClass("fa-bars");
-        
-        
+        if (menuContent.is(':visible')) {
+            menuContent.fadeOut(function(){
+                menuBackground.slideUp();
+                menuBar.addClass('shadow-bar');
+            });
+        } else {
+            menuBackground.slideDown(600, function(){
+                menuContent.fadeIn();
+                menuBar.removeClass('shadow-bar').removeClass('darker');
+            });   
+        }
     });
 
     menuAnchor.each(function(){
         $(this).on('click', function(){
             menuContent.fadeOut();
             menuBackground.fadeOut();
-        }) 
+        });
     });
 
     /* desktop and tablet sticky menu */
@@ -60,7 +64,7 @@ $(function(){
 
 
     /* menubar darkening */
-    
+
     function darkenMenuBar(){
         var headerImageBottom = $('nav').height();
         $(window).on('scroll', function(){
@@ -72,7 +76,7 @@ $(function(){
             }
         });
     }
-    
+
     darkenMenuBar();
 
     /*
