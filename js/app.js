@@ -4,7 +4,6 @@ $(function(){
     var menuContent = $('#menu-content');
     var menuBackground = $('#menu-background');
 
-
     /*
     **
     *** MENU EFFECTS ***
@@ -15,7 +14,6 @@ $(function(){
     /* mobile menu toggle */
     menuButton.on('click', function(){
         menuContent.fadeToggle();
-        menuBar.toggleClass('shadow-bar');
         menuBackground.fadeToggle(1200);
     });
 
@@ -27,7 +25,7 @@ $(function(){
     function useStickyMenu(event){
         if (event.matches) {
             var menuBarPosition = menuBar.offset().top;
-            var headerImageBottom = $('main').offset().top;
+            var headerImageBottom = $('nav').height();
             $(window).on('scroll', function(){
                 var scrolledAmount = $(document).scrollTop();
                 if (scrolledAmount > menuBarPosition) {

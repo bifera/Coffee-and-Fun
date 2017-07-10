@@ -59,14 +59,18 @@ page navigation
     align-items: center;
     position: fixed;
     top: 0;
+    max-height: 2.8rem;
     @include tablet {
         position: static;
+        max-height: 10vh;
     }
     @include desktop {
         position: static;
+        max-height: 10vh;
+
     }
     span.fa {
-        margin: 1vh 0;
+        margin: .5rem 0;
         font-size: 1.8rem;
         color: $primaryColor;
         @include tablet {
