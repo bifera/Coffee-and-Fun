@@ -143,6 +143,10 @@ $(function(){
     
     postSlider();
     
+    desktop.addListener(postSlider);
+    tablet.addListener(postSlider);
+    mobile.addListener(postSlider);
+    
     function postSlider(){
         var firstPostClone = posts.first().clone(true);
         var lastPostClone = posts.last().clone(true);

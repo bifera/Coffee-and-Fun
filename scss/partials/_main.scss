@@ -12,11 +12,9 @@ main {
         align-items: center;
         @include tablet {
             height: 35vh;
-            padding: 5vh 0;
         }
         @include desktop {
             height: 30vh;
-            padding: 5vh 0;
         }
         h1 {
             font-size: 2rem;
@@ -40,15 +38,6 @@ main {
         }
     }
     section:not(.main-info) {
-        margin-top: 3vh;
-        @include tablet {
-            margin-bottom: 5vh;
-            margin-top: 5vh;
-        }
-        @include desktop {
-            margin-bottom: 5vh;
-            margin-top: 5vh;
-        }
         h2 {
             font-size: 2rem;
             text-align: center;
