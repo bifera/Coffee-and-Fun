@@ -28,18 +28,8 @@ header {
         width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        span.fa {
-            font-size: 1.8rem;
-            color: $primaryColor;
-            @include tablet {
-                display: none;
-            }
-            @include desktop {
-                display: none;
-            }
-        }
+        justify-content: center;
         a.logo {
             display: block;
             background-image: $logoImageWhite;
@@ -62,44 +52,106 @@ page navigation
 
 */
 
-ul {
+.menu-bar {
     width: 100%;
-    background-color: transparentize($textColor, 0.7);
-    padding: 2vh 0;
-    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
     @include tablet {
-        display: block;
+        position: static;
     }
     @include desktop {
-        display: block;
+        position: static;
     }
-    .menu {
-        display:none;
+    span.fa {
+        margin: 1vh 0;
+        font-size: 1.8rem;
+        color: $primaryColor;
         @include tablet {
-            font-size: 1.33rem;
-            display: flex;
-            justify-content: flex-end;
+            display: none;
         }
         @include desktop {
-            display: flex;
-            justify-content: flex-end;
-        }
-        li {
-            a {
-                color: $primaryColor;
-                text-transform: uppercase;
-            }
-            &:hover {
-                text-decoration: underline;
-            }
-            @include tablet {
-                text-align: right;
-                padding-left: 4vw;
-            }
-            @include desktop {
-                text-align: right;
-                padding-left: 4vw;
-            }
+            display: none;
         }
     }
+}
+
+.shadow-bar {
+    background-color: transparentize($textColor, 0.7);
+}
+
+.menu {
+    display: none;
+    @include tablet {
+        font-size: 1.33rem;
+        display: flex;
+        justify-content: flex-end;
+    }
+    @include desktop {
+        display: flex;
+        justify-content: flex-end;
+    }
+    li {
+        text-align: left;
+        padding-top: 1.25vh;
+        &:last-child {
+            padding-bottom: 1.25vh;
+        }
+        @include tablet {
+            text-align: right;
+            padding: 2vh 0 2vh 4vw;
+        }
+        @include desktop {
+            text-align: right;
+            padding: 2vh 0 2vh 4vw;
+        }
+        a {
+            color: $primaryColor;
+            text-transform: uppercase;
+        }
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+/*
+
+effects for mobile display
+
+*/
+.mobile-display {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 1;
+}
+
+.mobile-active {
+    display: none;
+    background-color: transparentize($textColor, 0.025);
+    width: 200vw;
+    height: 200vw;
+    border-radius: 50%;
+    position: fixed;
+    right: -100vw;
+    top: -100vw;
+}
+
+/*
+
+sticky menu for tablet & desktop
+
+*/
+
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.darker {
+    background-color: transparentize($textColor, 0.025);
 }

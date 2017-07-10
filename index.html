@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="pl">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,30 +7,35 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link href="https://fonts.googleapis.com/css?family=Oswald:500|PT+Sans" rel="stylesheet">
         <script src="https://use.fontawesome.com/b416a3a8ab.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="./js/app.js"></script>
     </head>
     <body>
         <header>
             <nav>
-                <span class="fa fa-bars" id="menu-toggle"></span>
-                <ul id="menu-content">
-                    <div class="container menu">
-                        <li>
-                            <a href="#">Strona główna</a>
-                        </li>
-                        <li>
-                            <a href="#products">Produkty</a>
-                        </li>
-                        <li>
-                            <a href="#about">O nas</a>
-                        </li>
-                        <li>
-                            <a href="#b2b">B2B</a>
-                        </li>
-                        <li>
-                            <a href="#contact">Kontakt</a>
-                        </li>
+                <div class="menu-bar shadow-bar" id="menu-bar">
+                    <div class="mobile-active"  id="menu-background"></div>
+                    <div class="container mobile-display">
+                        <span class="fa fa-bars" id="menu-toggle"></span>
+                        <ul class="menu" id="menu-content">
+                            <li>
+                                <a href="#">Strona główna</a>
+                            </li>
+                            <li>
+                                <a href="#products">Produkty</a>
+                            </li>
+                            <li>
+                                <a href="#about">O nas</a>
+                            </li>
+                            <li>
+                                <a href="#b2b">B2B</a>
+                            </li>
+                            <li>
+                                <a href="#contact">Kontakt</a>
+                            </li>
+                        </ul>
                     </div>
-                </ul>
+                </div>
                 <a class="logo" href="#"></a>
             </nav>
         </header>
@@ -181,7 +186,6 @@
                 </article>
             </section>
         </main>
-        <hr />
         <!--
 <aside>
 <p>
@@ -214,10 +218,13 @@
 
             </section>
             <div class="footer-image">
+                <section class="copyright">
+                    <p class="container">Anfrawer - Coffee and Cocoa Trade · Bartosz Bielicki ul. Leśnych Skrzatów 1 · 60-193 Poznań &copy;&nbsp;2016-2017 Anfrawer</p>
+                </section>
+
+
             </div>
-            <section class="copyright">
-                <p class="container">Anfrawer - Coffee and Cocoa Trade · Bartosz Bielicki ul. Leśnych Skrzatów 1 · 60-193 Poznań &copy;&nbsp;2016-2017 Anfrawer</p>
-            </section>
+
         </footer>
     </body>
 </html>

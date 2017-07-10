@@ -10,7 +10,6 @@ footer {
     justify-content: space-between;
     background-color: transparentize($secondaryColor, 0.3);
     height: 100vh;
-    position: relative;
     .columns {
         width: 100%;
         @include tablet {
@@ -57,6 +56,9 @@ footer {
         background-position: top;
         background-size: cover;
         background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
         @include tablet {
             background-image: $footerTabletImage;
         }
@@ -66,10 +68,8 @@ footer {
         }
     }
     .copyright {
-        position: absolute;
-        bottom: 0;
-        margin-bottom: 3vh;
         width: 100%;
         background-color: transparentize($textColor, 0.8);
+        padding: 1.5vh 0;
     }
 }
