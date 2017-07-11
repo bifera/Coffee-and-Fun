@@ -1,0 +1,19 @@
+/* images for gallery */
+
+@for $i from 1 through 6 {
+    div.gallery-img0#{$i} {
+        background-image: url(./img/gallery/image0#{$i}.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+@for $i from 1 through 6 {
+    div.paragraph-img0#{$i} {
+        background-image: url(./img/images/image0#{$i}.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
