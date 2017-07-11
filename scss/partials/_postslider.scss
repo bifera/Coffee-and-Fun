@@ -27,25 +27,25 @@ slider for posts
         overflow: hidden;
         @include tablet {
             order: 0;
-            width: 90%;
+            width: 70vw;
         }
         @include desktop {
             order: 0;
-            width: 90%;
+            width: 60vw;
         }
         .wrapper-content {
-            width: 300%;
+            width: 10000vw;
             display: flex;
             justify-content: flex-start;
             .post {
                 width: 95vw;
                 @include tablet {
-                    width: 33.3333%;
+                    width: 70vw;
                     padding-left: 0;
                     padding-right: 0;
                 }
                 @include desktop {
-                    width: 33.3333%;
+                    width: 60vw;
                     padding-left: 0;
                     padding-right: 0;
                 }
