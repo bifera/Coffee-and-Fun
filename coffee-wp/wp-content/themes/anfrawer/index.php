@@ -71,8 +71,25 @@
                 </div>
             </div>
         </article>
-        <article>
-            <h3>
+        
+                                <?php
+                    $args = ['post_type' => 'miejsce'];
+                    $loop = new WP_Query( $args ); 
+
+                    while ( $loop->have_posts() ) : $loop->the_post();
+                    
+                    ?>
+                    <article>
+                    <h3>Miejsca - <?php the_title();?></h3>
+                    <?php the_content(); ?>
+                    </article>
+                    <?php
+
+                    endwhile;
+                    ?>
+            
+<!--            <article>
+<h3>
                 Miejsca - Kamerun
             </h3>
             <p>
@@ -90,7 +107,7 @@
             <p>
                 Większość plantacji to małe, przydomowe farmy lub wręcz kilka krzaków pielęgnowanych przez rodzinę. Zebrane owoce kawy zawożone są do okolicznych spółdzielni, których pracownicy obierają, suszą i sortują kawę. W takich właśnie miejscach dokonuję zakupów.
             </p>
-        </article>
+        </article>-->
     </section>
     <hr />
     <section class="container padded" id="b2b">
