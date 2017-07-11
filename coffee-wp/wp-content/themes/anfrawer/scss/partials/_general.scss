@@ -1,0 +1,55 @@
+/* 
+
+general stuff
+
+*/
+
+body {
+    background-color: $primaryColor;
+    color: $textColor;
+}
+
+.container {
+    width: 95vw;
+    margin: 0 auto;
+    @include tablet {
+        width: 80vw;
+    }
+    @include desktop {
+        width: 70vw;
+        max-width: 1200px;
+    }
+}
+
+.padded {
+    padding-top: 8vh;
+}
+
+h1, h2, h3 {
+    font-family: $headerFont;
+}
+
+p, a {
+    font-family: $primaryFont;
+    line-height: 1.5;
+}
+
+hr {
+    width: 30vw;
+    margin: 0 auto;
+    color: $secondaryColor;
+}
+
+.up {
+    display: none;
+}
+
+.fixed-bottom {
+    position: fixed;
+    bottom: 1vw;
+    right: 2vw;
+    a {
+        font-size: 2rem;
+        color: $accentColor;
+    }
+}
