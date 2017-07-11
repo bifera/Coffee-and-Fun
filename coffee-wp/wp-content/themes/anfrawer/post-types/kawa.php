@@ -3,19 +3,19 @@
 function kawa_init() {
 	register_post_type( 'kawa', array(
 		'labels'            => array(
-			'name'                => __( 'Kawas', 'anfrawer' ),
+			'name'                => __( 'Kawy', 'anfrawer' ),
 			'singular_name'       => __( 'Kawa', 'anfrawer' ),
-			'all_items'           => __( 'All Kawas', 'anfrawer' ),
-			'new_item'            => __( 'New kawa', 'anfrawer' ),
-			'add_new'             => __( 'Add New', 'anfrawer' ),
-			'add_new_item'        => __( 'Add New kawa', 'anfrawer' ),
-			'edit_item'           => __( 'Edit kawa', 'anfrawer' ),
-			'view_item'           => __( 'View kawa', 'anfrawer' ),
-			'search_items'        => __( 'Search kawas', 'anfrawer' ),
-			'not_found'           => __( 'No kawas found', 'anfrawer' ),
-			'not_found_in_trash'  => __( 'No kawas found in trash', 'anfrawer' ),
-			'parent_item_colon'   => __( 'Parent kawa', 'anfrawer' ),
-			'menu_name'           => __( 'Kawas', 'anfrawer' ),
+			'all_items'           => __( 'Wszystkie kawy', 'anfrawer' ),
+			'new_item'            => __( 'Nowa kawa', 'anfrawer' ),
+			'add_new'             => __( 'Dodaj nową', 'anfrawer' ),
+			'add_new_item'        => __( 'Dodaj nową kawę', 'anfrawer' ),
+			'edit_item'           => __( 'Edytuj kawę', 'anfrawer' ),
+			'view_item'           => __( 'Zobacz kawę', 'anfrawer' ),
+			'search_items'        => __( 'Znajdź kawę', 'anfrawer' ),
+			'not_found'           => __( 'Nie znaleziono żadnych kaw', 'anfrawer' ),
+			'not_found_in_trash'  => __( 'Nie znaleziono żadnych kaw w folderze Kosz', 'anfrawer' ),
+			'parent_item_colon'   => __( 'Nadrzędna kawa', 'anfrawer' ),
+			'menu_name'           => __( 'Kawy', 'anfrawer' ),
 		),
 		'public'            => true,
 		'hierarchical'      => false,
@@ -25,7 +25,7 @@ function kawa_init() {
 		'has_archive'       => true,
 		'rewrite'           => true,
 		'query_var'         => true,
-		'menu_icon'         => 'dashicons-admin-post',
+		'menu_icon'         => 'dashicons-carrot',
 		'show_in_rest'      => true,
 		'rest_base'         => 'kawa',
 		'rest_controller_class' => 'WP_REST_Posts_Controller',
@@ -41,19 +41,19 @@ function kawa_updated_messages( $messages ) {
 
 	$messages['kawa'] = array(
 		0 => '', // Unused. Messages start at index 1.
-		1 => sprintf( __('Kawa updated. <a target="_blank" href="%s">View kawa</a>', 'anfrawer'), esc_url( $permalink ) ),
+		1 => sprintf( __('Kawa zaktualizowana. <a target="_blank" href="%s">View kawa</a>', 'anfrawer'), esc_url( $permalink ) ),
 		2 => __('Custom field updated.', 'anfrawer'),
 		3 => __('Custom field deleted.', 'anfrawer'),
-		4 => __('Kawa updated.', 'anfrawer'),
+		4 => __('Kawa zaktualizowana.', 'anfrawer'),
 		/* translators: %s: date and time of the revision */
 		5 => isset($_GET['revision']) ? sprintf( __('Kawa restored to revision from %s', 'anfrawer'), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
-		6 => sprintf( __('Kawa published. <a href="%s">View kawa</a>', 'anfrawer'), esc_url( $permalink ) ),
-		7 => __('Kawa saved.', 'anfrawer'),
-		8 => sprintf( __('Kawa submitted. <a target="_blank" href="%s">Preview kawa</a>', 'anfrawer'), esc_url( add_query_arg( 'preview', 'true', $permalink ) ) ),
-		9 => sprintf( __('Kawa scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview kawa</a>', 'anfrawer'),
+		6 => sprintf( __('Kawa opublikowana. <a href="%s">View kawa</a>', 'anfrawer'), esc_url( $permalink ) ),
+		7 => __('Kawa zapisana.', 'anfrawer'),
+		8 => sprintf( __('Kawa wysłana. <a target="_blank" href="%s">Preview kawa</a>', 'anfrawer'), esc_url( add_query_arg( 'preview', 'true', $permalink ) ) ),
+		9 => sprintf( __('Kawa scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Podgląd</a>', 'anfrawer'),
 		// translators: Publish box date format, see http://php.net/date
 		date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( $permalink ) ),
-		10 => sprintf( __('Kawa draft updated. <a target="_blank" href="%s">Preview kawa</a>', 'anfrawer'), esc_url( add_query_arg( 'preview', 'true', $permalink ) ) ),
+		10 => sprintf( __('Szkic kawy zaktualizowany. <a target="_blank" href="%s">Pogląd</a>', 'anfrawer'), esc_url( add_query_arg( 'preview', 'true', $permalink ) ) ),
 	);
 
 	return $messages;
