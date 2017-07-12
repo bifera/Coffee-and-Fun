@@ -1,4 +1,4 @@
-        <footer>
+        <footer class="scrolled">
             <section class="container padded" id="contact">
                 <h2>Kontakt</h2>
                 <article>
