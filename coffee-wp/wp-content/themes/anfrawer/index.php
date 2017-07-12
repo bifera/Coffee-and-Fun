@@ -21,11 +21,11 @@
                     $loop = new WP_Query( $args ); 
 
                     while ( $loop->have_posts() ) : $loop->the_post();
-                    
+
                     ?>
                     <article class="post">
-                    <h3><?php the_title();?></h3>
-                    <?php the_content(); ?>
+                        <h3><?php the_title();?></h3>
+                        <?php the_content(); ?>
                     </article>
                     <?php
 
@@ -71,27 +71,27 @@
                 </div>
             </div>
         </article>
-                    <?php
-                    $args = ['post_type' => 'miejsce'];
-                    $loop = new WP_Query( $args ); 
+        <?php
+        $args = ['post_type' => 'miejsce'];
+        $loop = new WP_Query( $args ); 
 
-                    while ( $loop->have_posts() ) : $loop->the_post();
-                    
-                    ?>
-                    <article>
-                    <h3>Miejsca - <?php the_title();?></h3>
-                        <div class="images-wrapper">
-                            <div class="images-content">
-                                <img src="<?php the_field('wstaw_zdjecie')?>">
-                                <img src="<?php the_field('wstaw_kolejne_zdjecie')?>">
-                            </div>
-                        </div>
-                    <?php the_content(); ?>
-                    </article>
-                    <?php
+        while ( $loop->have_posts() ) : $loop->the_post();
 
-                    endwhile;
-                    ?>
+        ?>
+        <article>
+            <h3>Miejsca - <?php the_title();?></h3>
+            <div class="images-wrapper">
+                <div class="images-content">
+                    <img src="<?php the_field('wstaw_zdjecie')?>">
+                    <img src="<?php the_field('wstaw_kolejne_zdjecie')?>">
+                </div>
+            </div>
+            <?php the_content(); ?>
+        </article>
+        <?php
+
+        endwhile;
+        ?>
     </section>
     <hr />
     <section class="container padded scrolled" id="b2b">
@@ -102,26 +102,29 @@
             </h3>
             <form>
                 <div class="form-field inputs">
-                    <div>
+                    <div class="left">
                         <label>
                             Imię i nazwisko: <br />
                             <input type="text" name="name" id="name">
+                            <div class="error-message">Niepoprawne dane</div>
                         </label>
                         <label>
                             E-mail:<br />
                             <input type="email" name="email" id="email">
+                            <div class="error-message">Niepoprawny adres e-mail</div>
                         </label>
                         <label>
                             Numer telefonu:<br />
                             <input type="text" name="phone" id="phone">
+                            <div class="error-message">Niepoprawny numer telefonu</div>
                         </label>
                     </div>
-                    <div>
+                    <div class="right">
                         <label>
                             Wiadomość:<br />
-                            <textarea name="message" id="message"></textarea>
+                            <textarea name="message" id="message" maxlength="300"></textarea>
+                            <div class="error-message">Pusta wiadomość</div>
                         </label>
-
                     </div>
                 </div>
                 <div class="form-field buttons">

@@ -150,31 +150,35 @@
                     </h3>
                     <form>
                         <div class="form-field inputs">
-                            <div>
+                            <div class="left">
                                 <label>
                                     Imię i nazwisko: <br />
                                     <input type="text" name="name" id="name">
+                                    <div class="error-message">Niepoprawne dane</div>
                                 </label>
                                 <label>
                                     E-mail:<br />
                                     <input type="email" name="email" id="email">
+                                    <div class="error-message">Niepoprawny adres e-mail</div>
                                 </label>
                                 <label>
                                     Numer telefonu:<br />
                                     <input type="text" name="phone" id="phone">
+                                    <div class="error-message">Niepoprawny numer telefonu</div>
                                 </label>
                             </div>
-                            <div>
+                            <div class="right">
                                 <label>
                                     Wiadomość:<br />
-                                    <textarea name="message" id="message"></textarea>
+                                    <textarea name="message" id="message" maxlength="300"></textarea>
+                                    <div class="error-message">Pusta wiadomość</div>
                                 </label>
 
                             </div>
                         </div>
                         <div class="form-field buttons">
-                            <input type="reset" name="reset">
-                            <input type="submit" name="submit">
+                            <div id="reset">Wyczyść</div>
+                            <div id="submit">Wyślij</div>
                         </div>
 
                     </form>

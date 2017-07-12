@@ -177,7 +177,6 @@ $(function(){
 
     /* update slider size after window resize */
     $(window).on('resize', function(){
-        console.log('resize');
         postsList.css('width', "");
         postWidth = $('.post').eq(1).width();
         postsList.css('left', postWidth*(-1));
@@ -199,5 +198,116 @@ $(function(){
         });
 
     });
+
+    /*
+    **
+    *** CONTACT FORM ***
+    **
+    */
+
+    function contactForm(){
+        var nameInput = $('#name');
+        var emailInput = $('#email');
+        var phoneInput = $('#phone');
+        var messageInput = $('#message');
+        var submitBtn = $('#submit');
+
+        function validateNameInput(){
+            var givenName = nameInput.val();
+            var errorField = nameInput.next();
+            if (givenName.indexOf(" ") === -1 || givenName.indexOf(" ") === givenName.length-1) {
+                errorField.slideDown();
+            }
+        }
+
+        function validateEmailInput(){
+            var givenEmail = emailInput.val();
+            var errorField = emailInput.next();
+            if (givenEmail.indexOf("@") === -1 || givenEmail.indexOf(".") === -1 || givenEmail.lastIndexOf(".") < givenEmail.indexOf("@")) {
+                errorField.slideDown();
+            } 
+        }
+
+        function validatePhoneInput(){
+            var givenPhone = phoneInput.val();
+            var errorField = phoneInput.next();
+            var invalidInputValue = false;
+            for (var i = 0; i < givenPhone.length; i++) {
+                if (givenPhone[i] >= "a" && givenPhone[i] <= "z") {
+                    invalidInputValue = true;
+                } 
+                if (givenPhone[i] >= "A" && givenPhone[i] <= "Z") {
+                    invalidInputValue = true;
+                }
+            }
+            if (givenPhone.length < 9) {
+                invalidInputValue = true;
+            }
+            if (invalidInputValue) {
+                errorField.slideDown();
+            }
+        }
+
+        function validateMessageInput(){
+            var givenMessage = messageInput.val();
+            var errorField = messageInput.next();
+            if (givenMessage.length === 0) {
+                errorField.slideDown();
+            }
+        }
+
+        nameInput.on('change', function(){
+            validateNameInput();
+        });
+
+        emailInput.on('change', function(){
+            validateEmailInput();
+        });
+
+        phoneInput.on('change', function(){
+            validatePhoneInput();
+        });
+
+        messageInput.on('change', function(){
+            validateMessageInput();
+        });
+
+        nameInput.on('focus', function(){
+            $(this).next().slideUp();
+        });
+
+        emailInput.on('focus', function(){
+            $(this).next().slideUp();
+        });
+
+        phoneInput.on('focus', function(){
+            $(this).next().slideUp();
+        });
+
+        messageInput.on('focus', function(){
+            $(this).next().slideUp();
+        });
+
+        submitBtn.on('click', function(){
+            validateNameInput();
+            validateEmailInput();
+            validatePhoneInput();
+            validateMessageInput();
+            var validationResult = true;
+            $('.error-message').each(function(){
+                if ($(this).is(':visible')) {
+                    validationResult = false;
+                }
+            });
+
+            if (validationResult === false){
+                console.log('error');
+            } else {
+                console.log('wszystko przebiegło poprawnie');
+            }
+        });
+    }
+
+    contactForm();
 
 });
