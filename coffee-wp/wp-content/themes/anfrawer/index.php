@@ -80,10 +80,10 @@
                     ?>
                     <article>
                     <h3>Miejsca - <?php the_title();?></h3>
-                        <div class="paragraph-wrapper">
-                            <div class="paragraph-content">
-                                <img class="image" src="<?php the_field('wstaw_zdjecie')?>">
-                                <img class="image" src="<?php the_field('wstaw_kolejne_zdjecie')?>">
+                        <div class="images-wrapper">
+                            <div class="images-content">
+                                <img src="<?php the_field('wstaw_zdjecie')?>">
+                                <img src="<?php the_field('wstaw_kolejne_zdjecie')?>">
                             </div>
                         </div>
                     <?php the_content(); ?>
