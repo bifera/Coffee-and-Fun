@@ -145,3 +145,20 @@ style for paragraphs with images
         }
     }
 }
+
+/*
+
+scroll animation
+
+*/
+.scrolled {
+    visibility: hidden;
+}
+
+.slideUp {
+    animation-name: slideUp;	
+    animation-duration: 1s;	
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    visibility: visible;
+}

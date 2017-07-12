@@ -142,7 +142,7 @@ $(function(){
     postsList.css('position', 'relative');
     postsList.css('left', postWidth*(-1));
 
-    
+
     function postSlider(){
 
         var firstPostClone = posts.first().clone(true);
@@ -172,9 +172,9 @@ $(function(){
             }
         }
     }
-    
+
     postSlider();
-    
+
     /* update slider size after window resize */
     $(window).on('resize', function(){
         console.log('resize');
@@ -184,4 +184,20 @@ $(function(){
         postsList.width(postWidth*(posts.length+2));
         currentPostIndex = 1;
     });
+
+
+    /* scroll delay */
+
+    $(window).on('scroll', function () {
+        var distance = $(window).innerHeight();
+        $('.scrolled').each(function(index,value){
+            var elementPosition = $(this).offset().top;
+            var topOfWindow = $(window).scrollTop();
+            if (elementPosition < topOfWindow + distance) {
+                $(this).addClass('slideUp');
+            }
+        });
+
+    });
+
 });

@@ -2,3 +2,12 @@
     0% {background-color: transparentize($textColor, 0.7);}
     100% {background-color: transparentize($textColor, 0.025);}
 }
+
+@keyframes slideUp {
+    0% {
+		transform: translateY(20%);
+    }
+	100% {
+		transform: translateY(0%);
+	}	
+}

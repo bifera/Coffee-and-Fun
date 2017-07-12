@@ -9,7 +9,7 @@
         </p>
         <hr />
     </section>
-    <section class="container padded" id="products">
+    <section class="container padded scrolled" id="products">
         <h2>Produkty</h2>
         <div class="slider">
             <a class="wrapper-arrow" id="previousPost">&lt;</a>
@@ -36,7 +36,7 @@
             <a class="wrapper-arrow" id="nextPost">&gt;</a>
         </div>
     </section>
-    <section class="container gallery" id="gallery">
+    <section class="container gallery scrolled" id="gallery">
         <div class="row">
             <div class="wide gallery-img01"></div>
             <div class="narrow gallery-img02"></div>
@@ -49,7 +49,7 @@
         </div>
     </section>
     <hr />
-    <section class="container padded" id="about">
+    <section class="container padded scrolled" id="about">
         <h2>O nas</h2>
         <article>
             <h3>
@@ -94,7 +94,7 @@
                     ?>
     </section>
     <hr />
-    <section class="container padded" id="b2b">
+    <section class="container padded scrolled" id="b2b">
         <h2>B2B</h2>
         <article>
             <h3>
