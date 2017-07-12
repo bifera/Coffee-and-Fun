@@ -303,11 +303,30 @@ $(function(){
             if (validationResult === false){
                 console.log('error');
             } else {
-                console.log('wszystko przebiegło poprawnie');
+                sendThisMessage();
             }
         });
     }
 
     contactForm();
+    
+    function sendThisMessage(){
+        var postData = {
+            "submittedName" : $('#name').val(),
+            "submittedEmail" : $('#email').val(),
+            "submittedPhone" : $('#phone').val(),
+            "submittedMessage" : $('#message').val()
+        }
+        
+        $.ajax({
+            type: 'POST',
+            url: $('form').attr('action'),
+            data: postData
+        }).done(function(response){
+            console.log(response)
+        }).fail(function(error){
+            console.log(error)
+        });
+    }
 
 });

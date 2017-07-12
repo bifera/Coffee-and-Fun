@@ -100,7 +100,7 @@
             <h3>
                 Formularz kontaktowy
             </h3>
-            <form>
+            <form action="./contact-form/mailSender.php">
                 <div class="form-field inputs">
                     <div class="left">
                         <label>
@@ -125,13 +125,13 @@
                             <textarea name="message" id="message" maxlength="300"></textarea>
                             <div class="error-message">Pusta wiadomość</div>
                         </label>
+
                     </div>
                 </div>
                 <div class="form-field buttons">
-                    <input type="reset" name="reset">
-                    <input type="submit" name="submit">
+                    <div id="reset">Wyczyść</div>
+                    <div id="submit">Wyślij</div>
                 </div>
-
             </form>
             <div class="paragraph-wrapper">
                 <div class="paragraph-content">
