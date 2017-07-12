@@ -71,8 +71,7 @@
                 </div>
             </div>
         </article>
-        
-                                <?php
+                    <?php
                     $args = ['post_type' => 'miejsce'];
                     $loop = new WP_Query( $args ); 
 
@@ -81,33 +80,18 @@
                     ?>
                     <article>
                     <h3>Miejsca - <?php the_title();?></h3>
+                        <div class="paragraph-wrapper">
+                            <div class="paragraph-content">
+                                <img class="image" src="<?php the_field('wstaw_zdjecie')?>">
+                                <img class="image" src="<?php the_field('wstaw_kolejne_zdjecie')?>">
+                            </div>
+                        </div>
                     <?php the_content(); ?>
                     </article>
                     <?php
 
                     endwhile;
                     ?>
-            
-<!--            <article>
-<h3>
-                Miejsca - Kamerun
-            </h3>
-            <p>
-                Kamerun to państwo znajdujące się w zachodniej Afryce, kilka stopni nad równikiem. Mówi się na niego „Afryka w miniaturze”. Można tu znaleźć zarówno równikową dżunglę i las tropikalny na południu, jak i rozległe sawanny na północy. Wśród kawiarzy Kamerun jest najbardziej znany z upraw Robusty, która rośnie tam niemal wszędzie, jednakże w północno-zachodniej części kraju uprawiana jest także Arabica, przedmiot moich zainteresowań.
-            </p>
-            <div class="paragraph-wrapper">
-                <div class="paragraph-content">
-                    <div class="image paragraph-img03"></div>
-                    <div class="image paragraph-img04"></div>
-                </div>
-            </div>
-            <p>
-                Arabica została zasadzona na przełomie XIX i XX wieku przez niemieckich kolonizatorów, którzy przywieźli sadzonki odmiany Java Blue Mountain. Najlepszą jakość kawy uzyskuje się na zboczach wulkanu Mount Cameroun i w paśmie wzgórz wulkanicznych w północno-wschodniej części kraju, gdzie współgrają ze sobą 3 istotne czynniki: odpowiednia wilgotność, jak i wysokość upraw nad poziomem morza oraz wulkaniczna gleba. Dzięki połączeniu tych czynników pozyskuje się kawę o bardzo wysokiej jakości i doskonałym smaku.
-            </p>
-            <p>
-                Większość plantacji to małe, przydomowe farmy lub wręcz kilka krzaków pielęgnowanych przez rodzinę. Zebrane owoce kawy zawożone są do okolicznych spółdzielni, których pracownicy obierają, suszą i sortują kawę. W takich właśnie miejscach dokonuję zakupów.
-            </p>
-        </article>-->
     </section>
     <hr />
     <section class="container padded" id="b2b">
