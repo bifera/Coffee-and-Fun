@@ -8,12 +8,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $userEmail = trim($_POST['submittedEmail']);
     $userPhone = trim($_POST['submittedPhone']);
     $message = trim($_POST['submittedMessage']);
-    /**
- * This example shows settings to use when sending via Google's Gmail servers.
- */
 
-    //SMTP needs accurate times, and the PHP time zone MUST be set
-    //This should be done in your php.ini, but this is how to do it if you don't have access to that
+    /*
+    *** sending via Google's Gmail servers ***
+    */
+
     date_default_timezone_set('Etc/UTC');
 
     //Create a new PHPMailer instance
@@ -76,13 +75,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     //Attach an image file
     //$mail->addAttachment('images/phpmailer_mini.png');
 
-    
+
     //send the message
     if (!$mail->send()) {
-        $output = json_encode(array('type'=>'error', 'text' => 'Could not send mail! Please check your PHP mail configuration.'));
-        die($output);
+        print "Error";
     } else {
-        $output = json_encode(array('type'=>'message', 'text' => 'Hi '.$userName .' Thank you for your email'));
-        die($output);
+        print "Success";
     }
 }

@@ -13,26 +13,25 @@ $(function(){
 
 
     /* mobile menu toggle */
-    menuButton.on('click', function(){
-        if (menuContent.is(':visible')) {
-            menuContent.fadeOut(function(){
-                menuBackground.slideUp();
-                menuBar.addClass('shadow-bar');
-                menuButton.removeClass('fa-close').addClass('fa-bars');
-            });
-        } else {
-            menuBackground.slideDown(600, function(){
-                menuContent.fadeIn();
-                menuBar.removeClass('shadow-bar').removeClass('darker');
-                menuButton.removeClass('fa-bars').addClass('fa-close');
-            });   
-        }
-    });
-
-    /* hide menu when any anchor clicked */
     var mobile = window.matchMedia("screen and (max-width: 759px)");
-    function hideClickedMenu(event){
+
+    function useMobileMenu(event) {
         if (event.matches) {
+            menuButton.on('click', function(){
+                if (menuContent.is(':visible')) {
+                    menuContent.fadeOut(function(){
+                        menuBackground.slideUp();
+                        menuBar.addClass('shadow-bar');
+                        menuButton.removeClass('fa-close').addClass('fa-bars');
+                    });
+                } else {
+                    menuBackground.slideDown(600, function(){
+                        menuContent.fadeIn();
+                        menuBar.removeClass('shadow-bar').removeClass('darker');
+                        menuButton.removeClass('fa-bars').addClass('fa-close');
+                    });   
+                }
+            });
             menuAnchor.each(function(){
                 $(this).on('click', function(){
                     menuContent.fadeOut();
@@ -43,9 +42,8 @@ $(function(){
         }
     }
 
-    hideClickedMenu(mobile);
-    mobile.addListener(hideClickedMenu);
-
+    useMobileMenu(mobile);
+    mobile.addListener(useMobileMenu);
 
     /* desktop and tablet sticky menu */
 
@@ -151,8 +149,6 @@ $(function(){
         postsList.append(firstPostClone);
         postsList.prepend(lastPostClone);
 
-        nextPostButton.on('click', {value: +1}, startTheSlider);
-        prevPostButton.on('click', {value: -1}, startTheSlider);
 
         function startTheSlider(event) {
             currentPostIndex = currentPostIndex+event.data.value;
@@ -171,33 +167,43 @@ $(function(){
                 postsList.animate({left: (currentPostIndex*postWidth)*-1}, 1200);
             }
         }
+
+        nextPostButton.on('click', {value: +1}, startTheSlider);
+        prevPostButton.on('click', {value: -1}, startTheSlider);
+
+        $(window).on('resize', function(){
+            postsList.css('width', "");
+            postWidth = $('.post').eq(1).width();
+            postsList.css('left', postWidth*(-1));
+            postsList.width(postWidth*(posts.length+2));
+            currentPostIndex = 1;
+        });
+
     }
 
     postSlider();
 
     /* update slider size after window resize */
-    $(window).on('resize', function(){
-        postsList.css('width', "");
-        postWidth = $('.post').eq(1).width();
-        postsList.css('left', postWidth*(-1));
-        postsList.width(postWidth*(posts.length+2));
-        currentPostIndex = 1;
-    });
+
 
 
     /* scroll delay */
 
-    $(window).on('scroll', function () {
-        var distance = $(window).innerHeight();
-        $('.scrolled').each(function(index,value){
-            var elementPosition = $(this).offset().top;
-            var topOfWindow = $(window).scrollTop();
-            if (elementPosition < topOfWindow + distance) {
-                $(this).addClass('slideUp');
-            }
-        });
+    function scrollSectionsDelay(){
+        $(window).on('scroll', function () {
+            var distance = $(window).innerHeight();
+            $('.scrolled').each(function(index,value){
+                var elementPosition = $(this).offset().top;
+                var topOfWindow = $(window).scrollTop();
+                if (elementPosition < topOfWindow + distance) {
+                    $(this).addClass('slideUp');
+                }
+            });
 
-    });
+        });
+    }
+
+    scrollSectionsDelay();
 
     /*
     **
@@ -211,6 +217,7 @@ $(function(){
         var phoneInput = $('#phone');
         var messageInput = $('#message');
         var submitBtn = $('#submit');
+        var sendingInfoBox = $('.sending-info');
 
         function validateNameInput(){
             var givenName = nameInput.val();
@@ -288,6 +295,25 @@ $(function(){
             $(this).next().slideUp();
         });
 
+        function sendThisMessage(){
+            var postData = {
+                "submittedName" : $('#name').val(),
+                "submittedEmail" : $('#email').val(),
+                "submittedPhone" : $('#phone').val(),
+                "submittedMessage" : $('#message').val()
+            }
+
+            $.ajax({
+                type: 'POST',
+                url: $('form').attr('action'),
+                data: postData
+            }).done(function(response){
+                $('.sending-info').addClass('success').text('Dziękujemy. Twoja wiadomość została wysłana.').slideDown();
+            }).fail(function(error){
+                $('.sending-info').addClass('error').text('Podczas wysyłania wystąpił błąd. Spróbuj ponownie później.').slideDown();
+            });
+        }
+
         submitBtn.on('click', function(){
             validateNameInput();
             validateEmailInput();
@@ -300,33 +326,31 @@ $(function(){
                 }
             });
 
-            if (validationResult === false){
-                console.log('error');
-            } else {
+            if (validationResult === true){
                 sendThisMessage();
             }
         });
+
+        function clearForm(){
+            sendingInfoBox.on('click', function(){
+                $(this).text('');
+                if ($(this).hasClass('success')) {
+                    $(this).removeClass('success');
+                } else if ($(this).hasClass('error')) {
+                    $(this).removeClass('error');
+                }
+            });
+
+            $('#reset').on('click', function(){
+                $('input').each(function(){
+                    $(this).val('');
+                });
+                $('textarea').val('');
+            });
+        }
+        clearForm();
     }
 
     contactForm();
-    
-    function sendThisMessage(){
-        var postData = {
-            "submittedName" : $('#name').val(),
-            "submittedEmail" : $('#email').val(),
-            "submittedPhone" : $('#phone').val(),
-            "submittedMessage" : $('#message').val()
-        }
-        
-        $.ajax({
-            type: 'POST',
-            url: $('form').attr('action'),
-            data: postData
-        }).done(function(response){
-            console.log(response)
-        }).fail(function(error){
-            console.log(error)
-        });
-    }
 
 });

@@ -55,11 +55,9 @@
             <h3>
                 W poszukiwaniu dobrej kawy
             </h3>
-            <p>Jestem bezpośrednim importerem zielonej kawy z Afryki. Aby kupić jak najlepszą kawę, osobiście jadę na plantacje i tam na miejscu sprawdzam jej jakość. </p>
             <div class="paragraph-wrapper">
                 <div class="paragraph-content">
-                    <p>
-                        Wybieram jedynie te kawy, które – choć czasem nie mają międzynarodowych certyfikatów – zawsze są uprawiane ekologicznie i w sposób zrównoważony, a lokalni rolnicy za swoją ciężką pracę otrzymują uczciwe wynagrodzenie.
+                    <p> Jestem bezpośrednim importerem zielonej kawy z Afryki. Aby kupić jak najlepszą kawę, osobiście jadę na plantacje i tam na miejscu sprawdzam jej jakość. Wybieram jedynie te kawy, które – choć czasem nie mają międzynarodowych certyfikatów – zawsze są uprawiane ekologicznie i w sposób zrównoważony, a lokalni rolnicy za swoją ciężką pracę otrzymują uczciwe wynagrodzenie.
                     </p>
                     <div class="image paragraph-img01" id="about-01"></div>
                 </div>
@@ -101,7 +99,7 @@
                 Formularz kontaktowy
             </h3>
             <form action="./contact-form/mailSender.php">
-                <div class="form-field inputs">
+                <div class="inputs">
                     <div class="left">
                         <label>
                             Imię i nazwisko: <br />
@@ -128,7 +126,8 @@
 
                     </div>
                 </div>
-                <div class="form-field buttons">
+                <div class="sending-info"></div>
+                <div class="buttons">
                     <div id="reset">Wyczyść</div>
                     <div id="submit">Wyślij</div>
                 </div>

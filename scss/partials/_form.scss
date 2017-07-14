@@ -1,90 +1,97 @@
 /* ----------------- b2b contact form style --------------------*/
 
 form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
-    background-color: transparentize($altColor, 0.6);
     padding: 1.5vh 1.5vw;
-    @include desktop {
-        height: 60vh;
+    background-color: transparentize($altColor, 0.6);
+    label {
+        width: 100%;
+        font-family: $headerFont;
+        font-size: 1.1rem;
     }
-    .form-field {
+    input {
+        width: 100%;
+        height: 3rem;
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
         border: none;
+        font-family: $primaryFont;   
+    }
+    textarea {
+        width: 100%;
+        height: 16rem;
+        margin-top: 0.5rem;
+        border: none;
+        resize: none;
+        font-family: $primaryFont;
     }
     .inputs {
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         @include desktop {
             flex-direction: row;
             justify-content: space-between;
-            height: 85%;
         }
-        div {
+        .left {
             width: 100%;
-            &.left {
-                @include desktop {
-                    width: 40%;
-                }
-            }
-            &.right {
-                @include desktop {
-                    width: 58%;
-                }
+            @include desktop {
+                width: 40%;
             }
         }
-        input {
-            margin-top: 0.7rem;
-            margin-bottom: 1.2rem;
+        .right {
+            width: 100%;
             @include desktop {
-                width: 100%;
-                margin-top: 1rem;
+                width: 58%;
             }
+        }
+        .error-message {
+            display: none;
+            width: 50%;
+            height: 2rem;
+            background-color: lighten($accentColor, 60%);
+            border: 1px solid $accentColor;
+            border-radius: 2px;
+            font-family: $primaryFont;
+            font-size: 1.1rem;
         }
     }
+    .sending-info {
+        display: none;
+        margin: 1rem auto;
+        padding: 1rem;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 2px;
+        font-family: $headerFont;
+        font-size: 1.1rem;
+    }
+
+    .success {
+        background-color: lighten($secondaryColor, 60%);
+        border-color: $secondaryColor;
+    }
+
+    .error {
+        background-color: lighten($accentColor, 60%);
+        border-color: 1px solid $accentColor;
+    }
+
     .buttons {
         display: flex;
-        flex-direction: row;
         justify-content: center;
         align-items: center;
-        @include desktop {
-            height: 15%;
-        }
         div {
             font-family: $headerFont;
             width: 10rem;
-            margin: 0 1vw;
+            margin: 0.5rem 1vw 0;
             background-color: transparentize($secondaryColor, 0.3);
             border-radius: 2%;
             padding: 0.5rem 0;
             text-align: center;
         }
     }
-    .error-message {
-        width: 100%;
-        height: 2rem;
-        background-color: lighten($accentColor, 60%);
-        border: 1px solid $accentColor;
-        border-radius: 2px;
-        display: none;
-    }
-}
-
-label {
-    font-family: $headerFont;
-    font-size: 1.4rem;
-    display: block;
-    position: relative;
-}
-input {
-    font-family: $primaryFont;
-    border: none;
-    height: 3rem;
-}
-textarea {
-    font-family: $primaryFont;
-    border: none;
-    resize: none;
-    width: 100%;
-    height: 16rem;
-    margin-top: 1rem;
-    text-align: left;
 }
