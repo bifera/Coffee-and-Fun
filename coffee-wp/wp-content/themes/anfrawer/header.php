@@ -9,7 +9,6 @@
         <?php wp_head(); ?>
     </head>
     <body>
-        <div class="up fixed-bottom" id="arrow-up"><a class="fa fa-arrow-circle-up" href="#"></a></div>
         <header id="start">
             <nav>
                 <div class="menu-bar shadow-bar" id="menu-bar">

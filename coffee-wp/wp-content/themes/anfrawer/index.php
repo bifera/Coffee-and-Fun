@@ -1,5 +1,6 @@
 <?php get_header();?>
 <main>
+    <div class="arrow-up" id="arrow-up"><a class="fa fa-arrow-circle-up" href="#"></a></div>
     <section class="container main-info">
         <h1>
             Importer zielonej&nbsp;kawy

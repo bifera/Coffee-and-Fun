@@ -146,6 +146,46 @@ style for paragraphs with images
     }
 }
 
+/* return to top arrow */
+
+.arrow-up {
+    display: none;
+    position: fixed;
+    bottom: 3vw;
+    right: 3vw;
+    z-index: 2;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: $primaryColor;
+    border-radius: 50%;
+    @include tablet {
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+    @include desktop {
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+    a {
+        position: relative;
+        bottom: .1rem;
+        right: .095rem;
+        font-size: 2rem;
+        text-align: center;
+        color: $accentColor;
+        @include tablet {
+            right: 0.045rem;
+            bottom: .27rem;
+            font-size: 3rem;
+        }
+        @include desktop {
+            bottom: .27rem;
+            font-size: 3rem;
+            right: 0.045rem;
+        }
+    }
+}
+
 /*
 
 scroll animation

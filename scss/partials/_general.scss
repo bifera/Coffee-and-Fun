@@ -35,17 +35,3 @@ hr {
     margin: 0 auto;
     color: $secondaryColor;
 }
-
-.up {
-    display: none;
-}
-
-.fixed-bottom {
-    position: fixed;
-    bottom: 1vw;
-    right: 2vw;
-    a {
-        font-size: 2rem;
-        color: $accentColor;
-    }
-}
