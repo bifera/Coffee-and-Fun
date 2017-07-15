@@ -21,7 +21,7 @@ $(function(){
                 if (menuContent.is(':visible')) {
                     menuContent.fadeOut(function(){
                         menuBackground.slideUp();
-                        menuBar.addClass('shadow-bar');
+                        menuBar.addClass('shadow-bar').addClass('darker');
                         menuButton.removeClass('open');
                     });
                 } else {
@@ -37,6 +37,7 @@ $(function(){
                 $(this).on('click', function(){
                     menuContent.fadeOut();
                     menuBackground.fadeOut();
+                    menuBar.addClass('darker');
                     menuButton.removeClass('open')
                 });
             });
