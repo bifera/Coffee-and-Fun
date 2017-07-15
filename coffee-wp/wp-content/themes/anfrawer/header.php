@@ -15,7 +15,15 @@
                 <div class="menu-bar shadow-bar" id="menu-bar">
                     <div class="mobile-active"  id="menu-background"></div>
                     <div class="container mobile-display">
-                        <span class="fa fa-bars" id="menu-toggle"></span>
+                        <div class="mobile-menu-icon" id="menu-toggle">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <!--<span class="fa fa-bars" id="menu-toggle"></span>-->
                         <ul class="menu" id="menu-content">
                             <li>
                                 <a class="middle-out-underline" href="#start">Strona główna</a>

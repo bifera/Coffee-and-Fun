@@ -22,13 +22,14 @@ $(function(){
                     menuContent.fadeOut(function(){
                         menuBackground.slideUp();
                         menuBar.addClass('shadow-bar');
-                        menuButton.removeClass('fa-close').addClass('fa-bars');
+                        menuButton.removeClass('open');
                     });
                 } else {
+                    menuButton.addClass('open');
                     menuBackground.slideDown(600, function(){
                         menuContent.fadeIn();
                         menuBar.removeClass('shadow-bar').removeClass('darker');
-                        menuButton.removeClass('fa-bars').addClass('fa-close');
+
                     });   
                 }
             });
@@ -36,7 +37,7 @@ $(function(){
                 $(this).on('click', function(){
                     menuContent.fadeOut();
                     menuBackground.fadeOut();
-                    menuButton.removeClass('fa-close').addClass('fa-bars');
+                    menuButton.removeClass('open')
                 });
             });
         }
@@ -52,6 +53,10 @@ $(function(){
 
     function useStickyMenu(event){
         if (event.matches) {
+            /* necessary when resizing from mobile to wider screen */
+            if (menuContent.not(':visible')) {
+                menuContent.css('display', '');
+            }
             var menuBarPosition = menuBar.offset().top;
             $(window).on('scroll', function(){
                 var scrolledAmount = $(document).scrollTop();
