@@ -225,82 +225,80 @@ $(function(){
         var submitBtn = $('#submit');
         var sendingInfoBox = $('.sending-info');
 
-        function validateNameInput(){
-            var givenName = nameInput.val();
-            var errorField = nameInput.next();
-            if (givenName.indexOf(" ") === -1 || givenName.indexOf(" ") === givenName.length-1) {
-                errorField.slideDown();
+        /* single input validation result display */
+        function validationResult(response, element){
+            if (response == "error") {
+                element.siblings('.error-message').fadeIn();
+                element.siblings('.fa-check-circle').fadeOut();
+            } else {
+                element.siblings('.error-message').fadeOut();
+                element.siblings('.fa-check-circle').fadeIn();
             }
+        }
+
+        /* validation functions for each input */
+        function validateNameInput(){
+            var validator = "";
+            var givenName = nameInput.val();
+            if (givenName.indexOf(" ") === -1 || givenName.indexOf(" ") === givenName.length-1) {
+                validator = "error";
+            } 
+            validationResult(validator, nameInput);
         }
 
         function validateEmailInput(){
+            var validator = "";
             var givenEmail = emailInput.val();
-            var errorField = emailInput.next();
             if (givenEmail.indexOf("@") === -1 || givenEmail.indexOf(".") === -1 || givenEmail.lastIndexOf(".") < givenEmail.indexOf("@")) {
-                errorField.slideDown();
+                validator = "error";
             } 
+            validationResult(validator, emailInput);
         }
 
         function validatePhoneInput(){
+            var validator = "";
             var givenPhone = phoneInput.val();
-            var errorField = phoneInput.next();
-            var invalidInputValue = false;
             for (var i = 0; i < givenPhone.length; i++) {
                 if (givenPhone[i] >= "a" && givenPhone[i] <= "z") {
-                    invalidInputValue = true;
+                    validator = "error";
                 } 
                 if (givenPhone[i] >= "A" && givenPhone[i] <= "Z") {
-                    invalidInputValue = true;
+                    validator = "error";
                 }
             }
             if (givenPhone.length < 9) {
-                invalidInputValue = true;
+                validator = "error";
             }
-            if (invalidInputValue) {
-                errorField.slideDown();
-            }
+            validationResult(validator, phoneInput);
         }
 
         function validateMessageInput(){
+            var validator = "";
             var givenMessage = messageInput.val();
             var errorField = messageInput.next();
             if (givenMessage.length === 0) {
-                errorField.slideDown();
+                validator = "error";
             }
+            validationResult(validator, messageInput);
         }
-
+        
+        
+        /* validation: on change input event */
+        
         nameInput.on('change', function(){
             validateNameInput();
         });
-
         emailInput.on('change', function(){
             validateEmailInput();
         });
-
         phoneInput.on('change', function(){
             validatePhoneInput();
         });
-
         messageInput.on('change', function(){
             validateMessageInput();
         });
 
-        nameInput.on('focus', function(){
-            $(this).next().slideUp();
-        });
-
-        emailInput.on('focus', function(){
-            $(this).next().slideUp();
-        });
-
-        phoneInput.on('focus', function(){
-            $(this).next().slideUp();
-        });
-
-        messageInput.on('focus', function(){
-            $(this).next().slideUp();
-        });
-
+        /* ajax for contact form */
         function sendThisMessage(){
             var postData = {
                 "submittedName" : $('#name').val(),
@@ -320,6 +318,7 @@ $(function(){
             });
         }
 
+        /* another validation and sending on form submit event */
         submitBtn.on('click', function(){
             validateNameInput();
             validateEmailInput();
@@ -336,7 +335,8 @@ $(function(){
                 sendThisMessage();
             }
         });
-
+        
+        /* clearing contact form inputs */
         function clearForm(){
             sendingInfoBox.on('click', function(){
                 $(this).text('');
@@ -352,6 +352,8 @@ $(function(){
                     $(this).val('');
                 });
                 $('textarea').val('');
+                $('.error-message').fadeOut();
+                $('.fa-check-circle').fadeOut();
             });
         }
         clearForm();

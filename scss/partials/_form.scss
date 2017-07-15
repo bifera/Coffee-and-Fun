@@ -8,6 +8,7 @@ form {
     padding: 1.5vh 1.5vw;
     background-color: transparentize($altColor, 0.6);
     label {
+        position: relative;
         width: 100%;
         font-family: $headerFont;
         font-size: 1.1rem;
@@ -18,7 +19,16 @@ form {
         margin-top: 0.5rem;
         margin-bottom: 1rem;
         border: none;
-        font-family: $primaryFont;   
+        font-family: $primaryFont; 
+
+    }
+    .fa-check-circle {
+        display: none;
+        position: absolute;
+        right: 1rem;
+        top: 2.7rem;
+        font-size: 2rem;
+        color: $secondaryColor;
     }
     textarea {
         width: 100%;
@@ -50,13 +60,18 @@ form {
         }
         .error-message {
             display: none;
-            width: 50%;
-            height: 2rem;
-            background-color: lighten($accentColor, 60%);
-            border: 1px solid $accentColor;
+            position: absolute;
+            top: 1rem;
+            left: 25%;
+            padding: 0.5rem;
+            background-color: lighten($accentColor, 50%);
+/*            border: 1px solid $accentColor;*/
             border-radius: 2px;
             font-family: $primaryFont;
+            font-weight: bold;
+            color: $accentColor;
             font-size: 1.1rem;
+            z-index: 2;
         }
     }
     .sending-info {
