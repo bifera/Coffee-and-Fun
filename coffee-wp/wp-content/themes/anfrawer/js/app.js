@@ -37,8 +37,8 @@ $(function(){
                 $(this).on('click', function(){
                     menuContent.fadeOut();
                     menuBackground.fadeOut();
-                    menuBar.addClass('darker');
-                    menuButton.removeClass('open')
+                    menuBar.addClass('darker').addClass('shadow-bar');
+                    menuButton.removeClass('open');
                 });
             });
         }
