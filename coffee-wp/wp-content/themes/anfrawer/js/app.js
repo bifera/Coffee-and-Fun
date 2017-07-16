@@ -1,5 +1,5 @@
 $(function(){
-    $('#preload').delay(2000).fadeOut();
+    $('#page-loader').delay(2000).fadeOut(function(){$('#preload').fadeOut(1500);});
     var menuBar = $('#menu-bar');
     var menuButton = $('#menu-toggle');
     var menuContent = $('#menu-content');

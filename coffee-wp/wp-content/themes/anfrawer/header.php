@@ -10,7 +10,7 @@
     </head>
     <body>
         <div class="preload" id="preload">
-            <div class="page-loader"></div>
+            <div class="page-loader" id="page-loader"></div>
         </div>
         <header id="start">
             <nav>
