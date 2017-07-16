@@ -1,5 +1,5 @@
 $(function(){
-    $('#page-loader').delay(2000).fadeOut(function(){$('#preload').fadeOut(1500);});
+    $('#page-loader').delay(2000).fadeOut(function(){$('#preload').fadeOut(1500)});
     var menuBar = $('#menu-bar');
     var menuButton = $('#menu-toggle');
     var menuContent = $('#menu-content');
@@ -156,10 +156,7 @@ $(function(){
         postsList.append(firstPostClone);
         postsList.prepend(lastPostClone);
 
-
-        function startTheSlider(event) {
-            currentPostIndex = currentPostIndex+event.data.value;
-
+        function animateSlider(){
             if (currentPostIndex === posts.length+1) {
                 postsList.animate({left: (currentPostIndex*postWidth)*-1}, 1200, function(){
                     postsList.css('left', (postWidth*-1));
@@ -175,8 +172,27 @@ $(function(){
             }
         }
 
+        function startTheSlider(event) {
+            currentPostIndex = currentPostIndex+event.data.value;
+            animateSlider();
+        }
+
+
+
         nextPostButton.on('click', {value: +1}, startTheSlider);
         prevPostButton.on('click', {value: -1}, startTheSlider);
+
+        // animation on swipe: for mobile
+        $('.post-wrapper').swipe({
+            swipe:function(event, direction, distance, duration, fingerCount) {
+                if (direction == 'right') {
+                    currentPostIndex--;
+                } else if (direction == 'left') {
+                    currentPostIndex++;
+                }
+                animateSlider();
+            }
+        });
 
         $(window).on('resize', function(){
             postsList.css('width', "");
@@ -189,10 +205,6 @@ $(function(){
     }
 
     postSlider();
-
-    /* update slider size after window resize */
-
-
 
     /* scroll delay */
 
@@ -356,7 +368,7 @@ $(function(){
             $('.error-message').fadeOut();
             $('.fa-check-circle').fadeOut();
         }
-        
+
         sendingInfoBox.on('click', function(){
             $(this).text('');
             if ($(this).hasClass('success')) {
