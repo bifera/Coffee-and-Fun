@@ -223,7 +223,9 @@ $(function(){
         var phoneInput = $('#phone');
         var messageInput = $('#message');
         var submitBtn = $('#submit');
-        var sendingInfoBox = $('.sending-info');
+        var resetBtn = $('#reset');
+        var sendingInfoBox = $('#sending-info');
+        var sendingLoader = $('#sending-loader');
 
         /* single input validation result display */
         function validationResult(response, element){
@@ -281,10 +283,10 @@ $(function(){
             }
             validationResult(validator, messageInput);
         }
-        
-        
+
+
         /* validation: on change input event */
-        
+
         nameInput.on('change', function(){
             validateNameInput();
         });
@@ -312,9 +314,16 @@ $(function(){
                 url: $('form').attr('action'),
                 data: postData
             }).done(function(response){
-                $('.sending-info').addClass('success').text('Dziękujemy. Twoja wiadomość została wysłana.').slideDown();
+                sendingLoader.fadeOut(function(){
+                    sendingInfoBox.addClass('success').text('Dziękujemy. Twoja wiadomość została wysłana.').fadeIn();
+                    clearForm();
+                });
+
             }).fail(function(error){
-                $('.sending-info').addClass('error').text('Podczas wysyłania wystąpił błąd. Spróbuj ponownie później.').slideDown();
+                sendingLoader.fadeOut(function(){
+                    sendingInfoBox.addClass('error').text('Podczas wysyłania wystąpił błąd. Spróbuj ponownie później.').fadeIn();
+                });
+
             });
         }
 
@@ -332,31 +341,33 @@ $(function(){
             });
 
             if (validationResult === true){
+                sendingLoader.fadeIn();
                 sendThisMessage();
             }
         });
-        
+
         /* clearing contact form inputs */
         function clearForm(){
-            sendingInfoBox.on('click', function(){
-                $(this).text('');
-                if ($(this).hasClass('success')) {
-                    $(this).removeClass('success');
-                } else if ($(this).hasClass('error')) {
-                    $(this).removeClass('error');
-                }
+            $('input').each(function(){
+                $(this).val('');
             });
-
-            $('#reset').on('click', function(){
-                $('input').each(function(){
-                    $(this).val('');
-                });
-                $('textarea').val('');
-                $('.error-message').fadeOut();
-                $('.fa-check-circle').fadeOut();
-            });
+            $('textarea').val('');
+            $('.error-message').fadeOut();
+            $('.fa-check-circle').fadeOut();
         }
-        clearForm();
+        
+        sendingInfoBox.on('click', function(){
+            $(this).text('');
+            if ($(this).hasClass('success')) {
+                $(this).removeClass('success');
+            } else if ($(this).hasClass('error')) {
+                $(this).removeClass('error');
+            };
+        });
+
+        resetBtn.on('click', function(){
+            clearForm();
+        });
     }
 
     contactForm();

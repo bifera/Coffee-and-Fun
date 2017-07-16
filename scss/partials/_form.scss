@@ -7,6 +7,7 @@ form {
     width: 100%;
     padding: 1.5vh 1.5vw;
     background-color: transparentize($altColor, 0.6);
+    align-items: center;
     label {
         position: relative;
         width: 100%;
@@ -43,6 +44,7 @@ form {
         flex-direction: column;
         justify-content: space-between;
         @include desktop {
+            width: 100%;
             flex-direction: row;
             justify-content: space-between;
         }
@@ -65,7 +67,7 @@ form {
             left: 25%;
             padding: 0.5rem;
             background-color: lighten($accentColor, 50%);
-/*            border: 1px solid $accentColor;*/
+            /*            border: 1px solid $accentColor;*/
             border-radius: 2px;
             font-family: $primaryFont;
             font-weight: bold;
@@ -74,6 +76,17 @@ form {
             z-index: 2;
         }
     }
+    .sending-loader {
+        display: none;
+        width: 2rem;
+        height: 2rem;
+        margin: 1rem 0;
+        border: 3px solid lighten($altColor, 50%);
+        border-top: 3px solid lighten($secondaryColor, 20%);
+        border-radius: 50%;
+        animation: spinner 1.5s linear infinite;
+    }
+
     .sending-info {
         display: none;
         margin: 1rem auto;

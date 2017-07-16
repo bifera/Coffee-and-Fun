@@ -127,7 +127,8 @@
 
                     </div>
                 </div>
-                <div class="sending-info"></div>
+                <div class="sending-loader" id="sending-loader"></div>
+                <div class="sending-info" id="sending-info"></div>
                 <div class="buttons">
                     <div id="reset">Wyczyść</div>
                     <div id="submit">Wyślij</div>
