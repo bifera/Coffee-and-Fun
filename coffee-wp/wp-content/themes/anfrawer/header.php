@@ -9,6 +9,9 @@
         <?php wp_head(); ?>
     </head>
     <body>
+        <div class="preload" id="preload">
+            <div class="page-loader"></div>
+        </div>
         <header id="start">
             <nav>
                 <div class="menu-bar shadow-bar" id="menu-bar">

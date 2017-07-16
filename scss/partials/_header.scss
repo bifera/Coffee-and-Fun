@@ -269,3 +269,29 @@ sticky menu for tablet & desktop
     animation-duration: 1.2s;
     animation-fill-mode: forwards;
 }
+
+/* 
+
+spinner while page loading
+
+*/
+
+.preload {
+    width: 100vw;
+    height: 100vh;
+    background-color: $primaryColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 5;
+    .page-loader {
+        width: 20rem;
+        height: 20rem;
+        border: 20px solid lighten($accentColor, 60%);
+        border-top: 20px solid $accentColor;
+        border-radius: 50%;
+        animation: spinner 2s ease-in-out infinite;
+    }
+}
+

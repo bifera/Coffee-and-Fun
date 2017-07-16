@@ -1,4 +1,5 @@
 $(function(){
+    $('#preload').delay(2000).fadeOut();
     var menuBar = $('#menu-bar');
     var menuButton = $('#menu-toggle');
     var menuContent = $('#menu-content');
