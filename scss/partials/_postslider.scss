@@ -57,9 +57,13 @@
     }
     .post-content {
         display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
         img {
             width: 30%;
             height: 30%;
+            margin-top: 0.5rem;
+            margin-right: 1rem;
         }
     }
     .post-indicator {

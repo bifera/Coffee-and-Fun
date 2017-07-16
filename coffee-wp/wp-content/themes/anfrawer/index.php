@@ -26,7 +26,9 @@
                     ?>
                     <article class="post">
                         <h3><?php the_title();?></h3>
-                        <div class="post-content"><img src="<?php the_field('wstaw_zdjecie')?>">
+                        <div class="post-content">
+                        <img src="<?php the_field('wstaw_zdjecie')?>">
+                        
                         <?php the_content(); ?></div>
                         
 
