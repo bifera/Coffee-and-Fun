@@ -146,12 +146,12 @@ $(function(){
     postsList.width(postWidth*(posts.length+2));
     postsList.css('position', 'relative');
     postsList.css('left', postWidth*(-1));
-    
+
     var bulletsAmount = posts.length;
     console.log(bulletsAmount);
-    
+
     /* posts amount indicator */
-    
+
     var singleBullet = $('<span>').addClass('fa').addClass('fa-circle');
     var postIndicator = $('#post-indicator');
     var counter = 0;
@@ -173,11 +173,11 @@ $(function(){
 
         postsList.append(firstPostClone);
         postsList.prepend(lastPostClone);
-        
+
         var bullets = $('span.fa-circle'); // displaying posts amount
         bullets.eq(currentPostIndex-1).addClass('active');
         bullets.each(function(index, value){
-           $(this).attr('data-number', index+1); 
+            $(this).attr('data-number', index+1); 
         });
 
         function animateSlider(){
@@ -207,7 +207,7 @@ $(function(){
             currentPostIndex = currentPostIndex+event.data.value;
             animateSlider();
         }
-        
+
         nextPostButton.on('click', {value: +1}, startTheSlider);
         prevPostButton.on('click', {value: -1}, startTheSlider);
 
@@ -217,17 +217,20 @@ $(function(){
                 animateSlider();
             });
         });
-        
+
         // animation on swipe: for mobile
+
+
         $('.post-wrapper').swipe({
             swipe:function(event, direction, distance, duration, fingerCount) {
                 if (direction == 'right') {
                     currentPostIndex--;
+                    animateSlider();
                 } else if (direction == 'left') {
                     currentPostIndex++;
+                    animateSlider();
                 }
-                animateSlider();
-            }
+            }, allowPageScroll:"vertical" // throws warnings, however it works
         });
 
         $(window).on('resize', function(){

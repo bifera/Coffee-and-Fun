@@ -43,6 +43,9 @@ form {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        @include tablet {
+            width: 100%;
+        }
         @include desktop {
             width: 100%;
             flex-direction: row;

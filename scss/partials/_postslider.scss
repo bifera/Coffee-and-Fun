@@ -14,9 +14,6 @@
     }
     .wrapper-arrow {
         display: none;
-        @include tablet {
-            display: block;
-        }
         @include desktop {
             display: block;
         }
@@ -30,7 +27,7 @@
         overflow: hidden;
         @include tablet {
             order: 0;
-            width: 70vw;
+            width: 80vw;
         }
         @include desktop {
             order: 0;
@@ -43,7 +40,7 @@
             .post {
                 width: 95vw;
                 @include tablet {
-                    width: 70vw;
+                    width: 80vw;
                     padding-left: 0;
                     padding-right: 0;
                 }
@@ -56,14 +53,48 @@
         }
     }
     .post-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
+        position: relative;
+        overflow: hidden;
+        @include tablet {
+            position: static;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+        }
+        @include desktop {
+            position: static;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+        }
         img {
-            width: 30%;
-            height: 30%;
-            margin-top: 0.5rem;
-            margin-right: 1rem;
+            position: absolute;
+            top: -30vh;
+            @include tablet {
+                position: static;
+                width: 30%;
+                height: 30%;
+                margin-top: .5rem;
+                margin-right: 1rem;
+            }
+            @include desktop {
+                position: static;
+                width: 30%;
+                height: 30%;
+                margin-top: .5rem;
+                margin-right: 1rem;
+            }
+        }
+        p {
+            margin-top: 30vh;
+            @include tablet {
+                margin-top: 0;
+            }
+            @include desktop {
+                margin-top: 0;
+            }
         }
     }
     .post-indicator {
