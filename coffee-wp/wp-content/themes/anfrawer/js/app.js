@@ -176,6 +176,9 @@ $(function(){
         
         var bullets = $('span.fa-circle'); // displaying posts amount
         bullets.eq(currentPostIndex-1).addClass('active');
+        bullets.each(function(index, value){
+           $(this).attr('data-number', index+1); 
+        });
 
         function animateSlider(){
             bullets.each(function(){
@@ -208,6 +211,13 @@ $(function(){
         nextPostButton.on('click', {value: +1}, startTheSlider);
         prevPostButton.on('click', {value: -1}, startTheSlider);
 
+        bullets.each(function(){
+            $(this).on('click', function(){
+                currentPostIndex = $(this).data('number');
+                animateSlider();
+            });
+        });
+        
         // animation on swipe: for mobile
         $('.post-wrapper').swipe({
             swipe:function(event, direction, distance, duration, fingerCount) {
