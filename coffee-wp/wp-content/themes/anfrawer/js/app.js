@@ -146,6 +146,24 @@ $(function(){
     postsList.width(postWidth*(posts.length+2));
     postsList.css('position', 'relative');
     postsList.css('left', postWidth*(-1));
+    
+    var bulletsAmount = posts.length;
+    console.log(bulletsAmount);
+    
+    /* posts amount indicator */
+    
+    var singleBullet = $('<span>').addClass('fa').addClass('fa-circle');
+    var postIndicator = $('#post-indicator');
+    var counter = 0;
+    function createPostBullets(){
+        var clonedBullet = singleBullet.clone(true);
+        clonedBullet.appendTo(postIndicator);
+        counter++;
+        if (counter < bulletsAmount) {
+            createPostBullets();
+        }
+    }
+    createPostBullets();
 
 
     function postSlider(){
@@ -155,20 +173,30 @@ $(function(){
 
         postsList.append(firstPostClone);
         postsList.prepend(lastPostClone);
+        
+        var bullets = $('span.fa-circle'); // displaying posts amount
+        bullets.eq(currentPostIndex-1).addClass('active');
 
         function animateSlider(){
+            bullets.each(function(){
+                $(this).removeClass('active');
+            });
+            bullets.eq(currentPostIndex-1).addClass('active');
             if (currentPostIndex === posts.length+1) {
                 postsList.animate({left: (currentPostIndex*postWidth)*-1}, 1200, function(){
                     postsList.css('left', (postWidth*-1));
                 });
                 currentPostIndex = 1;
+                bullets.eq(currentPostIndex-1).addClass('active');
             } else if (currentPostIndex === 0) {
                 postsList.animate({left: (currentPostIndex*postWidth)*-1}, 1200, function(){
                     postsList.css('left', (postWidth*(posts.length))*-1);
                 });
                 currentPostIndex = posts.length;
+                bullets.eq(currentPostIndex-1).addClass('active');
             } else {
                 postsList.animate({left: (currentPostIndex*postWidth)*-1}, 1200);
+                bullets.eq(currentPostIndex-1).addClass('active');
             }
         }
 
@@ -176,9 +204,7 @@ $(function(){
             currentPostIndex = currentPostIndex+event.data.value;
             animateSlider();
         }
-
-
-
+        
         nextPostButton.on('click', {value: +1}, startTheSlider);
         prevPostButton.on('click', {value: -1}, startTheSlider);
 

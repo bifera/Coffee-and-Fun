@@ -35,6 +35,7 @@
                 </div>
             </div>
             <a class="wrapper-arrow" id="nextPost">&gt;</a>
+            <div class="post-indicator" id="post-indicator"></div>
         </div>
     </section>
     <section class="container gallery scrolled" id="gallery">
