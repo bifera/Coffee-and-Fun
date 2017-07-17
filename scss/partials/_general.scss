@@ -31,6 +31,7 @@ h1, h2, h3 {
 p {
     font-family: $primaryFont;
     line-height: 1.8;
+    text-align: left;
     @include tablet-landscape {
         font-size: 1.1rem;
     }

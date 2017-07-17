@@ -13,7 +13,6 @@ main {
             margin-bottom: .5rem;
         }
         p {
-            text-align: left;
             margin-bottom: 1.5rem;
         }
     }
@@ -100,6 +99,7 @@ style for paragraphs with images
         }
     }
 }
+/* for wordpress post-type 'miejsce' */
 .images-wrapper {
     margin-top: 1.5vh;
     @include desktop {
@@ -155,23 +155,21 @@ style for paragraphs with images
         height: 2.4rem;
     }
     a {
-        position: relative;
-        bottom: .1rem;
-        right: .095rem;
         font-size: 2rem;
         text-align: center;
         color: $accentColor;
         @include tablet {
-            right: 0.045rem;
-            bottom: .27rem;
             font-size: 3rem;
         }
         @include desktop {
-            bottom: .27rem;
             font-size: 3rem;
-            right: 0.045rem;
         }
     }
+}
+.arrow-visible {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /*

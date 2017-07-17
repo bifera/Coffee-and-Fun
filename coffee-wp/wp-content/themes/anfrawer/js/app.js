@@ -110,9 +110,9 @@ $(function(){
         $(window).on('scroll', function(){
             var scrolledAmount = $(document).scrollTop();
             if (scrolledAmount > headerImageBottom) {
-                buttonToTop.fadeIn();
+                buttonToTop.addClass('arrow-visible');
             } else {
-                buttonToTop.fadeOut();
+                buttonToTop.removeClass('arrow-visible');
             }
         });
     }

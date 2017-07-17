@@ -89,7 +89,6 @@
         endwhile;
         ?>
     </section>
-    <hr />
     <section class="container padded scrolled" id="b2b">
         <h2>B2B</h2>
         <article>
