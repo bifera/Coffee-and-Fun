@@ -4,8 +4,20 @@
 
 */
 
+@mixin mobile-landscape {
+    @media (max-width: #{$tablet}) and (orientation: landscape) {
+        @content;
+    }
+}
+
 @mixin tablet {
     @media (min-width: #{$tablet}) and (max-width: (#{$desktop }-1px)) {
+        @content;
+    }
+}
+
+@mixin tablet-landscape {
+    @media (min-width: #{$tablet}+1px) and (max-width: #{$desktop}-1px) and (orientation: landscape){
         @content;
     }
 }

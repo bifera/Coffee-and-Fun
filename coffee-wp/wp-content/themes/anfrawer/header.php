@@ -13,6 +13,8 @@
             <div class="page-loader" id="page-loader"></div>
         </div>
         <header id="start">
+            <div class="nav-image-shadow">
+            </div>
             <nav>
                 <div class="menu-bar shadow-bar" id="menu-bar">
                     <div class="mobile-active"  id="menu-background"></div>
@@ -47,4 +49,13 @@
                 </div>
                 <a class="logo" href="#"></a>
             </nav>
+            <section class="container">
+                <h1>
+                    Importer zielonej&nbsp;kawy
+                </h1>
+                <p>
+                    Naszą misją jest dostarczanie wysokiej jakości zielonej kawy z Afryki na rynek europejski kupowanej tak, aby każdy farmer otrzymał uczciwą zapłatę.
+                </p>
+                <hr />
+            </section>
         </header>

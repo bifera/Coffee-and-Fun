@@ -1,15 +1,6 @@
 <?php get_header();?>
 <main>
     <div class="arrow-up" id="arrow-up"><a class="fa fa-arrow-circle-up" href="#"></a></div>
-    <section class="container main-info">
-        <h1>
-            Importer zielonej&nbsp;kawy
-        </h1>
-        <p>
-            Naszą misją jest dostarczanie wysokiej jakości zielonej kawy z Afryki na rynek europejski kupowanej tak, aby każdy farmer otrzymał uczciwą zapłatę.
-        </p>
-        <hr />
-    </section>
     <section class="container padded scrolled" id="products">
         <h2>Produkty</h2>
         <div class="slider">
