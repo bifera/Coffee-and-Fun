@@ -12,7 +12,7 @@
     }
     @include desktop {
         justify-content: space-between;
-        height: 75vh;
+        height: 73vh;
     }
     .row {
         display: flex;
@@ -24,11 +24,12 @@
             height: 310vh;
         }
         @include tablet {
-            width: 48%;
-            height: 82.5vh;
+            width: 49%;
+            height: 78vh;
         }
         @include tablet-landscape {
-            height: 118vh;
+            width: 49%;
+            height: 114vh;
         }
         @include desktop {
             flex-direction: row;
@@ -53,17 +54,17 @@
             }
             &.rect {
                 @include desktop {
-                    width: 36%;
+                    width: 37%;
                 }
             }
             &.narrow {
                 @include desktop {
-                    width: 23%;
+                    width: 24%;
                 }
             }
             &.wide {
                 @include desktop {
-                    width: 49.25%;
+                    width: 50.25%;
                 }
             }
         }

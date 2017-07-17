@@ -73,13 +73,16 @@
         ?>
         <article>
             <h3>Miejsca - <?php the_title();?></h3>
-            <div class="images-wrapper">
-                <div class="images-content">
-                    <img src="<?php the_field('wstaw_zdjecie')?>">
-                    <img src="<?php the_field('wstaw_kolejne_zdjecie')?>">
+            <div class="paragraph-wrapper">
+                <?php the_content(); ?>
+                <div class="images-wrapper">
+                    <div class="images-content">
+                        <img src="<?php the_field('wstaw_zdjecie')?>" class="image">
+                        <img src="<?php the_field('wstaw_kolejne_zdjecie')?>" class="image">
+                    </div>
                 </div>
+                
             </div>
-            <?php the_content(); ?>
         </article>
         <?php
 

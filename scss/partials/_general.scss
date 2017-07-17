@@ -9,10 +9,13 @@ body {
     width: 95vw;
     margin: 0 auto;
     @include tablet {
-        width: 80vw;
+        width: 90vw;
+    }
+    @include tablet-landscape {
+        width: 85vw;
     }
     @include desktop {
-        width: 70vw;
+        width: 80vw;
         max-width: 1200px;
     }
 }
@@ -25,9 +28,15 @@ h1, h2, h3 {
     font-family: $headerFont;
 }
 
-p, a {
+p {
     font-family: $primaryFont;
-    line-height: 1.5;
+    line-height: 1.8;
+    @include tablet-landscape {
+        font-size: 1.1rem;
+    }
+    @include desktop {
+        font-size: 1.1rem;
+    }
 }
 
 hr {
