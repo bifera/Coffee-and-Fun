@@ -43,6 +43,9 @@ form {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        @include mobile-landscape {
+            width: 100%;
+        }
         @include tablet {
             width: 100%;
         }

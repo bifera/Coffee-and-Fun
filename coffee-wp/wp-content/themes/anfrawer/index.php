@@ -1,6 +1,6 @@
 <?php get_header();?>
 <main>
-    <div class="arrow-up" id="arrow-up"><a class="fa fa-arrow-circle-up" href="#"></a></div>
+    <div class="arrow-up" id="arrow-up"><a class="fa fa-arrow-circle-up"  href="#start"></a></div>
     <section class="container padded scrolled" id="products">
         <h2>Produkty</h2>
         <div class="slider">

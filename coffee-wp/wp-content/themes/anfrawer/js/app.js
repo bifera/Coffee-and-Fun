@@ -121,16 +121,24 @@ $(function(){
 
     /* smooth scrolling */
 
-    function smoothScrolling(){
-        menuAnchor.on('click', function(e){
-            e.preventDefault();
-            var anchor = $(this).attr('href');
-            givenOffset = $(anchor).offset().top;
-            $('html, body').animate({scrollTop: givenOffset}, 1200);
-        });
+    function smoothScrolling(target){
+        var anchor = $(target).attr('href');
+        givenOffset = $(anchor).offset().top;
+        console.log(givenOffset);
+        $('html, body').animate({scrollTop: givenOffset}, 1200);
     }
 
-    smoothScrolling();
+    menuAnchor.on('click', function(e){
+        e.preventDefault();
+        console.log(e.target);
+        smoothScrolling(e.target);
+    });
+    
+    buttonToTop.find('a').on('click', function(e){
+        e.preventDefault();
+        console.log(e.target);
+        smoothScrolling(e.target);
+    })
 
 
     /* post slider */
