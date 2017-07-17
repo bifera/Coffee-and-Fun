@@ -7,7 +7,6 @@
             <a class="wrapper-arrow" id="previousPost">&lt;</a>
             <div class="post-wrapper">
                 <div class="wrapper-content">
-
                     <?php
                     $args = ['post_type' => 'kawa'];
                     $loop = new WP_Query( $args ); 
@@ -24,7 +23,6 @@
                     </article>
 
                     <?php
-
                     endwhile;
                     ?>
                 </div>
