@@ -22,6 +22,9 @@ body {
 
 .padded {
     padding-top: 8vh;
+    @include mobile-landscape {
+        padding-top: 10vh;
+    }
 }
 
 h1, h2, h3 {

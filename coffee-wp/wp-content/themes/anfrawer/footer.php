@@ -3,14 +3,12 @@
         <h2>Kontakt</h2>
         <article>
             <div class="columns">
-                <div>
-                    <p>
-                        Anfrawer Bartosz Bielicki <br />
-                        Leśnych Skrzatów 1 <br />
-                        60-193 Poznań
-                    </p>
-                </div>
 
+                <p>
+                    Anfrawer Bartosz Bielicki <br />
+                    Leśnych Skrzatów 1 <br />
+                    60-193 Poznań
+                </p>
                 <p>
                     <span class="fa fa-phone-square"></span> +48 601 422 422 <br />
                     <span class="fa fa-envelope-square"></span> bartosz@anfrawer.pl <br />
