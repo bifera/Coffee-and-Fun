@@ -27,7 +27,11 @@
         overflow: hidden;
         @include tablet {
             order: 0;
-            width: 80vw;
+            width: 90vw;
+        }
+        @include tablet-landscape {
+            order: 0;
+            width: 85vw;
         }
         @include desktop {
             order: 0;
@@ -40,7 +44,12 @@
             .post {
                 width: 95vw;
                 @include tablet {
-                    width: 80vw;
+                    width: 90vw;
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+                @include tablet-landscape {
+                    width: 85vw;
                     padding-left: 0;
                     padding-right: 0;
                 }
@@ -53,46 +62,63 @@
         }
     }
     .post-content {
-        position: relative;
-        overflow: hidden;
-        @include tablet {
-            position: static;
+        @include mobile-landscape {
             display: flex;
-            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+        }
+        @include tablet {
+            display: flex;
             justify-content: space-between;
             width: 100%;
         }
         @include desktop {
-            position: static;
             display: flex;
-            flex-direction: row;
             justify-content: space-between;
             width: 100%;
         }
-        img {
-            position: absolute;
-            top: -30vh;
-            @include tablet {
-                position: static;
+        > div {
+            width: 100%;
+            height: 25vh;
+            background-position: center;
+            background-size: cover;
+            @include mobile-landscape {
                 width: 30%;
-                height: 30%;
+                height: 21.1rem;
                 margin-top: .5rem;
-                margin-right: 1rem;
+            }
+            @include tablet {
+                width: 25%;
+                height: 17.5rem;
+                margin-top: .5rem;
+            }
+            @include tablet-landscape {
+                width: 25%;
+                height: 16.7rem;
+                margin-top: .5rem;
             }
             @include desktop {
-                position: static;
-                width: 30%;
-                height: 30%;
+                width: 25%;
+                height: 16.7rem;
                 margin-top: .5rem;
-                margin-right: 1rem;
             }
         }
-        p {
-            margin-top: 30vh;
+        > p {
+            margin-top: .5rem;
+            @include mobile-landscape {
+                width: 68%;
+                margin-top: 0;
+            }
             @include tablet {
+                width: 72%;
+                margin-top: 0;
+            }
+            @include tablet-landscape {
+                width: 72%;
                 margin-top: 0;
             }
             @include desktop {
+                width: 72%;
                 margin-top: 0;
             }
         }

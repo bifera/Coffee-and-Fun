@@ -148,8 +148,8 @@ style for paragraphs with images
         height: 1rem;
         position: relative;
         top: 25%;
-        border-top: .125rem solid desaturate($secondaryColor, 20%);
-        border-right: .125rem solid desaturate($secondaryColor, 20%);
+        border-top: .125rem solid $primaryColor;
+        border-right: .125rem solid $primaryColor;
         transform: rotate(-45deg);
     }
 }
