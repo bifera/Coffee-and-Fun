@@ -160,9 +160,8 @@ page navigation
     @include desktop {
         align-items: center;
         position: absolute;
-        top: 10vh;
+        top: 5vh;
         max-height: 10vh;
-
     }
     .menu-container {
         display: flex;
@@ -417,7 +416,7 @@ sticky menu for tablet & desktop
         height: 3.875rem;
     }
     @include desktop {
-        width: 10vw;
+        width: 5.5vw;
         height: 3.625rem;
     }
     display: block;
