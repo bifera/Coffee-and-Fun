@@ -18,7 +18,7 @@
             <nav>
                 <div class="menu-bar" id="menu-bar">
                     <div class="menu-background-mobile"  id="menu-background"></div>
-                    <div class="menu-container mobile-display">
+                    <div class="menu-container">
                         <div class="fixed-nav-border">
                             <div class="mobile-menu-icon" id="menu-toggle">
                                 <span></span>
@@ -29,6 +29,7 @@
                                 <span></span>
                             </div>
                         </div>
+                        <a class="logo-sticky" href="#start" id="logo-sticky"></a>
                         <ul class="menu" id="menu-content">
                             <li>
                                 <a class="middle-out-underline" href="#start">Strona główna</a>

@@ -1,10 +1,7 @@
 <?php get_header();?>
 <main>
     <div class="fixed-nav-border arrow-up" id="arrow-up">
-        <a class="arrow-up-icon" href="#start">
-            <span></span>
-            <span></span>
-        </a>
+        <a class="arrow-up-icon" href="#start"></a>
     </div>
     <section class="container padded scrolled" id="products">
         <h2>Produkty</h2>

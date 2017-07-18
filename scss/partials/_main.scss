@@ -142,37 +142,15 @@ style for paragraphs with images
     bottom: 0;
     right: 0;
     z-index: 2;
-    @include tablet {
-        width: 2.4rem;
-        height: 2.4rem;
-    }
-    @include desktop {
-        width: 2.4rem;
-        height: 2.4rem;
-    }
     .arrow-up-icon {
         display: block;
-        width: 1.25rem;
-        height: 1.25rem;
+        width: 1rem;
+        height: 1rem;
         position: relative;
-        span {
-            display: block;
-            width: 70%;
-            height: .125rem;
-            background-color: desaturate($secondaryColor, 20%);
-            opacity: 1;
-            position: absolute;
-            &:nth-child(1) {
-                top: 32.5%;
-                right: 37.5%;
-                transform: rotate(-45deg);
-            }
-            &:nth-child(2) {
-                top: 32.5%;
-                left: 37.5%;
-                transform: rotate(45deg);
-            }
-        }
+        top: 25%;
+        border-top: .125rem solid desaturate($secondaryColor, 20%);
+        border-right: .125rem solid desaturate($secondaryColor, 20%);
+        transform: rotate(-45deg);
     }
 }
 .arrow-visible {
