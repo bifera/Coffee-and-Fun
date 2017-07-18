@@ -117,13 +117,16 @@ $(function(){
 
     menuAnchor.on('click', function(e){
         e.preventDefault();
-        console.log(e.target);
         smoothScrolling(e.target);
     });
 
     buttonToTop.find('a').on('click', function(e){
         e.preventDefault();
-        console.log(e.target);
+        smoothScrolling(e.target);
+    });
+    
+    menuLogo.on('click', function(e){
+        e.preventDefault();
         smoothScrolling(e.target);
     })
 
