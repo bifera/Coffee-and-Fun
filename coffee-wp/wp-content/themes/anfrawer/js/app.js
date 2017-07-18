@@ -21,21 +21,22 @@ $(function(){
         if (event.matches) {
             menuButton.on('click', function(){
                 if (menuContent.is(':visible')) {
-                    menuContent.hide(function(){
-                        menuBackground.slideUp();
+                    menuContent.fadeOut(600, function(){
+                        menuBackground.hide(400);
                         menuButton.removeClass('open');
                     });
                 } else {
                     menuButton.addClass('open');
-                    menuBackground.slideDown(600, function(){
-                        menuContent.show();
+                    menuBackground.show(400, function(){
+                        menuContent.fadeIn(600);
                     });   
                 }
             });
             menuAnchor.each(function(){
                 $(this).on('click', function(){
-                    menuContent.fadeOut();
-                    menuBackground.fadeOut();
+                    menuContent.fadeOut(600, function(){
+                        menuBackground.hide(400);
+                    });
                     menuButton.removeClass('open');
                 });
             });
@@ -117,17 +118,17 @@ $(function(){
 
     menuAnchor.on('click', function(e){
         e.preventDefault();
-        smoothScrolling(e.target);
+        smoothScrolling($(this));
     });
 
     buttonToTop.find('a').on('click', function(e){
         e.preventDefault();
-        smoothScrolling(e.target);
+        smoothScrolling($(this));
     });
     
     menuLogo.on('click', function(e){
         e.preventDefault();
-        smoothScrolling(e.target);
+        smoothScrolling($(this));
     })
 
 

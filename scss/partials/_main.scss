@@ -139,13 +139,9 @@ style for paragraphs with images
 .arrow-up {
     display: none;
     position: fixed;
-    bottom: 1rem;
-    right: 1rem;
+    bottom: 0;
+    right: 0;
     z-index: 2;
-    width: 1.5rem;
-    height: 1.5rem;
-    background-color: $primaryColor;
-    border-radius: 50%;
     @include tablet {
         width: 2.4rem;
         height: 2.4rem;
@@ -154,15 +150,28 @@ style for paragraphs with images
         width: 2.4rem;
         height: 2.4rem;
     }
-    a {
-        font-size: 2rem;
-        text-align: center;
-        color: $accentColor;
-        @include tablet {
-            font-size: 3rem;
-        }
-        @include desktop {
-            font-size: 3rem;
+    .arrow-up-icon {
+        display: block;
+        width: 1.25rem;
+        height: 1.25rem;
+        position: relative;
+        span {
+            display: block;
+            width: 70%;
+            height: .125rem;
+            background-color: desaturate($secondaryColor, 20%);
+            opacity: 1;
+            position: absolute;
+            &:nth-child(1) {
+                top: 32.5%;
+                right: 37.5%;
+                transform: rotate(-45deg);
+            }
+            &:nth-child(2) {
+                top: 32.5%;
+                left: 37.5%;
+                transform: rotate(45deg);
+            }
         }
     }
 }

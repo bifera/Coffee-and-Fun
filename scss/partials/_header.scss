@@ -6,7 +6,7 @@ header {
     position: relative;
     .nav-image-shadow {
         width: 100%;
-        height: 60vh;
+        height: 55vh;
         background-color: transparentize($textColor, 0.8);
         position: absolute;
         top: 0;
@@ -29,7 +29,7 @@ header {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 60vh;
+        height: 55vh;
         background-image: $headerMobileImage;
         background-position: bottom;
         background-repeat: no-repeat;
@@ -84,7 +84,7 @@ header {
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        height: 40vh;
+        height: 45vh;
         @include mobile-landscape {
             height: 45vh;
         }
@@ -112,6 +112,7 @@ header {
             }
             & + p {
                 text-align: center;
+                font-size: 0.9rem;
                 @include tablet {
                     font-size: 1.33rem;
                 }
@@ -135,130 +136,56 @@ page navigation
 .menu-bar {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     width: 100%;
-    max-height: 2.6rem;
+
     position: fixed;
     top: 0;
     z-index: 4;
     @include mobile-landscape {
+        align-items: center;
         position: fixed;
         top: 0;
     }
     @include tablet {
+        align-items: center;
         position: absolute;
         top: 5vh;
         max-height: 10vh;
     }
     @include tablet-landscape {
+        align-items: center;
         position: absolute;
         top: 5vh;
+        max-height: 2.6rem;
     }
     @include desktop {
+        align-items: center;
         position: absolute;
         top: 10vh;
         max-height: 10vh;
 
     }
-}
-.mobile-menu-icon {
-    @include tablet {
-        display: none;
-    }
-    @include desktop {
-        display: none;
-    }
-    width: 2.5rem;
-    height: 2rem;
-    margin: .3rem 0 .3rem 0;
-    position: relative;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-    -webkit-transition: .5s ease-in-out;
-    -moz-transition: .5s ease-in-out;
-    -o-transition: .5s ease-in-out;
-    transition: .5s ease-in-out;
-    cursor: pointer;
-    span {
-        display: block;
-        width: 50%;
-        height: .3rem;
-        background: $primaryColor;
-        opacity: 1;
-        position: absolute;
-        -webkit-transform: rotate(0deg);
-        -moz-transform: rotate(0deg);
-        -o-transform: rotate(0deg);
-        transform: rotate(0deg);
-        -webkit-transition: .25s ease-in-out;
-        -moz-transition: .25s ease-in-out;
-        -o-transition: .25s ease-in-out;
-        transition: .25s ease-in-out;
-        &:nth-child(even) {
-            border-radius: 0 25% 25% 0;
-            left: 50%;
+    .menu-container {
+        @include tablet {
+            margin: 0 auto;
+            width: 90vw;
         }
-        &:nth-child(odd) {
-            border-radius: 25% 0 0 25%;
-            left: 0;
+        @include tablet-landscape {
+            margin: 0 auto;
+            width: 85vw;
         }
-        &:nth-child(1), &:nth-child(2) {
-            top: 0;
-        }
-        &:nth-child(3), &:nth-child(4) {
-            top: .85rem;
-        }
-        &:nth-child(5), &:nth-child(6) {
-            top: 1.7rem;
-        }
-    }
-    &.open {
-        span {
-            &:nth-child(1), &:nth-child(6) {
-                -webkit-transform: rotate(35deg);
-                -moz-transform: rotate(35deg);
-                -o-transform: rotate(35deg);
-                transform: rotate(35deg);
-            }
-            &:nth-child(2), &:nth-child(5) {
-                -webkit-transform: rotate(-35deg);
-                -moz-transform: rotate(-35deg);
-                -o-transform: rotate(-35deg);
-                transform: rotate(-35deg);
-            }
-            &:nth-child(1) {
-                left: .4rem;
-                top: .4rem;
-            }
-            &:nth-child(2) {
-                left: 50%;
-                top: .4rem;
-            }
-            &:nth-child(3) {
-                left: -50%;
-                opacity: 0;
-            }
-            &:nth-child(4) {
-                left: 100%;
-                opacity: 0;
-            }
-            &:nth-child(5) {
-                left: .4rem;
-                top: 1.5rem;
-            }
-            &:nth-child(6) {
-                left: 50%;
-                top: 1.5rem;
-            }
+        @include desktop {
+            margin: 0 auto;
+            width: 80vw;
+            max-width: 1200px;
         }
     }
 }
 
 ul.menu {
     display: none;
-    margin-top: 2.6rem;
+    margin-top: 1.4rem;
     @include tablet {
         display: flex;
         justify-content: flex-end;
@@ -271,8 +198,8 @@ ul.menu {
     }
     li {
         text-align: right;
-        padding-top: 1rem;
         margin-right: 1rem;
+        padding-top: .25rem;
         &:last-child {
             padding-bottom: 1rem;
         }
@@ -347,11 +274,116 @@ effects for mobile display
         width: 50vw;
         height: 50vw;
     }
-    background-color: lighten($textColor, 15%);
+    background-color: $textColor;
     border-bottom-left-radius: 100%;
     position: fixed;
     right: 0;
     top: 0;
+}
+
+.fixed-nav-border {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: .25rem;
+    padding: .5rem;
+    border: .125rem solid desaturate($secondaryColor, 20%);
+    background-color: desaturate($altColor, 20%);
+    border-radius: 4px;
+    z-index: 2;
+    @include tablet {
+        display: none;
+    }
+    @include tablet-landscape {
+        display: none;
+    }
+    @include desktop {
+        display: none;
+    }
+}
+.mobile-menu-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    @include tablet {
+        display: none;
+    }
+    @include desktop {
+        display: none;
+    }
+    position: relative;
+    cursor: pointer;
+    span {
+        display: block;
+        width: 50%;
+        height: .125rem;
+        background-color: desaturate($secondaryColor, 20%);
+        opacity: 1;
+        position: absolute;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .25s ease-in-out;
+        -moz-transition: .25s ease-in-out;
+        -o-transition: .25s ease-in-out;
+        transition: .25s ease-in-out;
+        &:nth-child(even) {
+            border-radius: 0 25% 25% 0;
+            right: 0;
+        }
+        &:nth-child(odd) {
+            border-radius: 25% 0 0 25%;
+            left: 0;
+        }
+        &:nth-child(1), &:nth-child(2) {
+            top: 0;
+        }
+        &:nth-child(3), &:nth-child(4) {
+            top: .5625rem;
+        }
+        &:nth-child(5), &:nth-child(6) {
+            bottom: 0;
+        }
+    }
+    &.open {
+        span {
+            &:nth-child(1), &:nth-child(6) {
+                -webkit-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+            &:nth-child(2), &:nth-child(5) {
+                -webkit-transform: rotate(-45deg);
+                -moz-transform: rotate(-45deg);
+                -o-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+            }
+            &:nth-child(1) {
+                top: 28%;
+                left: 10%;
+            }
+            &:nth-child(2) {
+                top: 28%;
+                right: 10%;
+            }
+            &:nth-child(3) {
+                left: -50%;
+                opacity: 0;
+            }
+            &:nth-child(4) {
+                right: -100%;
+                opacity: 0;
+            }
+            &:nth-child(5) {
+                bottom: 28%;
+                left: 10%
+            }
+            &:nth-child(6) {
+                bottom: 28%;
+                right: 10%;
+            }
+        }
+    }
 }
 
 /*

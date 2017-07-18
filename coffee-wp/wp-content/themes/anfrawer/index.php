@@ -1,6 +1,11 @@
 <?php get_header();?>
 <main>
-    <div class="arrow-up" id="arrow-up"><a class="fa fa-arrow-circle-up"  href="#start"></a></div>
+    <div class="fixed-nav-border arrow-up" id="arrow-up">
+        <a class="arrow-up-icon" href="#start">
+            <span></span>
+            <span></span>
+        </a>
+    </div>
     <section class="container padded scrolled" id="products">
         <h2>Produkty</h2>
         <div class="slider">
@@ -80,12 +85,12 @@
                         <img src="<?php the_field('wstaw_kolejne_zdjecie')?>" class="image">
                     </div>
                 </div>
-                
+
             </div>
         </article>
         <?php
 
-        endwhile;
+    endwhile;
         ?>
     </section>
     <section class="container padded scrolled" id="b2b">

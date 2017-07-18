@@ -18,14 +18,16 @@
             <nav>
                 <div class="menu-bar" id="menu-bar">
                     <div class="menu-background-mobile"  id="menu-background"></div>
-                    <div class="container mobile-display">
-                        <div class="mobile-menu-icon" id="menu-toggle">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
+                    <div class="menu-container mobile-display">
+                        <div class="fixed-nav-border">
+                            <div class="mobile-menu-icon" id="menu-toggle">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
                         </div>
                         <ul class="menu" id="menu-content">
                             <li>
