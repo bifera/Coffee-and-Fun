@@ -4,6 +4,7 @@ $(function(){
     var menuButton = $('#menu-toggle');
     var menuContent = $('#menu-content');
     var menuBackground = $('#menu-background');
+    var menuLogo = $('#logo');
     var menuAnchor = menuContent.find('a');
 
     /*
@@ -20,17 +21,14 @@ $(function(){
         if (event.matches) {
             menuButton.on('click', function(){
                 if (menuContent.is(':visible')) {
-                    menuContent.fadeOut(function(){
+                    menuContent.hide(function(){
                         menuBackground.slideUp();
-                        menuBar.addClass('shadow-bar').addClass('darker');
                         menuButton.removeClass('open');
                     });
                 } else {
                     menuButton.addClass('open');
                     menuBackground.slideDown(600, function(){
-                        menuContent.fadeIn();
-                        menuBar.removeClass('shadow-bar').removeClass('darker');
-
+                        menuContent.show();
                     });   
                 }
             });
@@ -38,7 +36,6 @@ $(function(){
                 $(this).on('click', function(){
                     menuContent.fadeOut();
                     menuBackground.fadeOut();
-                    menuBar.addClass('darker').addClass('shadow-bar');
                     menuButton.removeClass('open');
                 });
             });
@@ -59,14 +56,21 @@ $(function(){
             if (menuContent.not(':visible')) {
                 menuContent.css('display', '');
             }
-            var menuBarPosition = menuBar.offset().top;
+            var menuBarPosition = menuBar.offset().top; // for sticky class
+            var headerImageBottom = $('nav').height(); // for darkening
             $(window).on('scroll', function(){
                 var scrolledAmount = $(document).scrollTop();
                 if (scrolledAmount > menuBarPosition) {
                     menuBar.addClass('sticky');
-
                 } else {
                     menuBar.removeClass('sticky');
+                }
+                if (scrolledAmount > headerImageBottom) {
+                    menuBar.addClass('darker');
+                    menuLogo.removeClass('logo').addClass('logo-sticky');
+                } else {
+                    menuBar.removeClass('darker');
+                    menuLogo.addClass('logo').removeClass('logo-sticky');
                 }
             });
         }
@@ -77,23 +81,6 @@ $(function(){
 
     tablet.addListener(useStickyMenu);
     desktop.addListener(useStickyMenu);
-
-
-    /* menubar darkening */
-
-    function darkenMenuBar(){
-        var headerImageBottom = $('nav').height();
-        $(window).on('scroll', function(){
-            var scrolledAmount = $(document).scrollTop();
-            if (scrolledAmount > headerImageBottom) {
-                menuBar.addClass('darker');
-            } else {
-                menuBar.removeClass('darker');
-            }
-        });
-    }
-
-    darkenMenuBar();
 
     /*
     **
@@ -133,7 +120,7 @@ $(function(){
         console.log(e.target);
         smoothScrolling(e.target);
     });
-    
+
     buttonToTop.find('a').on('click', function(e){
         e.preventDefault();
         console.log(e.target);

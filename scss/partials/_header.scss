@@ -256,10 +256,6 @@ page navigation
     }
 }
 
-.shadow-bar {
-    background-color: transparentize($textColor, 0.7);
-}
-
 ul.menu {
     display: none;
     margin-top: 2.6rem;
@@ -275,22 +271,22 @@ ul.menu {
     }
     li {
         text-align: right;
-        padding-top: 1.25vh;
+        padding-top: 1rem;
         margin-right: 1rem;
         &:last-child {
-            padding-bottom: 1.25vh;
+            padding-bottom: 1rem;
         }
         @include tablet {
             margin-right: 0;
-            padding: 2vh 0 2vh 4vw;
+            padding: 1rem 0 1rem 1.9rem;
         }
         @include tablet-landscape {
             margin-right: 0;
-            padding: 1.5vh 0 1.5vh 4vw;
+            padding: 1rem 0 1rem 1.9rem;
         }
         @include desktop {
             margin-right: 0;
-            padding: 2vh 0 2vh 4vw;
+            padding: 1rem 0 1rem 1.9rem;
         }
         a {
             font-family: $headerFont;
@@ -343,7 +339,7 @@ effects for mobile display
     align-items: flex-end;
 }
 
-.mobile-active {
+.menu-background-mobile {
     display: none;
     width: 80vw;
     height: 80vw;
@@ -351,7 +347,7 @@ effects for mobile display
         width: 50vw;
         height: 50vw;
     }
-    background-color: transparentize($textColor, 0.025);
+    background-color: lighten($textColor, 15%);
     border-bottom-left-radius: 100%;
     position: fixed;
     right: 0;
@@ -368,6 +364,30 @@ sticky menu for tablet & desktop
     position: fixed;
     top: 0;
     left: 0;
+    background-color: transparentize($textColor, 0.7);
+}
+
+.logo-sticky {
+    width: 10vw;
+    @include tablet {
+        height: 3.1875rem;
+    }
+    @include tablet-landscape {
+        height: 3.875rem;
+    }
+    @include desktop {
+        height: 3.625rem;
+    }
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    opacity: .8;
+    background-image: $logoImageWhite;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .darker {

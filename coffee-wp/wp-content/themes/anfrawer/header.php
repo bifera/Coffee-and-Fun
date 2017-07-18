@@ -16,8 +16,8 @@
             <div class="nav-image-shadow">
             </div>
             <nav>
-                <div class="menu-bar shadow-bar" id="menu-bar">
-                    <div class="mobile-active"  id="menu-background"></div>
+                <div class="menu-bar" id="menu-bar">
+                    <div class="menu-background-mobile"  id="menu-background"></div>
                     <div class="container mobile-display">
                         <div class="mobile-menu-icon" id="menu-toggle">
                             <span></span>
@@ -27,7 +27,6 @@
                             <span></span>
                             <span></span>
                         </div>
-                        <!--<span class="fa fa-bars" id="menu-toggle"></span>-->
                         <ul class="menu" id="menu-content">
                             <li>
                                 <a class="middle-out-underline" href="#start">Strona główna</a>
@@ -47,7 +46,7 @@
                         </ul>
                     </div>
                 </div>
-                <a class="logo" href="#"></a>
+                <a class="logo" href="#start" id="logo"></a>
             </nav>
             <section class="container">
                 <h1>
