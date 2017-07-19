@@ -23,7 +23,6 @@
                             <?php the_content(); ?>
                         </div>
                     </article>
-
                     <?php
                     endwhile;
                     ?>
@@ -52,41 +51,37 @@
             <h3>
                 W poszukiwaniu dobrej kawy
             </h3>
-            <div class="paragraph-wrapper">
-                <div class="paragraph-content">
-                    <p> Jestem bezpośrednim importerem zielonej kawy z Afryki. Aby kupić jak najlepszą kawę, osobiście jadę na plantacje i tam na miejscu sprawdzam jej jakość. Wybieram jedynie te kawy, które – choć czasem nie mają międzynarodowych certyfikatów – zawsze są uprawiane ekologicznie i w sposób zrównoważony, a lokalni rolnicy za swoją ciężką pracę otrzymują uczciwe wynagrodzenie.
-                    </p>
-                    <div class="image paragraph-img01" id="about-01"></div>
-                </div>
-                <div class="paragraph-content">
-                    <p>
-                        Kawy szukam w Afryce i staram się znajdować miejsca dotychczas niekojarzone z taką produkcją. Docieram do miejsc, gdzie nie trafiają kupcy z wielkich firm i właśnie tam wyszukuję najciekawsze produkty. Każdy gatunek przed zakupem spróbowałem i jestem przekonany o jego dobrej jakości.
-                    </p>
-                    <div class="image paragraph-img02" id="about-02"></div>
-                </div>
+            <div class="paragraph-image-box">
+                <p>
+                    Jestem bezpośrednim importerem zielonej kawy z Afryki. Aby kupić jak najlepszą kawę, osobiście jadę na plantacje i tam na miejscu sprawdzam jej jakość. Wybieram jedynie te kawy, które – choć czasem nie mają międzynarodowych certyfikatów – zawsze są uprawiane ekologicznie i w sposób zrównoważony, a lokalni rolnicy za swoją ciężką pracę otrzymują uczciwe wynagrodzenie.
+                </p>
+                <div class="image-box paragraph-img01" id="about-01"></div>
+            </div>
+            <div class="paragraph-image-box">
+                <p>
+                    Kawy szukam w Afryce i staram się znajdować miejsca dotychczas niekojarzone z taką produkcją. Docieram do miejsc, gdzie nie trafiają kupcy z wielkich firm i właśnie tam wyszukuję najciekawsze produkty. Każdy gatunek przed zakupem spróbowałem i jestem przekonany o jego dobrej jakości.
+                </p>
+                <div class="image-box paragraph-img02" id="about-02"></div>
             </div>
         </article>
         <?php
         $args = ['post_type' => 'miejsce'];
         $loop = new WP_Query( $args ); 
         while ( $loop->have_posts() ) : $loop->the_post();
-
         ?>
         <article>
             <h3>Miejsca - <?php the_title();?></h3>
-            <div class="paragraph-wrapper">
-                <?php the_content(); ?>
-                <div class="images-wrapper">
-                    <div class="images-content">
-                        <img src="<?php the_field('wstaw_zdjecie')?>" class="image">
-                        <img src="<?php the_field('wstaw_kolejne_zdjecie')?>" class="image">
+            <div class="paragraph-image-box">
+                <div class="wp-places-box">
+                    <?php the_content(); ?>
+                    <div class="wp-places-images-box">
+                        <img src="<?php the_field('wstaw_zdjecie')?>" class="image-box">
+                        <img src="<?php the_field('wstaw_kolejne_zdjecie')?>" class="image-box">
                     </div>
                 </div>
-
             </div>
         </article>
         <?php
-
     endwhile;
         ?>
     </section>

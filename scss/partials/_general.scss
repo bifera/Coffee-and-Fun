@@ -21,9 +21,14 @@ body {
 }
 
 .padded {
-    padding-top: 8vh;
-    @include mobile-landscape {
-        padding-top: 10vh;
+    @include tablet {
+        padding-top: 4rem;
+    }
+    @include tablet-landscape {
+        padding-top: 4rem;
+    }
+    @include desktop {
+        padding-top: 4rem;
     }
 }
 
@@ -35,11 +40,11 @@ p {
     font-family: $primaryFont;
     line-height: 1.8;
     text-align: left;
-    @include tablet-landscape {
+    @include tablet {
         font-size: 1.1rem;
     }
-    @include desktop {
-        font-size: 1.1rem;
+    @include tablet-landscape {
+        font-size: 1rem;
     }
 }
 
