@@ -154,22 +154,14 @@ $(function(){
     **
     */
     var products = $('.products-post');
-    var productsBoxDistance = $('.products-posts-box').offset().left;
-    var productsBoxWidth = $('.products-posts-box').innerWidth();
-    console.log(productsBoxDistance);
+    var popupBox = $('#products-popup-box');
+    var popupBoxFrame = $('#products-popup-frame');
     function displaySinglePostInfo() {
         products.each(function(){
             $(this).on('click', function(){
-                var distanceLeft = $(this).offset().left;
-                var popupDisplay = {
-                    width: productsBoxWidth,
-                    position: "absolute",
-                    left: productsBoxDistance-distanceLeft,
-                    top: 0,
-                    "z-index": 2
-                }
-                console.log("distance left: " + distanceLeft);
-                $(this).find('.products-post-content').css(popupDisplay).fadeToggle();
+                var clonedContent = $(this).find('.products-post-content').clone(true);
+                clonedContent.appendTo(popupBoxFrame);
+                popupBox.fadeIn();
             });
         });
     }

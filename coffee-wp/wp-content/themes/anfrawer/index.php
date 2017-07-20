@@ -20,7 +20,12 @@
                     <div class="products-image-content" style="background-image: url(<?php the_field('wstaw_zdjecie')?>)"></div>
                     <h4><?php the_title();?></h4>
                     <div class="products-post-content">
-                        <?php the_content(); ?>
+                        <h4><?php the_title();?></h4>
+                        <div class="mobile-landscape-wrapper">
+                            <div class="products-image-content" style="background-image: url(<?php the_field('wstaw_zdjecie')?>)"></div>
+                            <?php the_content(); ?>
+                        </div>
+                        <hr />
                     </div>
                 </article>
                 <?php
@@ -28,7 +33,18 @@
                 ?>
             </div>
         </div>
+
     </section>
+    <div class="products-popup-box" id="products-popup-box">
+        <div class="products-popup-content" >
+            <div class="products-popup-frame" id="products-popup-frame">
+                <div class="products-popup-close" id="products-popup-close">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
     <section class="container gallery scrolled" id="gallery">
         <div class="row">
             <div class="wide gallery-img01"></div>
