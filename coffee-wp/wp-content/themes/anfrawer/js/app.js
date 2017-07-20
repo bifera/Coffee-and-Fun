@@ -156,16 +156,27 @@ $(function(){
     var products = $('.products-post');
     var popupBox = $('#products-popup-box');
     var popupBoxFrame = $('#products-popup-frame');
+    var popupBoxCloseBtn = $('#products-popup-close');
     function displaySinglePostInfo() {
         products.each(function(){
             $(this).on('click', function(){
                 var clonedContent = $(this).find('.products-post-content').clone(true);
                 clonedContent.appendTo(popupBoxFrame);
-                popupBox.fadeIn();
+                popupBox.fadeIn(800);
             });
         });
     }
+    function closePopupBox(){
+        popupBoxCloseBtn.on('click', function(){
+            var contentToDelete = $(this).next();
+            popupBox.fadeOut(800, function(){
+                contentToDelete.remove();
+            });
+        });
+    }
+    
     displaySinglePostInfo();
+    closePopupBox();
 
     /*
     **

@@ -62,6 +62,9 @@
             font-size: .9rem;
             background-color: $primaryColor;
         }
+        > h4 {
+            font-size: 1.2rem;
+        }
     }
 }
 
@@ -167,8 +170,8 @@
             padding: 0;
         }
         h4 {
+            font-size: 1.2rem;
             @include mobile-landscape {
-                font-size: 1.2rem;
                 margin-top: .5rem;
             }
             @include tablet {

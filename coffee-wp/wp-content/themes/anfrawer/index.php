@@ -33,7 +33,6 @@
                 ?>
             </div>
         </div>
-
     </section>
     <div class="products-popup-box" id="products-popup-box">
         <div class="products-popup-content" >
