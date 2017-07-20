@@ -5,9 +5,7 @@
     </div>
     <section class="container padded scrolled" id="products">
         <h2>Produkty</h2>
-
         <div class="wp-products-box">
-            <h3>Afryka</h3>
             <div class="products-posts-box">
                 <?php
                 $args = ['post_type' => 'kawa'];
@@ -16,19 +14,22 @@
                 while ( $loop->have_posts() ) : $loop->the_post();
                 ?>
                 <article class="products-post">
-                    <div class="products-image-content" style="background-image: url(<?php the_field('wstaw_zdjecie')?>)"></div>
-                    <h4><?php the_title();
-
-                        ?></h4>
-                    <div>
-                    <?php $terms = wp_get_post_terms( $post->ID, 'Kraj' ); 
-                        echo $terms[0]->name; ?>
-                    
-                        <?php echo get_the_term_list( $post->ID, 'Kraj'); ?>
-                        
+                    <div class="products-image-content" style="background-image: url(<?php the_field('wstaw_zdjecie')?>)">
+                        <div class="products-image-shadow">
+                            <h4>
+                                <?php the_title(); ?>
+                            </h4>
+                        </div>
                     </div>
+                    <p>
+                        <?php $terms = wp_get_post_terms( $post->ID, 'Kraj' ); 
+                        echo $terms[0]->name; 
+                        ?>
+                    </p>
                     <div class="products-post-content">
-                        <h4><?php the_title();?></h4>
+                        <h4>
+                            <?php echo $terms[0]->name; echo " "; the_title();?>
+                        </h4>
                         <div class="mobile-landscape-wrapper">
                             <div class="products-image-content" style="background-image: url(<?php the_field('wstaw_zdjecie')?>)"></div>
                             <?php the_content(); ?>
@@ -53,6 +54,7 @@
             </div>
         </div>
     </div>
+    <hr />
     <section class="container gallery scrolled padded" id="gallery">
         <div class="row">
             <div class="wide gallery-img01"></div>
@@ -106,6 +108,7 @@
     endwhile;
         ?>
     </section>
+    <hr />
     <section class="container padded scrolled" id="b2b">
         <h2>B2B</h2>
         <article>
@@ -156,11 +159,5 @@
         </article>
     </section>
 </main>
-<!--
-<aside>
-<p>
-</p>
-</aside>
 <hr />
--->
 <?php get_footer(); ?>

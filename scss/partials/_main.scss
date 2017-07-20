@@ -110,20 +110,6 @@ style for paragraphs with images
         flex-direction: column;
         align-items: center;
     }
-/*    > p {
-        @include mobile-landscape {
-            width: 80%;
-        }
-        @include tablet {
-            width: 80%;
-        }
-        @include tablet-landscape {
-            width: 80%;
-        }
-        @include desktop {
-            width: 80%;
-        }
-    }*/
     .wp-places-images-box {
         width: 100%;
         @include tablet {
