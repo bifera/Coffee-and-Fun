@@ -63,6 +63,9 @@ style for paragraphs with images
         width: 100%;
         height: 35vh;
         margin-bottom: 1.5rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
         &:last-of-type{
         }
         @include mobile-landscape {
@@ -107,7 +110,7 @@ style for paragraphs with images
         flex-direction: column;
         align-items: center;
     }
-    > p {
+/*    > p {
         @include mobile-landscape {
             width: 80%;
         }
@@ -120,8 +123,9 @@ style for paragraphs with images
         @include desktop {
             width: 80%;
         }
-    }
+    }*/
     .wp-places-images-box {
+        width: 100%;
         @include tablet {
             display: flex;
             justify-content: space-between;

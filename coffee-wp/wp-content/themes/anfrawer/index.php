@@ -7,18 +7,26 @@
         <h2>Produkty</h2>
 
         <div class="wp-products-box">
-            <h3>Afryka - Kamerun</h3>
+            <h3>Afryka</h3>
             <div class="products-posts-box">
                 <?php
                 $args = ['post_type' => 'kawa'];
                 $loop = new WP_Query( $args ); 
-
+                if ( $loop->have_posts() ) :
                 while ( $loop->have_posts() ) : $loop->the_post();
-
                 ?>
                 <article class="products-post">
                     <div class="products-image-content" style="background-image: url(<?php the_field('wstaw_zdjecie')?>)"></div>
-                    <h4><?php the_title();?></h4>
+                    <h4><?php the_title();
+
+                        ?></h4>
+                    <div>
+                    <?php $terms = wp_get_post_terms( $post->ID, 'Kraj' ); 
+                        echo $terms[0]->name; ?>
+                    
+                        <?php echo get_the_term_list( $post->ID, 'Kraj'); ?>
+                        
+                    </div>
                     <div class="products-post-content">
                         <h4><?php the_title();?></h4>
                         <div class="mobile-landscape-wrapper">
@@ -30,6 +38,7 @@
                 </article>
                 <?php
                 endwhile;
+                endif;
                 ?>
             </div>
         </div>
@@ -44,7 +53,7 @@
             </div>
         </div>
     </div>
-    <section class="container gallery scrolled" id="gallery">
+    <section class="container gallery scrolled padded" id="gallery">
         <div class="row">
             <div class="wide gallery-img01"></div>
             <div class="narrow gallery-img02"></div>
@@ -87,8 +96,8 @@
                 <div class="wp-places-box">
                     <?php the_content(); ?>
                     <div class="wp-places-images-box">
-                        <img src="<?php the_field('wstaw_zdjecie')?>" class="image-box">
-                        <img src="<?php the_field('wstaw_kolejne_zdjecie')?>" class="image-box">
+                        <div class="image-box" style="background-image: url(<?php the_field('wstaw_zdjecie')?>)"></div>
+                        <div class="image-box" style="background-image: url(<?php the_field('wstaw_kolejne_zdjecie')?>)"></div>
                     </div>
                 </div>
             </div>

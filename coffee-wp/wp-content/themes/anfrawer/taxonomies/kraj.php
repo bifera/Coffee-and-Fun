@@ -1,7 +1,7 @@
 <?php
 
-function kraj_init() {
-	register_taxonomy( 'kraj', array( 'kawa' ), array(
+function Kraj_init() {
+	register_taxonomy( 'Kraj', array( 'kawa' ), array(
 		'hierarchical'      => true,
 		'public'            => true,
 		'show_in_nav_menus' => true,
@@ -18,7 +18,7 @@ function kraj_init() {
 		'labels'            => array(
 			'name'                       => __( 'Kraje', 'anfrawer' ),
 			'singular_name'              => _x( 'Kraj', 'taxonomy general name', 'anfrawer' ),
-			'search_items'               => __( 'Znajdź kraje', 'anfrawer' ),
+			'search_items'               => __( 'Znajdź kraj', 'anfrawer' ),
 			'popular_items'              => __( 'Popularne kraje', 'anfrawer' ),
 			'all_items'                  => __( 'Wszystkie kraje', 'anfrawer' ),
 			'parent_item'                => __( 'Nadrzędny kraj', 'anfrawer' ),
@@ -29,14 +29,14 @@ function kraj_init() {
 			'new_item_name'              => __( 'Nowy kraj', 'anfrawer' ),
 			'separate_items_with_commas' => __( 'Oddzielaj kraje przecinkami', 'anfrawer' ),
 			'add_or_remove_items'        => __( 'Dodaj lub usuń kraje', 'anfrawer' ),
-			'choose_from_most_used'      => __( 'Wybierz spośród najczęściej używanych krajów', 'anfrawer' ),
-			'not_found'                  => __( 'Nie znaleziono żadnych krajów.', 'anfrawer' ),
+			'choose_from_most_used'      => __( 'Wybierz z najczęściej używanych krajów', 'anfrawer' ),
+			'not_found'                  => __( 'Nie znaleziono krajów.', 'anfrawer' ),
 			'menu_name'                  => __( 'Kraje', 'anfrawer' ),
 		),
 		'show_in_rest'      => true,
-		'rest_base'         => 'kraj',
+		'rest_base'         => 'Kraj',
 		'rest_controller_class' => 'WP_REST_Terms_Controller',
 	) );
 
 }
-add_action( 'init', 'kraj_init' );
+add_action( 'init', 'Kraj_init' );
