@@ -65,9 +65,10 @@
         width: 100%;
         height: 100%;
         border-radius: 50%;
-        background-color: transparentize($textColor, 0.6);
+        background-color: transparentize($textColor, 0.5);
         > h4 {
-            font-size: 1.35rem;
+            font-family: $headerFont;
+            font-size: 1.25rem;
             color: $primaryColor;
         }
     }
@@ -181,6 +182,7 @@
             padding: 0;
         }
         h4 {
+            font-family: $headerFont;
             font-size: 1.2rem;
             @include mobile-landscape {
                 margin-top: .5rem;
