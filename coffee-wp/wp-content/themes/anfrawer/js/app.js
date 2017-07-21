@@ -6,7 +6,6 @@ $(function(){
     var menuContent = $('#menu-content');
     var stickyLogo = $('#logo-sticky');
     var menuAnchor = menuContent.find('a');
-    console.log(menuAnchor);
 
     /*
     **
@@ -44,7 +43,7 @@ $(function(){
                 // preventing event firing when tapped on .menu-container area:
                 if (!$(e.target).closest('.menu-container').length) {
                     menuContent.fadeOut(600, function(){
-                        $('.menu-container').removeClass('menu-background-mobile');
+                        menuContainer.removeClass('menu-background-mobile');
                         menuButton.removeClass('open');
                     });  
                 }
@@ -149,7 +148,7 @@ $(function(){
         smoothScrolling($(this));
     });
 
-    /* scroll delay */
+    /* smooth scroll delay */
 
     function scrollSectionsDelay(){
         $(window).on('scroll', function () {
@@ -169,33 +168,62 @@ $(function(){
 
     /*
     **
-    *** POSTS DISPLAY EFFECTS ***
+    *** PRODUCTS DISPLAY EFFECTS ***
     **
     */
+
     var products = $('.products-post');
     var popupBox = $('#products-popup-box');
     var popupBoxFrame = $('#products-popup-frame');
     var popupBoxCloseBtn = $('#products-popup-close');
-    function displaySinglePostInfo() {
-        products.each(function(){
-            $(this).on('click', function(){
-                var clonedContent = $(this).find('.products-post-content').clone(true);
-                clonedContent.appendTo(popupBoxFrame);
-                popupBox.fadeIn(800);
-            });
-        });
+
+    function displaySinglePostInfo(target) {
+        var clonedContent = target.find('.products-post-content').clone(true);
+        clonedContent.appendTo(popupBoxFrame);
+        popupBox.fadeIn(800);
     }
+
     function closePopupBox(){
-        popupBoxCloseBtn.on('click', function(){
-            var contentToDelete = $(this).next();
-            popupBox.fadeOut(800, function(){
-                contentToDelete.remove();
-            });
+        var contentToDelete = popupBox.find('.products-post-content');
+        popupBox.fadeOut(800, function(){
+            contentToDelete.remove();
         });
     }
 
-    displaySinglePostInfo();
-    closePopupBox();
+    products.each(function(){
+        $(this).on('tap', function(e){
+            // prevents from firing when window tapped to close menu, not to show product
+            if (menuContent.is(':visible')){
+                e.preventDefault();
+            } else {
+                displaySinglePostInfo($(this));
+            } 
+        });
+    });
+
+    products.each(function(){
+        $(this).on('click', function(e){
+            if (menuContent.is(':visible')){
+                e.preventDefault();
+            } else {
+                displaySinglePostInfo($(this));
+            }
+        });
+    });
+
+    popupBoxCloseBtn.on('tap', function(){
+        closePopupBox();
+    });
+
+    popupBoxCloseBtn.on('click', function(){
+        closePopupBox();
+    });
+
+    popupBox.on('click', function(e){
+        if (!$(e.target).closest(popupBoxFrame).length){
+            closePopupBox();
+        }
+    });
 
     /*
     **
