@@ -6,6 +6,7 @@ $(function(){
     var menuBackground = $('#menu-background');
     var stickyLogo = $('#logo-sticky');
     var menuAnchor = menuContent.find('a');
+    console.log(menuAnchor);
 
     /*
     **
@@ -19,7 +20,7 @@ $(function(){
 
     function useMobileMenu(event) {
         if (event.matches) {
-            menuButton.on('click', function(){
+            menuButton.on('tap', function(){
                 if (menuContent.is(':visible')) {
                     menuContent.fadeOut(600, function(){
                         menuBackground.hide(400);
@@ -33,7 +34,7 @@ $(function(){
                 }
             });
             menuAnchor.each(function(){
-                $(this).on('click', function(){
+                $(this).on('tap', function(){
                     menuContent.fadeOut(600, function(){
                         menuBackground.hide(400);
                     });
@@ -48,7 +49,7 @@ $(function(){
 
     /* desktop and tablet sticky menu */
 
-    var tablet = window.matchMedia("screen and (max-width: 1023px) and (min-width: 760px)");
+    var tablet = window.matchMedia("screen and (min-width: 760px) and (max-width: 1023px)");
     var desktop = window.matchMedia("screen and (min-width: 1024px)");
 
     function useStickyMenu(event){
@@ -115,18 +116,28 @@ $(function(){
         $('html, body').animate({scrollTop: givenOffset}, 1200);
     }
 
-    menuAnchor.on('click', function(e){
-        e.preventDefault();
+    menuAnchor.on('tap', function(){
+        smoothScrolling($(this));
+    })
+
+    menuAnchor.on('click', function(){
         smoothScrolling($(this));
     });
 
-    buttonToTop.find('a').on('click', function(e){
-        e.preventDefault();
+    buttonToTop.find('a').on('tap', function(){
         smoothScrolling($(this));
     });
 
-    stickyLogo.on('click', function(e){
-        e.preventDefault();
+    buttonToTop.find('a').on('click', function(){
+        smoothScrolling($(this));
+    });
+
+    
+    stickyLogo.on('tap', function(){
+        smoothScrolling($(this));
+    });
+    
+    stickyLogo.on('click', function(){
         smoothScrolling($(this));
     });
 
@@ -174,7 +185,7 @@ $(function(){
             });
         });
     }
-    
+
     displaySinglePostInfo();
     closePopupBox();
 

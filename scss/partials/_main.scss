@@ -46,9 +46,6 @@ style for paragraphs with images
         margin: auto;
     }
     & > p {
-        @include mobile-landscape {
-            width: 80%;
-        }
         @include tablet {
             width: 50%;
         }
@@ -66,8 +63,6 @@ style for paragraphs with images
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        &:last-of-type{
-        }
         @include mobile-landscape {
             height: 100vh;
         }
