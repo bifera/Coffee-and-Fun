@@ -2,8 +2,8 @@ $(function(){
     $('#page-loader').delay(2000).fadeOut(function(){$('#preload').fadeOut(1500)});
     var menuBar = $('#menu-bar');
     var menuButton = $('#menu-toggle');
+    var menuContainer = $('#menu-container');
     var menuContent = $('#menu-content');
-    var menuBackground = $('#menu-background');
     var stickyLogo = $('#logo-sticky');
     var menuAnchor = menuContent.find('a');
     console.log(menuAnchor);
@@ -21,25 +21,33 @@ $(function(){
     function useMobileMenu(event) {
         if (event.matches) {
             menuButton.on('tap', function(){
-                if (menuContent.is(':visible')) {
+                if (menuContainer.hasClass('menu-background-mobile')) {
                     menuContent.fadeOut(600, function(){
-                        menuBackground.hide(400);
+                        menuContainer.removeClass('menu-background-mobile');
                         menuButton.removeClass('open');
                     });
                 } else {
                     menuButton.addClass('open');
-                    menuBackground.show(400, function(){
-                        menuContent.fadeIn(600);
-                    });   
+                    menuContainer.addClass('menu-background-mobile');
+                    menuContent.fadeIn(600);
                 }
             });
             menuAnchor.each(function(){
                 $(this).on('tap', function(){
                     menuContent.fadeOut(600, function(){
-                        menuBackground.hide(400);
+                        menuContainer.removeClass('menu-background-mobile');
+                        menuButton.removeClass('open');
                     });
-                    menuButton.removeClass('open');
                 });
+            });
+            $(document).on('tap', function(e){
+                // preventing event firing when tapped on .menu-container area:
+                if (!$(e.target).closest('.menu-container').length) {
+                    menuContent.fadeOut(600, function(){
+                        $('.menu-container').removeClass('menu-background-mobile');
+                        menuButton.removeClass('open');
+                    });  
+                }
             });
         }
     }
@@ -132,11 +140,11 @@ $(function(){
         smoothScrolling($(this));
     });
 
-    
+
     stickyLogo.on('tap', function(){
         smoothScrolling($(this));
     });
-    
+
     stickyLogo.on('click', function(){
         smoothScrolling($(this));
     });

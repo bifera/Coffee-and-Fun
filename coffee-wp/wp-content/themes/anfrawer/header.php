@@ -17,8 +17,7 @@
             </div>
             <nav>
                 <div class="menu-bar" id="menu-bar">
-                    <div class="menu-background-mobile"  id="menu-background"></div>
-                    <div class="menu-container">
+                    <div class="menu-container" id="menu-container">
                         <div class="fixed-nav-border">
                             <div class="mobile-menu-icon" id="menu-toggle">
                                 <span></span>
