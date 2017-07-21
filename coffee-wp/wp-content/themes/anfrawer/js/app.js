@@ -19,7 +19,7 @@ $(function(){
 
     function useMobileMenu(event) {
         if (event.matches) {
-            menuButton.on('tap', function(){
+            menuButton.on('click', function(){
                 if (menuContainer.hasClass('menu-background-mobile')) {
                     menuContent.fadeOut(600, function(){
                         menuContainer.removeClass('menu-background-mobile');
@@ -32,14 +32,14 @@ $(function(){
                 }
             });
             menuAnchor.each(function(){
-                $(this).on('tap', function(){
+                $(this).on('click', function(){
                     menuContent.fadeOut(600, function(){
                         menuContainer.removeClass('menu-background-mobile');
                         menuButton.removeClass('open');
                     });
                 });
             });
-            $(document).on('tap', function(e){
+            $(document).on('click', function(e){
                 // preventing event firing when tapped on .menu-container area:
                 if (!$(e.target).closest('.menu-container').length) {
                     menuContent.fadeOut(600, function(){
@@ -123,24 +123,11 @@ $(function(){
         $('html, body').animate({scrollTop: givenOffset}, 1200);
     }
 
-    menuAnchor.on('tap', function(){
-        smoothScrolling($(this));
-    })
-
     menuAnchor.on('click', function(){
         smoothScrolling($(this));
     });
 
-    buttonToTop.find('a').on('tap', function(){
-        smoothScrolling($(this));
-    });
-
     buttonToTop.find('a').on('click', function(){
-        smoothScrolling($(this));
-    });
-
-
-    stickyLogo.on('tap', function(){
         smoothScrolling($(this));
     });
 
@@ -191,28 +178,14 @@ $(function(){
     }
 
     products.each(function(){
-        $(this).on('tap', function(e){
+        $(this).on('click', function(e){
             // prevents from firing when window tapped to close menu, not to show product
-            if (menuContent.is(':visible')){
+            if (menuContainer.hasClass('menu-background-mobile')){
                 e.preventDefault();
             } else {
                 displaySinglePostInfo($(this));
             } 
         });
-    });
-
-    products.each(function(){
-        $(this).on('click', function(e){
-            if (menuContent.is(':visible')){
-                e.preventDefault();
-            } else {
-                displaySinglePostInfo($(this));
-            }
-        });
-    });
-
-    popupBoxCloseBtn.on('tap', function(){
-        closePopupBox();
     });
 
     popupBoxCloseBtn.on('click', function(){

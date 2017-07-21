@@ -26,8 +26,7 @@
         </section>
     </div>
 </footer>
-<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="<?php bloginfo('template_url')?>/js/app.js" type="text/javascript"></script>
 <script src="https://use.fontawesome.com/b416a3a8ab.js"></script>
 </body>

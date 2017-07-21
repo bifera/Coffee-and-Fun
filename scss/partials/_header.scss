@@ -249,12 +249,14 @@ menu anchor hover effects
         margin: auto;
         height: 2px;
         width: 0;
-        background-color: transparent;
-        transition: width .45s ease, background-color .45s ease;
+        opacity: 0;
+        transition: width .45s ease, opacity .45s ease;
     }
     &:hover::after {
         width: 100%;
         background-color: $primaryColor;
+        opacity: 1;
+
     }
 }
 
