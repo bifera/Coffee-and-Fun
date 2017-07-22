@@ -5,7 +5,7 @@ $(function(){
     var menuContainer = $('#menu-container');
     var menuContent = $('#menu-content');
     var stickyLogo = $('#logo-sticky');
-    var menuAnchor = menuContent.find('a');
+    var menuAnchors = menuContent.find('a');
 
     /*
     **
@@ -31,7 +31,7 @@ $(function(){
                     menuContent.fadeIn(600);
                 }
             });
-            menuAnchor.each(function(){
+            menuAnchors.each(function(){
                 $(this).on('click', function(){
                     menuContent.fadeOut(600, function(){
                         menuContainer.removeClass('menu-background-mobile');
@@ -114,6 +114,21 @@ $(function(){
     }
 
     showButtonTop();
+    
+    /* hover effects */
+    
+    function hoverOnAnchor(){
+        menuAnchors.each(function(){
+            $(this).on('mouseenter', function(){
+                $(this).next('span').addClass('middle-out-underline');
+            });
+            $(this).on('mouseleave', function(){
+                $(this).next('span').removeClass('middle-out-underline');
+            })
+        });
+    };
+    
+    /*hoverOnAnchor();*/
 
     /* smooth scrolling */
 
@@ -123,8 +138,10 @@ $(function(){
         $('html, body').animate({scrollTop: givenOffset}, 1200);
     }
 
-    menuAnchor.on('click', function(){
-        smoothScrolling($(this));
+    menuAnchors.each(function(){
+        $(this).on('click', function(){
+            smoothScrolling($(this));
+        });
     });
 
     buttonToTop.find('a').on('click', function(){

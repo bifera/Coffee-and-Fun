@@ -31,19 +31,24 @@
                         <a class="logo-sticky" href="#start" id="logo-sticky"></a>
                         <ul class="menu" id="menu-content">
                             <li>
-                                <a class="middle-out-underline" href="#start">Strona główna</a>
+                                <a href="#start">Strona główna</a>
+                                <span></span>
                             </li>
                             <li>
-                                <a class="middle-out-underline" href="#products">Produkty</a>
+                                <a href="#products">Produkty</a>
+                                <span></span>
                             </li>
                             <li>
-                                <a class="middle-out-underline" href="#about">O nas</a>
+                                <a href="#about">O nas</a>
+                                <span></span>
                             </li>
                             <li>
-                                <a class="middle-out-underline" href="#b2b">B2B</a>
+                                <a href="#b2b">B2B</a>
+                                <span></span>
                             </li>
                             <li>
-                                <a class="middle-out-underline" href="#contact">Kontakt</a>
+                                <a href="#contact">Kontakt</a>
+                                <span></span>
                             </li>
                         </ul>
                     </div>
