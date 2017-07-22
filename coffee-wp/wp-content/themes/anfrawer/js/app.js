@@ -114,21 +114,6 @@ $(function(){
     }
 
     showButtonTop();
-    
-    /* hover effects */
-    
-    function hoverOnAnchor(){
-        menuAnchors.each(function(){
-            $(this).on('mouseenter', function(){
-                $(this).next('span').addClass('middle-out-underline');
-            });
-            $(this).on('mouseleave', function(){
-                $(this).next('span').removeClass('middle-out-underline');
-            })
-        });
-    };
-    
-    /*hoverOnAnchor();*/
 
     /* smooth scrolling */
 
