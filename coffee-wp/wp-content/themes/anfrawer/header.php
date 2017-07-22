@@ -13,11 +13,11 @@
             <div class="page-loader" id="page-loader"></div>
         </div>
         <header id="start">
-            <div class="nav-image-shadow">
-            </div>
+            <div></div>
             <nav>
-                <div class="menu-bar" id="menu-bar">
-                    <div class="menu-container" id="menu-container">
+                <a href="#start" id="logo"></a>
+                <div id="menu-bar">
+                    <div class="menu-container mobile-closed" id="menu-container">
                         <div class="fixed-nav-border">
                             <div class="mobile-menu-icon" id="menu-toggle">
                                 <span></span>
@@ -28,34 +28,29 @@
                                 <span></span>
                             </div>
                         </div>
-                        <a class="logo-sticky" href="#start" id="logo-sticky"></a>
-                        <ul class="menu" id="menu-content">
+                        <a href="#start" id="logo-sticky"></a>
+                        <ul id="menu-content">
                             <li>
                                 <a href="#start">Strona główna</a>
-                                <span></span>
                             </li>
                             <li>
                                 <a href="#products">Produkty</a>
-                                <span></span>
                             </li>
                             <li>
                                 <a href="#about">O nas</a>
-                                <span></span>
                             </li>
                             <li>
                                 <a href="#b2b">B2B</a>
-                                <span></span>
                             </li>
                             <li>
                                 <a href="#contact">Kontakt</a>
-                                <span></span>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <a class="logo" href="#start" id="logo"></a>
+
             </nav>
-            <section class="container">
+            <section>
                 <h1>
                     Importer zielonej&nbsp;kawy
                 </h1>

@@ -3,7 +3,7 @@
     <div class="fixed-nav-border arrow-up" id="arrow-up">
         <a class="arrow-up-icon" href="#start"></a>
     </div>
-    <section class="container padded scrolled" id="products">
+    <section class="padded scrolled" id="products">
         <h2>Produkty</h2>
         <div class="wp-products-box">
             <div class="products-posts-box">
@@ -55,7 +55,7 @@
         </div>
     </div>
     <hr />
-    <section class="container gallery scrolled padded" id="gallery">
+    <section class="gallery scrolled padded" id="gallery">
         <div class="row">
             <div class="wide gallery-img01"></div>
             <div class="narrow gallery-img02"></div>
@@ -68,7 +68,7 @@
         </div>
     </section>
     <hr />
-    <section class="container padded scrolled" id="about">
+    <section class="padded scrolled" id="about">
         <h2>O nas</h2>
         <article>
             <h3>
@@ -109,7 +109,7 @@
         ?>
     </section>
     <hr />
-    <section class="container padded scrolled" id="b2b">
+    <section class="padded scrolled" id="b2b">
         <h2>B2B</h2>
         <article>
             <h3>

@@ -1,5 +1,5 @@
 <footer class="scrolled">
-    <section class="container padded" id="contact">
+    <section class="padded" id="contact">
         <h2>Kontakt</h2>
         <article>
             <div class="columns">
@@ -21,9 +21,9 @@
 
     </section>
     <div class="footer-image">
-        <section class="copyright">
-            <p class="container">Anfrawer - Coffee and Cocoa Trade · Bartosz Bielicki ul. Leśnych Skrzatów 1 · 60-193 Poznań &copy;&nbsp;2016-2017 Anfrawer</p>
-        </section>
+        <div class="copyright">
+            <p>Anfrawer - Coffee and Cocoa Trade · Bartosz Bielicki ul. Leśnych Skrzatów 1 · 60-193 Poznań &copy;&nbsp;2016-2017 Anfrawer</p>
+        </div>
     </div>
 </footer>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

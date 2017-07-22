@@ -4,13 +4,15 @@ header {
     height: 100vh;
     width: 100%;
     position: relative;
-    .nav-image-shadow {
+    > div {
+        /* darkening layer for background photo */
         width: 100%;
         height: 55vh;
         background-color: transparentize($textColor, 0.8);
         position: absolute;
         top: 0;
-        z-index: 2;
+        left: 0;
+        z-index: 1;
         @include mobile-landscape {
             height: 55vh;
         }
@@ -22,62 +24,7 @@ header {
         }
         @include desktop {
             height: 70vh;
-        }
-    }
-    nav {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 55vh;
-        background-image: $headerMobileImage;
-        background-position: bottom;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: relative;
-        @include mobile-landscape {
-            height: 55vh;
-        }
-        @include tablet {
-            height: 65vh;
-            background-image: $headerTabletImage;
-        }
-        @include tablet-landscape {
-            height: 60vh;
-            background-image: $headerTabletImage;
-        }
-        @include desktop {
-            height: 70vh;
-            background-image: $headerDesktopImage;
-        }
-        a.logo {
-            display: block;
-            width: 80vw;
-            height: inherit;
-            background-image: $logoImageWhite;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 80vw;
-            z-index: 3;
-            @include mobile-landscape {
-                width: 40vw;
-                background-size: 40vw;
-                position: absolute;
-                top: 0;
-            }
-            @include tablet-landscape {
-                width: 35vw;
-                background-size: 35vw;
-                position: absolute;
-                top: 0;
-            }
-            @include desktop {
-                width: 30vw;
-                background-size: 30vw;
-                position: absolute;
-                top: 0;
-            }
-        }
+        }   
     }
     section {
         display: flex;
@@ -133,14 +80,64 @@ page navigation
 
 */
 
-.menu-bar {
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 55vh;
+    background-image: $headerMobileImage;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    @include mobile-landscape {
+        height: 55vh;
+    }
+    @include tablet {
+        height: 65vh;
+        background-image: $headerTabletImage;
+    }
+    @include tablet-landscape {
+        height: 60vh;
+        background-image: $headerTabletImage;
+    }
+    @include desktop {
+        height: 70vh;
+        background-image: $headerDesktopImage;
+    }
+    > a {
+        display: block;
+        width: 100%;
+        height: inherit;
+        background-image: $logoImageWhite;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 80vw;
+        z-index: 1;
+        @include mobile-landscape {
+            background-size: 40vw;
+        }
+        @include tablet {
+            background-size: 70vw;
+        }
+        @include tablet-landscape {
+            background-size: 35vw;
+        }
+        @include desktop {
+            background-size: 30vw;
+        }
+    }
+}
+
+nav > div {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     width: 100%;
     position: fixed;
     top: 0;
-    z-index: 4;
+    z-index: 2;
     @include mobile-landscape {
         position: fixed;
         top: 0;
@@ -148,72 +145,128 @@ page navigation
     @include tablet {
         align-items: center;
         position: absolute;
-        top: 5vh;
-        max-height: 10vh;
+        top: 4rem;
+        height: 4rem;
     }
     @include tablet-landscape {
         align-items: center;
         position: absolute;
-        top: 5vh;
-        max-height: 10vh;
+        top: 4rem;
+        height: 4rem;
     }
     @include desktop {
         align-items: center;
         position: absolute;
-        top: 5vh;
-        max-height: 10vh;
+        top: 4rem;
+        height: 4rem;
     }
     .menu-container {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
+        transition: width .5s ease, height .5s ease, background-color .75s ease;
         @include tablet {
             flex-direction: row;
             justify-content: space-between;
+            align-items: center;
             margin: 0 auto;
             width: 90vw;
         }
         @include tablet-landscape {
             flex-direction: row;
             justify-content: space-between;
+            align-items: center;
             margin: 0 auto;
             width: 85vw;
         }
         @include desktop {
             flex-direction: row;
             justify-content: space-between;
+            align-items: center;
             margin: 0 auto;
             width: 80vw;
             max-width: 1200px;
         }
+        > a {
+            visibility: hidden;
+            @include tablet {
+                width: 15vw;
+                height: 4rem;
+            }
+            @include tablet-landscape {
+                width: 10vw;
+                height: 3.875rem;
+            }
+            @include desktop {
+                width: 5.5vw;
+                height: 3.625rem;
+            }
+            display: block;
+            opacity: .8;
+            background-image: $logoImageWhite;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
     }
-}
-
-ul.menu {
-    display: none;
-    margin-top: 1.4rem;
-    @include tablet {
-        display: flex;
-        justify-content: flex-end;
-        margin-top: 0;
+    /* effects for mobile menu */
+    .mobile-closed {
+        width: 0;
+        height: 0;
+        border-bottom-left-radius: 100%;
+        background-color: transparent;
+        position: fixed;
+        right: 0;
+        top: 0;
+    
     }
-    @include desktop {
-        display: flex;
-        justify-content: flex-end;
-        margin-top: 0;
+    .mobile-open {
+        width: 80vw;
+        height: 80vw;
+        background-color: $textColor;
+        border-bottom-left-radius: 100%;
+        position: fixed;
+        right: 0;
+        top: 0;
+        
+    }
+    ul {
+        display: none;
+        margin-top: 1.4rem;
+        @include tablet {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 0;
+        }
+        @include tablet-landscape {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 0;
+        }
+        @include desktop {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 0;
+        }
     }
     li {
         height: 1.6rem;
         text-align: right;
-        margin: .25rem 1rem 0 0;
+        margin: .4rem 1rem 0 0;
         @include tablet {
-            margin: 1rem 0 1rem 1.9rem;
+            height: auto;
+            margin-top: 0;
         }
         @include tablet-landscape {
-            margin: 1rem 0 1rem 1.9rem;
+            height: auto;
+            margin-top: 0;
         }
         @include desktop {
-            margin: 1rem 0 1rem 1.9rem;
+            height: auto;
+            margin-top: 0;
         }
         a {
             font-family: $headerFont;
@@ -225,41 +278,32 @@ ul.menu {
             @include tablet-landscape {
                 font-size: 1.1rem;
             }
-        }
-        span {
-            display: block;
-            width: 0;
-            height: 2px;
-            margin: auto;
-            background: transparent;
-            transition: width .75s ease-in-out, background-color .75s ease-in-out; 
-        }
-        &:hover > span {
-            width: 100%;
-            background: $primaryColor;
+            &::after {
+                display: block;
+                content: '';
+                width: 0;
+                height: 2px;
+                margin: auto;
+                background: transparent;
+                transition: width .5s ease-in-out, background-color .5s ease-in-out;
+            }
+            &:active::after {
+                width: 100%;
+                background-color: $primaryColor;
+            }
+            &:hover::after {
+                width: 100%;
+                background-color: $primaryColor;
+            }
         }
     }
 }
 
 /*
 
-effects for mobile display
+hamburger menu
 
 */
-
-.menu-background-mobile {
-    width: 80vw;
-    height: 80vw;
-    background-color: $textColor;
-    border-bottom-left-radius: 100%;
-    position: fixed;
-    right: 0;
-    top: 0;
-    @include mobile-landscape {
-        width: 50vw;
-        height: 50vw;
-    }
-}
 
 .fixed-nav-border {
     width: 2.5rem;
@@ -377,28 +421,6 @@ sticky menu for tablet & desktop
     top: 0;
     left: 0;
     background-color: transparentize($textColor, 0.7);
-}
-
-.logo-sticky {
-    visibility: hidden;
-    @include tablet {
-        width: 15vw;
-        height: 4rem;
-    }
-    @include tablet-landscape {
-        width: 10vw;
-        height: 3.875rem;
-    }
-    @include desktop {
-        width: 5.5vw;
-        height: 3.625rem;
-    }
-    display: block;
-    opacity: .8;
-    background-image: $logoImageWhite;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .darker {

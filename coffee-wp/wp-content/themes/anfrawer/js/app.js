@@ -20,30 +20,30 @@ $(function(){
     function useMobileMenu(event) {
         if (event.matches) {
             menuButton.on('click', function(){
-                if (menuContainer.hasClass('menu-background-mobile')) {
+                if (menuContainer.hasClass('mobile-open')) {
                     menuContent.fadeOut(600, function(){
-                        menuContainer.removeClass('menu-background-mobile');
+                        menuContainer.removeClass('mobile-open').addClass('mobile-closed');
                         menuButton.removeClass('open');
                     });
                 } else {
                     menuButton.addClass('open');
-                    menuContainer.addClass('menu-background-mobile');
+                    menuContainer.removeClass('mobile-closed').addClass('mobile-open');
                     menuContent.fadeIn(600);
                 }
             });
             menuAnchors.each(function(){
                 $(this).on('click', function(){
                     menuContent.fadeOut(600, function(){
-                        menuContainer.removeClass('menu-background-mobile');
+                        menuContainer.removeClass('mobile-open').addClass('mobile-closed');
                         menuButton.removeClass('open');
                     });
                 });
             });
             $(document).on('click', function(e){
                 // preventing event firing when tapped on .menu-container area:
-                if (!$(e.target).closest('.menu-container').length) {
+                if (!$(e.target).closest(menuContainer).length) {
                     menuContent.fadeOut(600, function(){
-                        menuContainer.removeClass('menu-background-mobile');
+                        menuContainer.removeClass('mobile-open').addClass('mobile-closed');
                         menuButton.removeClass('open');
                     });  
                 }
