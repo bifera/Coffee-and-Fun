@@ -17,7 +17,7 @@
             <nav>
                 <a href="#start" id="logo"></a>
                 <div id="menu-bar">
-                    <div class="menu-container mobile-closed" id="menu-container">
+                    <div class="menu-container" id="menu-container">
                         <div class="fixed-nav-border">
                             <div class="mobile-menu-icon" id="menu-toggle">
                                 <span></span>

@@ -19,6 +19,7 @@ $(function(){
 
     function useMobileMenu(event) {
         if (event.matches) {
+            menuContainer.addClass('mobile-closed');
             menuButton.on('click', function(){
                 if (menuContainer.hasClass('mobile-open')) {
                     menuContent.fadeOut(600, function(){
