@@ -60,17 +60,17 @@ form {
             z-index: 2;
         }
     .fa {
+        display: none;
+        opacity: .8;
         font-size: 2rem;
         position: absolute;
         right: 1rem;
         top: 2.7rem;
     }
     .fa-check-square {
-        display: none;
         color: $secondaryColor;
     }
     .fa-minus-square {
-        display: none;
         color: $accentColor;
     }
     textarea {

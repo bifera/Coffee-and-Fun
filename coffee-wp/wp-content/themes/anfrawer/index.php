@@ -130,17 +130,17 @@
                     <div>
                         <label>
                             Imię i nazwisko: <br />
-                            <input type="text" name="name" id="name"><span class="fa fa-check-square"></span>
+                            <input type="text" name="name" id="name"><span class="fa"></span>
                             <div class="error-message">Niepoprawne dane</div>
                         </label>
                         <label>
                             E-mail:<br />
-                            <input type="email" name="email" id="email"><span class="fa fa-check-square"></span>
+                            <input type="email" name="email" id="email"><span class="fa"></span>
                             <div class="error-message">Niepoprawny adres e-mail</div>
                         </label>
                         <label>
                             Numer telefonu:<br />
-                            <input type="text" name="phone" id="phone"><span class="fa fa-check-square"></span>
+                            <input type="text" name="phone" id="phone"><span class="fa"></span>
                             <div class="error-message">Niepoprawny numer telefonu</div>
                         </label>
                     </div>

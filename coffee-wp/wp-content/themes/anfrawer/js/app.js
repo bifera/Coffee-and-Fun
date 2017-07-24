@@ -231,12 +231,13 @@ $(function(){
 
         /* single input validation result display */
         function validationResult(response, element){
+            element.siblings('.fa').hide();
             if (response == "error") {
                 element.siblings('.error-message').fadeIn();
-                element.siblings('.fa-check-circle').fadeOut();
+                element.siblings('.fa').addClass('fa-minus-square').removeClass('fa-check-square').fadeIn();
             } else {
                 element.siblings('.error-message').fadeOut();
-                element.siblings('.fa-check-circle').fadeIn();
+                element.siblings('.fa').addClass('fa-check-square').removeClass('fa-minus-square').fadeIn();
             }
         }
 
