@@ -53,13 +53,14 @@
         </div>
     </div>
     <hr />
+
+    <?php
+    $args = ['post_type' => 'galeria'];
+    $loop = new WP_Query( $args ); 
+    if ( $loop->have_posts() ) :
+    while ( $loop->have_posts() ) : $loop->the_post();
+    ?>
     <section class="gallery scrolled padded" id="gallery">
-        <?php
-        $args = ['post_type' => 'galeria'];
-        $loop = new WP_Query( $args ); 
-        if ( $loop->have_posts() ) :
-        while ( $loop->have_posts() ) : $loop->the_post();
-        ?>
         <div>
             <div class="wide" style="background-image: url(<?php the_field('zdjecie_1')?>)"></div>
             <div class="narrow" style="background-image: url(<?php the_field('zdjecie_2')?>)"></div>
@@ -70,11 +71,12 @@
             <div class="rect" style="background-image: url(<?php the_field('zdjecie_5')?>)"></div>
             <div class="rect" style="background-image: url(<?php the_field('zdjecie_6')?>)"></div>
         </div>
-        <?php
-        endwhile;
-        endif;
-        ?>
     </section>
+    <?php
+    endwhile;
+    endif;
+    ?>
+
     <hr />
     <section class="padded scrolled" id="about">
         <h2>O nas</h2>
