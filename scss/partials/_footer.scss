@@ -5,15 +5,15 @@ footer {
     height: 100vh;
     background-color: transparentize($secondaryColor, 0.3);
     > section {
-        height: 60vh;
+        min-height: 60vh;
         @include tablet {
-            height: 40vh;
+            min-height: 40vh;
         }
         @include tablet-landscape {
-            height: 35vh;
+            min-height: 35vh;
         }
         @include desktop {
-            height: 35vh;
+            min-height: 35vh;
         }
     }
     h2 {
