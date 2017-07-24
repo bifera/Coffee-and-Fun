@@ -1,0 +1,38 @@
+/* for wordpress post-type 'miejsce' */
+.wp-places-box {
+    @include mobile-landscape {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    @include tablet {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    @include tablet-landscape {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    @include desktop {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .wp-places-images-box {
+        width: 100%;
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+        }
+        @include tablet-landscape {
+            display: flex;
+            justify-content: space-between;
+        }
+        @include desktop {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}

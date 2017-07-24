@@ -5,49 +5,47 @@
     </div>
     <section class="padded scrolled" id="products">
         <h2>Produkty</h2>
-        <div class="wp-products-box">
-            <div class="products-posts-box">
-                <?php
-                $args = ['post_type' => 'kawa'];
-                $loop = new WP_Query( $args ); 
-                if ( $loop->have_posts() ) :
-                while ( $loop->have_posts() ) : $loop->the_post();
-                ?>
-                <article class="products-post">
-                    <div class="products-image-content" style="background-image: url(<?php the_field('wstaw_zdjecie')?>)">
-                        <div class="products-image-shadow">
-                            <h4>
-                                <?php the_title(); ?>
-                            </h4>
-                        </div>
+        <div class="wp-products-posts-box">
+            <?php
+            $args = ['post_type' => 'kawa'];
+            $loop = new WP_Query( $args ); 
+            if ( $loop->have_posts() ) :
+            while ( $loop->have_posts() ) : $loop->the_post();
+            ?>
+            <article class="wp-products-post">
+                <div class="wp-products-image-content" style="background-image: url(<?php the_field('wstaw_zdjecie')?>)">
+                    <div class="wp-products-image-shadow">
+                        <h3>
+                            <?php the_title(); ?>
+                        </h3>
                     </div>
-                    <p>
-                        <?php $terms = wp_get_post_terms( $post->ID, 'Kraj' ); 
-                        echo $terms[0]->name; 
-                        ?>
-                    </p>
-                    <div class="products-post-content">
-                        <h4>
-                            <?php echo $terms[0]->name; echo " "; the_title();?>
-                        </h4>
-                        <div class="mobile-landscape-wrapper">
-                            <div class="products-image-content" style="background-image: url(<?php the_field('wstaw_zdjecie')?>)"></div>
-                            <?php the_content(); ?>
-                        </div>
-                        <hr />
+                </div>
+                <p>
+                    <?php $terms = wp_get_post_terms( $post->ID, 'Kraj' ); 
+                    echo $terms[0]->name; 
+                    ?>
+                </p>
+                <div class="wp-products-post-content">
+                    <h3>
+                        <?php echo $terms[0]->name; echo " "; the_title();?>
+                    </h3>
+                    <div>
+                        <div class="wp-products-image-content" style="background-image: url(<?php the_field('wstaw_zdjecie')?>)"></div>
+                        <?php the_content(); ?>
                     </div>
-                </article>
-                <?php
-                endwhile;
-                endif;
-                ?>
-            </div>
+                    <hr />
+                </div>
+            </article>
+            <?php
+            endwhile;
+            endif;
+            ?>
         </div>
     </section>
-    <div class="products-popup-box" id="products-popup-box">
-        <div class="products-popup-content" >
-            <div class="products-popup-frame" id="products-popup-frame">
-                <div class="products-popup-close" id="products-popup-close">
+    <div class="wp-products-popup-container" id="products-popup-box">
+        <div class="wp-products-popup-content" >
+            <div class="wp-products-popup-box" id="products-popup-frame">
+                <div class="wp-products-popup-close" id="products-popup-close">
                     <span></span>
                     <span></span>
                 </div>

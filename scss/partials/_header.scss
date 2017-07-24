@@ -44,33 +44,6 @@ header {
         @include desktop {
             height: 30vh;
         }
-        h1 {
-            font-size: 2.2rem;
-            text-align: center;
-            text-transform: uppercase;
-            @include tablet {
-                font-size: 2.66rem;
-            }
-            @include tablet-landscape {
-                font-size: 2.66rem;
-            }
-            @include desktop {
-                font-size: 3rem;
-            }
-            & + p {
-                text-align: center;
-                font-size: 1rem;
-                @include tablet {
-                    font-size: 1.33rem;
-                }
-                @include tablet-landscape {
-                    font-size: 1.13rem;
-                }
-                @include desktop {
-                    font-size: 1.33rem;
-                }
-            }
-        }
     }
 }
 
@@ -308,25 +281,6 @@ hamburger menu
 
 */
 
-.fixed-nav-border {
-    width: 2.5rem;
-    height: 2.5rem;
-    margin: .25rem;
-    padding: .5rem;
-    border: .125rem solid $primaryColor;
-    background-color: transparentize($textColor, .2);
-    border-radius: 50%;
-    z-index: 2;
-    @include tablet {
-        display: none;
-    }
-    @include tablet-landscape {
-        display: none;
-    }
-    @include desktop {
-        display: none;
-    }
-}
 .mobile-menu-icon {
     width: 1.25rem;
     height: 1.25rem;
@@ -415,7 +369,7 @@ hamburger menu
 
 /*
 
-sticky menu for tablet & desktop
+effects for sticky menu for tablet & desktop
 
 */
 

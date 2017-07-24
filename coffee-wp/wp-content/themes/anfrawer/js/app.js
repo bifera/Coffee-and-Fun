@@ -173,19 +173,20 @@ $(function(){
     **
     */
 
-    var products = $('.products-post');
+    var products = $('.wp-products-post');
     var popupBox = $('#products-popup-box');
     var popupBoxFrame = $('#products-popup-frame');
     var popupBoxCloseBtn = $('#products-popup-close');
 
     function displaySinglePostInfo(target) {
-        var clonedContent = target.find('.products-post-content').clone(true);
+        var clonedContent = target.find('.wp-products-post-content').clone(true);
+        console.log(clonedContent);
         clonedContent.appendTo(popupBoxFrame);
         popupBox.fadeIn(800);
     }
 
     function closePopupBox(){
-        var contentToDelete = popupBox.find('.products-post-content');
+        var contentToDelete = popupBox.find('.wp-products-post-content');
         popupBox.fadeOut(800, function(){
             contentToDelete.remove();
         });
@@ -372,5 +373,7 @@ $(function(){
     }
 
     contactForm();
+    
+    console.log($('h3'));
 
 });
