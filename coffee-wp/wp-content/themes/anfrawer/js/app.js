@@ -17,36 +17,47 @@ $(function(){
     /* mobile menu toggle */
     var mobile = window.matchMedia("screen and (max-width: 759px)");
 
+    function openMobileMenu(){
+        menuButton.addClass('open');
+        menuContainer.removeClass('mobile-closed').addClass('mobile-open');
+        menuContent.fadeIn(600);
+        
+        /* close menu when nothing is done */
+        var timeout = setTimeout(function(){
+            closeMobileMenu();
+        }, 4500);
+
+    }
+
+    function closeMobileMenu(){
+        menuContent.fadeOut(600, function(){
+            menuContainer.removeClass('mobile-open').addClass('mobile-closed');
+            menuButton.removeClass('open');
+        });
+    }
+
     function useMobileMenu(event) {
         if (event.matches) {
             menuContainer.addClass('mobile-closed');
+
             menuButton.on('click', function(){
                 if (menuContainer.hasClass('mobile-open')) {
-                    menuContent.fadeOut(600, function(){
-                        menuContainer.removeClass('mobile-open').addClass('mobile-closed');
-                        menuButton.removeClass('open');
-                    });
+                    closeMobileMenu();
                 } else {
-                    menuButton.addClass('open');
-                    menuContainer.removeClass('mobile-closed').addClass('mobile-open');
-                    menuContent.fadeIn(600);
+                    openMobileMenu();
                 }
             });
+
             menuAnchors.each(function(){
                 $(this).on('click', function(){
-                    menuContent.fadeOut(600, function(){
-                        menuContainer.removeClass('mobile-open').addClass('mobile-closed');
-                        menuButton.removeClass('open');
-                    });
+                    closeMobileMenu();
                 });
             });
+
             $(document).on('click', function(e){
                 // preventing event firing when tapped on .menu-container area:
                 if (!$(e.target).closest(menuContainer).length) {
-                    menuContent.fadeOut(600, function(){
-                        menuContainer.removeClass('mobile-open').addClass('mobile-closed');
-                        menuButton.removeClass('open');
-                    });  
+                    closeMobileMenu();  
                 }
             });
         }
