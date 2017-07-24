@@ -4,15 +4,38 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     padding: 1.5vh 1.5vw;
     background-color: transparentize($altColor, 0.6);
-    align-items: center;
+    > div:first-child {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        @include desktop {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        > div {
+            width: 100%;
+            &:first-child {
+                @include desktop {
+                    width: 40%;
+                }
+            }
+            &:last-child {
+                @include desktop {
+                    width: 58%;
+                }
+            }
+        }
+    }
     label {
-        position: relative;
         width: 100%;
         font-family: $headerFont;
         font-size: 1.1rem;
+        position: relative;
     }
     input {
         width: 100%;
@@ -21,15 +44,34 @@ form {
         margin-bottom: 1rem;
         border: none;
         font-family: $primaryFont; 
-
     }
-    .fa-check-circle {
-        display: none;
+    .error-message {
+            display: none;
+            padding: 0.5rem;
+            border-radius: 2px;
+            font-family: $primaryFont;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: $accentColor;
+            background-color: lighten($accentColor, 50%);
+            position: absolute;
+            top: 1rem;
+            left: 25%;
+            z-index: 2;
+        }
+    .fa {
+        font-size: 2rem;
         position: absolute;
         right: 1rem;
         top: 2.7rem;
-        font-size: 2rem;
+    }
+    .fa-check-square {
+        display: none;
         color: $secondaryColor;
+    }
+    .fa-minus-square {
+        display: none;
+        color: $accentColor;
     }
     textarea {
         width: 100%;
@@ -39,63 +81,19 @@ form {
         resize: none;
         font-family: $primaryFont;
     }
-    .inputs {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        @include mobile-landscape {
-            width: 100%;
-        }
-        @include tablet {
-            width: 100%;
-        }
-        @include desktop {
-            width: 100%;
-            flex-direction: row;
-            justify-content: space-between;
-        }
-        .left {
-            width: 100%;
-            @include desktop {
-                width: 40%;
-            }
-        }
-        .right {
-            width: 100%;
-            @include desktop {
-                width: 58%;
-            }
-        }
-        .error-message {
-            display: none;
-            position: absolute;
-            top: 1rem;
-            left: 25%;
-            padding: 0.5rem;
-            background-color: lighten($accentColor, 50%);
-            /*            border: 1px solid $accentColor;*/
-            border-radius: 2px;
-            font-family: $primaryFont;
-            font-weight: bold;
-            color: $accentColor;
-            font-size: 1.1rem;
-            z-index: 2;
-        }
-    }
-    .sending-loader {
+    > div:nth-child(2), > div:nth-child(3) {
         display: none;
+        margin: 1rem auto;
+    }
+    > div:nth-child(2) {
         width: 2rem;
         height: 2rem;
-        margin: 1rem 0;
         border: 3px solid lighten($altColor, 50%);
         border-top: 3px solid lighten($secondaryColor, 20%);
         border-radius: 50%;
         animation: spinner 1.5s linear infinite;
     }
-
-    .sending-info {
-        display: none;
-        margin: 1rem auto;
+    > div:nth-child(3) {
         padding: 1rem;
         border-width: 1px;
         border-style: solid;
@@ -103,18 +101,15 @@ form {
         font-family: $headerFont;
         font-size: 1.1rem;
     }
-
     .success {
         background-color: lighten($secondaryColor, 60%);
         border-color: $secondaryColor;
     }
-
     .error {
         background-color: lighten($accentColor, 60%);
         border-color: 1px solid $accentColor;
     }
-
-    .buttons {
+    > div:last-child {
         display: flex;
         justify-content: center;
         align-items: center;

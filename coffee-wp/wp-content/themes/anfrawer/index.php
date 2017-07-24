@@ -126,25 +126,25 @@
                 Formularz kontaktowy
             </h3>
             <form action="./contact-form/mailSender.php">
-                <div class="inputs">
-                    <div class="left">
+                <div>
+                    <div>
                         <label>
                             Imię i nazwisko: <br />
-                            <input type="text" name="name" id="name"><span class="fa fa-check-circle"></span>
+                            <input type="text" name="name" id="name"><span class="fa fa-check-square"></span>
                             <div class="error-message">Niepoprawne dane</div>
                         </label>
                         <label>
                             E-mail:<br />
-                            <input type="email" name="email" id="email"><span class="fa fa-check-circle"></span>
+                            <input type="email" name="email" id="email"><span class="fa fa-check-square"></span>
                             <div class="error-message">Niepoprawny adres e-mail</div>
                         </label>
                         <label>
                             Numer telefonu:<br />
-                            <input type="text" name="phone" id="phone"><span class="fa fa-check-circle"></span>
+                            <input type="text" name="phone" id="phone"><span class="fa fa-check-square"></span>
                             <div class="error-message">Niepoprawny numer telefonu</div>
                         </label>
                     </div>
-                    <div class="right">
+                    <div>
                         <label>
                             Wiadomość:<br />
                             <textarea name="message" id="message" maxlength="300"></textarea>
@@ -153,9 +153,9 @@
 
                     </div>
                 </div>
-                <div class="sending-loader" id="sending-loader"></div>
-                <div class="sending-info" id="sending-info"></div>
-                <div class="buttons">
+                <div id="sending-loader"></div>
+                <div id="sending-info"></div>
+                <div>
                     <div id="reset">Wyczyść</div>
                     <div id="submit">Wyślij</div>
                 </div>
