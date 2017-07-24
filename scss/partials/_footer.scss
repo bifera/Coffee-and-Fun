@@ -6,7 +6,6 @@ footer {
     background-color: transparentize($secondaryColor, 0.3);
     > section {
         height: 60vh;
-        padding-left: 3vw;
         @include tablet {
             height: 40vh;
         }
@@ -23,21 +22,26 @@ footer {
     }
     article {
         width: 100%;
+        padding-left: 3vh;
         @include mobile-landscape {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
+            padding-left: 0;
         }
         @include tablet {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
+            padding-left: 0;
         }
         @include tablet-landscape {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
+            padding-left: 0;
         }
         @include desktop {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
+            padding-left: 0;
         }
         p {
             &:first-child {

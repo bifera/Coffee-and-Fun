@@ -74,7 +74,7 @@
     </section>
     <?php
     endwhile;
-    endif;
+                 endif;
     ?>
 
     <hr />
@@ -160,11 +160,9 @@
                     <div id="submit">Wyślij</div>
                 </div>
             </form>
-            <div class="paragraph-wrapper">
-                <div class="paragraph-content">
-                    <div class="image paragraph-img05"></div>
-                    <div class="image paragraph-img06"></div>
-                </div>
+            <div class="paragraph-image-box">
+                <div class="image-box paragraph-img05"></div>
+                <div class="image-box paragraph-img06"></div>
             </div>
         </article>
     </section>

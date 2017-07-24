@@ -107,20 +107,20 @@ form {
     }
     .error {
         background-color: lighten($accentColor, 60%);
-        border-color: 1px solid $accentColor;
+        border-color: $accentColor;
     }
     > div:last-child {
         display: flex;
         justify-content: center;
         align-items: center;
         div {
-            font-family: $headerFont;
             width: 10rem;
             margin: 0.5rem 1vw 0;
-            background-color: transparentize($secondaryColor, 0.3);
-            border-radius: 2%;
             padding: 0.5rem 0;
+            border-radius: 2%;
+            font-family: $headerFont;
             text-align: center;
+            background-color: transparentize($secondaryColor, 0.3);            
         }
     }
 }
