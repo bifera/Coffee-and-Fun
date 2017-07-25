@@ -220,6 +220,7 @@ $(function(){
     */
 
     function contactForm(){
+        var userDataInputs = $('input:not([type="checkbox"])');
         var nameInput = $('#name');
         var emailInput = $('#email');
         var phoneInput = $('#phone');
@@ -227,6 +228,7 @@ $(function(){
         var formProducts = $('.form-products');
         var submitBtn = $('#submit');
         var resetBtn = $('#reset');
+        var errorMessageBoxes = $('.error-message');
         var sendingInfoBox = $('#sending-info');
         var sendingLoader = $('#sending-loader');
 
@@ -241,10 +243,12 @@ $(function(){
                 element.siblings('.fa').addClass('fa-check-square').removeClass('fa-minus-square').fadeIn();
             }
         }
-
+        
         /* validation functions for each input */
+        
+        var validator = "";
+        
         function validateNameInput(){
-            var validator = "";
             var givenName = nameInput.val();
             if (givenName.indexOf(" ") === -1 || givenName.indexOf(" ") === givenName.length-1) {
                 validator = "error";
@@ -253,7 +257,6 @@ $(function(){
         }
 
         function validateEmailInput(){
-            var validator = "";
             var givenEmail = emailInput.val();
             if (givenEmail.indexOf("@") === -1 || givenEmail.indexOf(".") === -1 || givenEmail.lastIndexOf(".") < givenEmail.indexOf("@")) {
                 validator = "error";
@@ -262,7 +265,6 @@ $(function(){
         }
 
         function validatePhoneInput(){
-            var validator = "";
             var givenPhone = phoneInput.val();
             for (var i = 0; i < givenPhone.length; i++) {
                 if (givenPhone[i] >= "a" && givenPhone[i] <= "z") {
@@ -279,7 +281,6 @@ $(function(){
         }
 
         function validateMessageInput(){
-            var validator = "";
             var givenMessage = messageInput.val();
             var errorField = messageInput.next();
             if (givenMessage.length === 0) {
@@ -306,13 +307,13 @@ $(function(){
 
         /* ajax for contact form */
         function sendThisMessage(){
-            var coffeeData = " ";
+            var coffeeData = "";
             for (var i = 0; i < formProducts.length; i ++) {
                 if (formProducts.eq([i]).is(':checked')) {
                     coffeeData += " " + formProducts.eq([i]).val();
                 }
             }
-            
+
             var postData = {
                 "submittedName" : $('#name').val(),
                 "submittedEmail" : $('#email').val(),
@@ -320,7 +321,7 @@ $(function(){
                 "submittedMessage" : $('#message').val(),
                 "submittedCoffee" : coffeeData
             }
-            
+
             $.ajax({
                 type: 'POST',
                 url: $('form').attr('action'),
@@ -346,7 +347,7 @@ $(function(){
             validatePhoneInput();
             validateMessageInput();
             var validationResult = true;
-            $('.error-message').each(function(){
+            errorMessageBoxes.each(function(){
                 if ($(this).is(':visible')) {
                     validationResult = false;
                 }
@@ -360,11 +361,13 @@ $(function(){
 
         /* clearing contact form inputs */
         function clearForm(){
-            $('input').each(function(){
+            userDataInputs.each(function(){
                 $(this).val('');
             });
             $('textarea').val('');
-            $('.error-message').fadeOut();
+            errorMessageBoxes.each(function(){
+                $(this).fadeOut();
+            });
             $('form .fa').each(function(){
                 $(this).removeClass('fa-check-square fa-minus-square');
             });
