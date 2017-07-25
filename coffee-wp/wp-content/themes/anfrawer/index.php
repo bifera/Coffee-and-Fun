@@ -161,7 +161,7 @@
                             if ( $loop->have_posts() ) :
                             while ( $loop->have_posts() ) : $loop->the_post();
                             $terms = wp_get_post_terms( $post->ID, 'Kraj' ); ?>
-                            <input class="products" type="checkbox" name="<?php echo $terms[0]->name; echo " "; the_title();?>" value="<?php echo $terms[0]->name; echo " "; the_title();?>">&nbsp;<?php echo $terms[0]->name; echo " "; the_title(); ?> <br />
+                            <input class="form-products" type="checkbox" name="<?php echo $terms[0]->name; echo " "; the_title();?>" value="<?php echo $terms[0]->name; echo " "; the_title();?>">&nbsp;<?php echo $terms[0]->name; echo " "; the_title(); ?> <br />
                             <?php
                             endwhile;
                             endif;

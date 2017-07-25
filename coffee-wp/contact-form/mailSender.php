@@ -8,6 +8,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $userEmail = trim($_POST['submittedEmail']);
     $userPhone = trim($_POST['submittedPhone']);
     $message = trim($_POST['submittedMessage']);
+    $coffees = $_POST['submittedCoffee'];
 
     /*
     *** sending via Google's Gmail servers ***
@@ -62,12 +63,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 
     //Set the subject line
-    $mail->Subject = "Nowa wiadomość od $userEmail ($userName)";
+    $mail->Subject = "Nowa wiadomosc od $userEmail ($userName)";
 
     //Read an HTML message body from an external file, convert referenced images to embedded,
     //convert HTML into a basic plain-text alternative body
     //$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
-    $mail->msgHTML("<h2>Nowa wiadomość od $userEmail ($userName):</h2><p>$message</p>");
+    $mail->msgHTML("<h2>Nowa wiadomość od $userEmail ($userName):</h2><p>Dotyczy kaw: $coffees</p><p>$message</p>");
 
     //Replace the plain text body with one created manually
     $mail->AltBody = "Nowa wiadomość od $userEmail ($userName): $message";

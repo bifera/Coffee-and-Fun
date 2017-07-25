@@ -21,7 +21,7 @@ $(function(){
         menuButton.addClass('open');
         menuContainer.removeClass('mobile-closed').addClass('mobile-open');
         menuContent.fadeIn(600);
-        
+
         /* close menu when nothing is done */
         var timeout = setTimeout(function(){
             closeMobileMenu();
@@ -224,6 +224,7 @@ $(function(){
         var emailInput = $('#email');
         var phoneInput = $('#phone');
         var messageInput = $('#message');
+        var formProducts = $('.form-products');
         var submitBtn = $('#submit');
         var resetBtn = $('#reset');
         var sendingInfoBox = $('#sending-info');
@@ -305,13 +306,21 @@ $(function(){
 
         /* ajax for contact form */
         function sendThisMessage(){
+            var coffeeData = " ";
+            for (var i = 0; i < formProducts.length; i ++) {
+                if (formProducts.eq([i]).is(':checked')) {
+                    coffeeData += " " + formProducts.eq([i]).val();
+                }
+            }
+            
             var postData = {
                 "submittedName" : $('#name').val(),
                 "submittedEmail" : $('#email').val(),
                 "submittedPhone" : $('#phone').val(),
-                "submittedMessage" : $('#message').val()
+                "submittedMessage" : $('#message').val(),
+                "submittedCoffee" : coffeeData
             }
-
+            
             $.ajax({
                 type: 'POST',
                 url: $('form').attr('action'),
@@ -356,25 +365,24 @@ $(function(){
             });
             $('textarea').val('');
             $('.error-message').fadeOut();
-            $('.fa-check-circle').fadeOut();
+            $('form .fa').each(function(){
+                $(this).removeClass('fa-check-square fa-minus-square');
+            });
+            formProducts.each(function(){
+                $(this).prop('checked', false);
+            });
         }
 
         sendingInfoBox.on('click', function(){
-            $(this).text('');
-            if ($(this).hasClass('success')) {
-                $(this).removeClass('success');
-            } else if ($(this).hasClass('error')) {
-                $(this).removeClass('error');
-            };
+            $(this).hide().text('').removeClass('error success');
         });
 
         resetBtn.on('click', function(){
             clearForm();
+            sendingInfoBox.hide().text('').removeClass('error success');
         });
     }
 
     contactForm();
-    
-    console.log($('h3'));
 
 });
