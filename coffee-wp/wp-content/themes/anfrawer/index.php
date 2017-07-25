@@ -153,7 +153,7 @@
                     </div>
                     <div>
                         <label>
-                            Dotyczy kaw (opcjonalnie, można wybrać więcej niż jeden gatunek): <br />
+                            Dotyczy kaw (opcjonalnie): <br />
                         
                             <?php
                             $args = ['post_type' => 'kawa'];

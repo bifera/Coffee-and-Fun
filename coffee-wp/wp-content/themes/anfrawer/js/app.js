@@ -1,5 +1,5 @@
 $(function(){
-    $('#page-loader').delay(2000).fadeOut(function(){$('#preload').fadeOut(1500)});
+    $('#page-loader').delay(2000).fadeOut(function(){$('#preload').fadeOut(1500);});
     var menuBar = $('#menu-bar');
     var menuButton = $('#menu-toggle');
     var menuContainer = $('#menu-container');
@@ -320,7 +320,7 @@ $(function(){
                 "submittedPhone" : $('#phone').val(),
                 "submittedMessage" : $('#message').val(),
                 "submittedCoffee" : coffeeData
-            }
+            };
 
             $.ajax({
                 type: 'POST',
