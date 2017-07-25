@@ -118,19 +118,19 @@ nav > div {
     @include tablet {
         align-items: center;
         position: absolute;
-        top: 7%;
+        top: 7vh;
         height: 4rem;
     }
     @include tablet-landscape {
         align-items: center;
         position: absolute;
-        top: 7%;
+        top: 7vh;
         height: 4rem;
     }
     @include desktop {
         align-items: center;
         position: absolute;
-        top: 7%;
+        top: 7vh;
         height: 4rem;
     }
     .menu-container {
@@ -142,23 +142,26 @@ nav > div {
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            margin: 0 auto;
             width: 90vw;
+            height: 100%;
+            margin: 0 auto;
         }
         @include tablet-landscape {
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            margin: 0 auto;
             width: 85vw;
+            height: 100%;
+            margin: 0 auto;
         }
         @include desktop {
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            margin: 0 auto;
             width: 80vw;
+            height: 100%;
             max-width: 1200px;
+            margin: 0 auto;
         }
         > a {
             visibility: hidden;

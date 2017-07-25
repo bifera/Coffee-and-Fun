@@ -36,6 +36,7 @@ form {
         font-family: $headerFont;
         font-size: 1.1rem;
         position: relative;
+        
     }
     input {
         width: 100%;
@@ -43,7 +44,15 @@ form {
         margin-top: 0.5rem;
         margin-bottom: 1rem;
         border: none;
-        font-family: $primaryFont; 
+        font-family: $primaryFont;
+        &.products {
+            width: auto;
+            height: auto;
+            margin-right: .5rem;
+            &:first-of-type {
+                margin-top: 1rem;
+            }
+        }
     }
     .error-message {
             display: none;
