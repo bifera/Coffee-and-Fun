@@ -122,10 +122,11 @@ form {
         display: flex;
         justify-content: center;
         align-items: center;
-        div {
+        button {
             width: 10rem;
             margin: 0.5rem 1vw 0;
             padding: 0.5rem 0;
+            border: none;
             border-radius: 2%;
             font-family: $headerFont;
             text-align: center;

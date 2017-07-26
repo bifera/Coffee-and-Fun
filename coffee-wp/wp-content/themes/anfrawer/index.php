@@ -12,7 +12,7 @@
             if ( $loop->have_posts() ) :
             while ( $loop->have_posts() ) : $loop->the_post();
             ?>
-            <article class="wp-products-post">
+            <article class="wp-products-post" tabindex="0">
                 <div class="wp-products-image-content" style="background-image: url(<?php the_field('wstaw_zdjecie')?>)">
                     <div class="wp-products-image-shadow">
                         <h3>
@@ -45,7 +45,7 @@
     <div class="wp-products-popup-container" id="products-popup-box">
         <div class="wp-products-popup-content" >
             <div class="wp-products-popup-box" id="products-popup-frame">
-                <div class="wp-products-popup-close" id="products-popup-close">
+                <div class="wp-products-popup-close" id="products-popup-close" tabindex="0">
                     <span></span>
                     <span></span>
                 </div>
@@ -172,8 +172,8 @@
                 <div id="sending-loader"></div>
                 <div id="sending-info"></div>
                 <div>
-                    <div id="reset">Wyczyść</div>
-                    <div id="submit">Wyślij</div>
+                    <button id="reset">Wyczyść</button>
+                    <button id="submit">Wyślij</button>
                 </div>
             </form>
             <div class="paragraph-image-box">

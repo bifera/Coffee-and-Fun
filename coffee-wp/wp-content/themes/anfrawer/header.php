@@ -15,7 +15,7 @@
         <header id="start">
             <div></div>
             <nav>
-                <a href="#start" id="logo"></a>
+                <a href="#start" id="logo" tabindex="-1"></a>
                 <div id="menu-bar">
                     <div class="menu-container" id="menu-container">
                         <div class="fixed-nav-border">

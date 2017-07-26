@@ -180,7 +180,6 @@ $(function(){
 
     function displaySinglePostInfo(target) {
         var clonedContent = target.find('.wp-products-post-content').clone(true);
-        console.log(clonedContent);
         clonedContent.appendTo(popupBoxFrame);
         popupBox.fadeIn(800);
     }
@@ -193,18 +192,30 @@ $(function(){
     }
 
     products.each(function(){
-        $(this).on('click', function(e){
-            // prevents from firing when window tapped to close menu, not to show product
-            if (menuContainer.hasClass('menu-background-mobile')){
-                e.preventDefault();
+        $(this).on('click', function(event){
+            if (menuContainer.hasClass('menu-background-mobile')) {
+                event.preventDefault();
             } else {
                 displaySinglePostInfo($(this));
-            } 
+            }
+        });
+        $(this).on('keydown', function(event){
+            if (event.keyCode === 32 || event.keyCode === 13) {
+                event.preventDefault();
+                displaySinglePostInfo($(this));
+            }
         });
     });
 
     popupBoxCloseBtn.on('click', function(){
         closePopupBox();
+    });
+
+    popupBoxCloseBtn.on('keydown', function(event){
+        if (event.keyCode === 32 || event.keyCode === 13 ) {
+            event.preventDefault();
+            closePopupBox();
+        }
     });
 
     popupBox.on('click', function(e){
@@ -243,11 +254,11 @@ $(function(){
                 element.siblings('.fa').addClass('fa-check-square').removeClass('fa-minus-square').fadeIn();
             }
         }
-        
+
         /* validation functions for each input */
-        
+
         var validator = "";
-        
+
         function validateNameInput(){
             var givenName = nameInput.val();
             if (givenName.indexOf(" ") === -1 || givenName.indexOf(" ") === givenName.length-1) {
@@ -341,7 +352,7 @@ $(function(){
         }
 
         /* another validation and sending on form submit event */
-        submitBtn.on('click', function(){
+        function handleSubmit(){
             validateNameInput();
             validateEmailInput();
             validatePhoneInput();
@@ -356,6 +367,18 @@ $(function(){
             if (validationResult === true){
                 sendingLoader.fadeIn();
                 sendThisMessage();
+            }
+        }
+
+        submitBtn.on('click', function(event){
+            event.preventDefault();
+            handleSubmit();
+        });
+
+        submitBtn.on('keydown', function(event){
+            if (event.keyCode === 32 || event.keyCode === 13 ) {
+                event.preventDefault();
+                handleSubmit();
             }
         });
 
@@ -380,10 +403,18 @@ $(function(){
             $(this).hide().text('').removeClass('error success');
         });
 
-        resetBtn.on('click', function(){
+        resetBtn.on('click', function(event){
+            event.preventDefault();
             clearForm();
             sendingInfoBox.hide().text('').removeClass('error success');
         });
+        resetBtn.on('keydown', function(event){
+            if (event.keyCode === 32 || event.keyCode === 13 ) {
+                event.preventDefault();
+                clearForm();
+                sendingInfoBox.hide().text('').removeClass('error success');
+            }
+        })
     }
 
     contactForm();
