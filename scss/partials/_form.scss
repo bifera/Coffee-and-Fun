@@ -8,7 +8,7 @@ form {
     width: 100%;
     padding: 1.5vh 1.5vw;
     background-color: transparentize($altColor, 0.6);
-    > div:first-child {
+    > div:first-child { /* all inputs section */
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -17,7 +17,7 @@ form {
             flex-direction: row;
             justify-content: space-between;
         }
-        > div {
+        > div { /* divide form into two columns on desktop */
             width: 100%;
             &:first-child {
                 @include desktop {
@@ -45,7 +45,7 @@ form {
         margin-bottom: 1rem;
         border: none;
         font-family: $primaryFont;
-        &.form-products {
+        &.form-products { /* generated with wordpress loop */
             width: auto;
             height: auto;
             margin-right: .5rem;
@@ -54,7 +54,7 @@ form {
             }
         }
     }
-    .error-message {
+    .error-message { /* pops up with error for each input */
             display: none;
             padding: 0.5rem;
             border-radius: 2px;
@@ -68,7 +68,7 @@ form {
             left: 25%;
             z-index: 2;
         }
-    .fa {
+    .fa { /* correct or wrong input value indicators */
         display: none;
         opacity: .8;
         font-size: 2rem;
@@ -76,10 +76,10 @@ form {
         right: 1rem;
         top: 2.7rem;
     }
-    .fa-check-square {
+    .fa-check-square { /* correct input value */
         color: $secondaryColor;
     }
-    .fa-minus-square {
+    .fa-minus-square { /* wrong input value */
         color: $accentColor;
     }
     textarea {
@@ -90,11 +90,11 @@ form {
         resize: none;
         font-family: $primaryFont;
     }
-    > div:nth-child(3), > div:nth-child(4) {
+    > div:nth-child(3), > div:nth-child(4) { /* boxes including sending progress & info */
         display: none;
         margin: 1rem auto;
     }
-    > div:nth-child(3) {
+    > div:nth-child(3) { /* sending progress box */
         width: 2rem;
         height: 2rem;
         border: 3px solid lighten($altColor, 50%);
@@ -102,7 +102,7 @@ form {
         border-radius: 50%;
         animation: spinner 1.5s linear infinite;
     }
-    > div:nth-child(4) {
+    > div:nth-child(4) { /* sending info box */
         padding: 1rem;
         border-width: 1px;
         border-style: solid;
@@ -110,15 +110,15 @@ form {
         font-family: $headerFont;
         font-size: 1.1rem;
     }
-    .success {
+    .success { /* style on success */
         background-color: lighten($secondaryColor, 60%);
         border-color: $secondaryColor;
     }
-    .error {
+    .error { /* style on error */
         background-color: lighten($accentColor, 60%);
         border-color: $accentColor;
     }
-    > div:last-child {
+    > div:last-child { /* form buttons section */
         display: flex;
         justify-content: center;
         align-items: center;

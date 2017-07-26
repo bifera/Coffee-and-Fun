@@ -42,9 +42,9 @@
             ?>
         </div>
     </section>
-    <div class="wp-products-popup-container" id="products-popup-box">
-        <div class="wp-products-popup-content" >
-            <div class="wp-products-popup-box" id="products-popup-frame">
+    <div class="wp-products-popup-container" id="products-popup-container">
+        <div class="wp-products-popup-content">
+            <div class="wp-products-popup-box" id="products-popup-box">
                 <div class="wp-products-popup-close" id="products-popup-close" tabindex="0">
                     <span></span>
                     <span></span>
@@ -57,8 +57,8 @@
     <?php
     $args = ['post_type' => 'galeria'];
     $loop = new WP_Query( $args ); 
-    if ( $loop->have_posts() ) :
-    while ( $loop->have_posts() ) : $loop->the_post();
+        if ( $loop->have_posts() ) :
+            while ( $loop->have_posts() ) : $loop->the_post();
     ?>
     <section class="gallery scrolled padded" id="gallery">
         <div>
@@ -73,8 +73,8 @@
         </div>
     </section>
     <?php
-    endwhile;
-                 endif;
+            endwhile;
+        endif;
     ?>
 
     <hr />

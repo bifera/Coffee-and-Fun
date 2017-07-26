@@ -4,8 +4,7 @@ header {
     height: 100vh;
     width: 100%;
     position: relative;
-    > div {
-        /* darkening layer for background photo */
+    > div { /* darkens and reduces contrast of header photo */
         width: 100%;
         height: 55vh;
         background-color: transparentize($textColor, 0.8);
@@ -26,7 +25,7 @@ header {
             height: 70vh;
         }   
     }
-    section {
+    section { /* holds general info about website */
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -46,12 +45,6 @@ header {
         }
     }
 }
-
-/*
-
-page navigation
-
-*/
 
 nav {
     display: flex;
@@ -79,7 +72,7 @@ nav {
         height: 70vh;
         background-image: $headerDesktopImage;
     }
-    > a {
+    > a { /* large logo on header image */
         display: block;
         width: 100%;
         height: inherit;
@@ -101,115 +94,38 @@ nav {
             background-size: 30vw;
         }
     }
-}
-
-nav > div {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 2;
-    @include mobile-landscape {
-        position: fixed;
-        top: 0;
-    }
-    @include tablet {
-        align-items: center;
-        position: absolute;
-        top: 7vh;
-        height: 4rem;
-    }
-    @include tablet-landscape {
-        align-items: center;
-        position: absolute;
-        top: 7vh;
-        height: 4rem;
-    }
-    @include desktop {
-        align-items: center;
-        position: absolute;
-        top: 7vh;
-        height: 4rem;
-    }
-    .menu-container {
+    > div { /* container for menu position */
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        transition: width .5s ease, height .5s ease, background-color .75s ease;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+        @include mobile-landscape {
+            position: fixed;
+            top: 0;
+        }
         @include tablet {
-            flex-direction: row;
-            justify-content: space-between;
             align-items: center;
-            width: 90vw;
-            height: 100%;
-            margin: 0 auto;
+            position: absolute;
+            top: 7vh;
+            height: 4rem;
         }
         @include tablet-landscape {
-            flex-direction: row;
-            justify-content: space-between;
             align-items: center;
-            width: 85vw;
-            height: 100%;
-            margin: 0 auto;
+            position: absolute;
+            top: 7vh;
+            height: 4rem;
         }
         @include desktop {
-            flex-direction: row;
-            justify-content: space-between;
             align-items: center;
-            width: 80vw;
-            height: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        > a {
-            visibility: hidden;
-            @include tablet {
-                width: 15vw;
-                height: 4rem;
-            }
-            @include tablet-landscape {
-                width: 10vw;
-                height: 3.875rem;
-            }
-            @include desktop {
-                width: 5.5vw;
-                height: 3.625rem;
-            }
-            display: block;
-            opacity: .8;
-            background-image: $logoImageWhite;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+            position: absolute;
+            top: 7vh;
+            height: 4rem;
         }
     }
-    /* effects for mobile menu */
-    .mobile-closed {
-        width: 0;
-        height: 0;
-        border-bottom-left-radius: 100%;
-        background-color: transparent;
-        position: fixed;
-        right: 0;
-        top: 0;
-
-    }
-    .mobile-open {
-        width: 80vw;
-        height: 80vw;
-        background-color: $textColor;
-        border-bottom-left-radius: 100%;
-        position: fixed;
-        right: 0;
-        top: 0;
-        @include mobile-landscape {
-            width: 80vh;
-            height: 80vh;
-        }
-    }
-    ul {
+    ul { /* menu list */
         display: none;
         margin-top: 1.4rem;
         @include tablet {
@@ -231,7 +147,7 @@ nav > div {
             margin-top: 0;
         }
     }
-    li {
+    li { /* menu list item */
         height: 1.6rem;
         text-align: right;
         margin: .4rem 1rem 0 0;
@@ -256,6 +172,7 @@ nav > div {
             @include tablet-landscape {
                 font-size: 1.1rem;
             }
+            /* animated middle-out-underline effect on hover */
             &::after {
                 display: block;
                 content: '';
@@ -265,10 +182,6 @@ nav > div {
                 background: transparent;
                 transition: width .5s ease-in-out, background-color .5s ease-in-out;
             }
-            &:active::after {
-                width: 100%;
-                background-color: $primaryColor;
-            }
             &:hover::after {
                 width: 100%;
                 background-color: $primaryColor;
@@ -277,13 +190,86 @@ nav > div {
     }
 }
 
-/*
+/* effects for mobile menu */
+.mobile-closed { /* when menu not displayed */
+    width: 0;
+    height: 0;
+    border-bottom-left-radius: 100%;
+    background-color: transparent;
+    position: fixed;
+    right: 0;
+    top: 0;
 
-hamburger menu
+}
+.mobile-open { /* background for displayed menu */
+    width: 80vw;
+    height: 80vw;
+    background-color: $textColor;
+    border-bottom-left-radius: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    @include mobile-landscape {
+        width: 80vh;
+        height: 80vh;
+    }
+}
 
-*/
 
-.mobile-menu-icon {
+.menu-container { /* actual menu bar */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    transition: width .5s ease, height .5s ease, background-color .75s ease;
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 90vw;
+        height: 100%;
+        margin: 0 auto;
+    }
+    @include tablet-landscape {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 85vw;
+        height: 100%;
+        margin: 0 auto;
+    }
+    @include desktop {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 80vw;
+        height: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    > a { /* logo image displayed on scroll after leaving header image */
+        visibility: hidden;
+        display: block;
+        opacity: .8;
+        background-image: $logoImageWhite;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        @include tablet {
+            width: 15vw;
+            height: 4rem;
+        }
+        @include tablet-landscape {
+            width: 10vw;
+            height: 3.875rem;
+        }
+        @include desktop {
+            width: 5.5vw;
+            height: 3.625rem;
+        }
+    }
+}
+
+.mobile-menu-icon { /* mobile hamburger menu */
     width: 1.25rem;
     height: 1.25rem;
     @include tablet {
@@ -301,13 +287,7 @@ hamburger menu
         background-color: $primaryColor;
         opacity: 1;
         position: absolute;
-        -webkit-transform: rotate(0deg);
-        -moz-transform: rotate(0deg);
-        -o-transform: rotate(0deg);
         transform: rotate(0deg);
-        -webkit-transition: .25s ease-in-out;
-        -moz-transition: .25s ease-in-out;
-        -o-transition: .25s ease-in-out;
         transition: .25s ease-in-out;
         &:nth-child(even) {
             border-radius: 0 25% 25% 0;
@@ -330,15 +310,9 @@ hamburger menu
     &.open {
         span {
             &:nth-child(1), &:nth-child(6) {
-                -webkit-transform: rotate(45deg);
-                -moz-transform: rotate(45deg);
-                -o-transform: rotate(45deg);
                 transform: rotate(45deg);
             }
             &:nth-child(2), &:nth-child(5) {
-                -webkit-transform: rotate(-45deg);
-                -moz-transform: rotate(-45deg);
-                -o-transform: rotate(-45deg);
                 transform: rotate(-45deg);
             }
             &:nth-child(1) {
@@ -369,32 +343,20 @@ hamburger menu
     }
 }
 
-/*
-
-effects for sticky menu for tablet & desktop
-
-*/
-
-.sticky {
+.sticky { /* tablet and desktop menu bar sticky style after scroll */
     position: fixed;
     top: 0;
     left: 0;
     background-color: transparentize($textColor, 0.7);
 }
 
-.darker {
+.darker { /* tablet and desktop menu bar darkening after leaving header image */
     animation-name: darkenNavbar;
     animation-duration: 1.2s;
     animation-fill-mode: forwards;
 }
 
-/* 
-
-spinner while page loading
-
-*/
-
-.preload {
+.preload { /* simple spinner on page loading */
     width: 100vw;
     height: 100vh;
     background-color: $primaryColor;
@@ -411,7 +373,6 @@ spinner while page loading
         border-bottom: 10px solid $secondaryColor;
         border-right: 10px solid $altColor;
         border-radius: 50%;
-        animation: spinner 2s ease-in-out infinite;
+        animation: spinner 1.5s ease-in-out infinite;
     }
 }
-

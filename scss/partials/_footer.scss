@@ -4,7 +4,7 @@ footer {
     width: 100%;
     height: 100vh;
     background-color: transparentize($secondaryColor, 0.3);
-    > section {
+    > section { /* contains all contact info */
         min-height: 60vh;
         @include tablet {
             min-height: 40vh;
@@ -20,7 +20,7 @@ footer {
         font-size: 1.8rem;
         margin-bottom: 1.2rem;
     }
-    article {
+    article { /* split into two columns if not mobile portrait */
         width: 100%;
         padding-left: 3vh;
         @include mobile-landscape {
@@ -58,7 +58,7 @@ footer {
     p {
         color: $primaryColor;
     }
-    > div {
+    > div { /* contains footer image and copyright info bar */
         display: flex;
         flex-direction: column;
         justify-content: flex-end;

@@ -76,14 +76,9 @@ h3 {
 
 p {
     font-family: $primaryFont;
+    font-size: 1rem;
     line-height: 1.8;
     text-align: left;
-    @include tablet {
-        font-size: 1.1rem;
-    }
-    @include tablet-landscape {
-        font-size: 1rem;
-    }
 }
 
 a {
@@ -97,7 +92,7 @@ hr {
     color: $secondaryColor;
 }
 
-/* used for mobile menu and arrow up */
+/* border used for mobile menu and arrow up */
 .fixed-nav-border {
     width: 2.5rem;
     height: 2.5rem;
@@ -117,9 +112,8 @@ hr {
         display: none;
     }
 }
-/* return to top arrow */
 
-.arrow-up {
+.arrow-up { /* return to top arrow */
     display: none;
     position: fixed;
     bottom: 0;
@@ -136,17 +130,13 @@ hr {
         transform: rotate(-45deg);
     }
 }
-.arrow-visible {
+.arrow-visible { /* style for arrow displayed after header scroll */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/*
-
-scroll animation
-
-*/
+/* animation for scrolling - sliding up elements */
 .scrolled {
     visibility: hidden;
 }

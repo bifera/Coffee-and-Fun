@@ -174,19 +174,19 @@ $(function(){
     */
 
     var products = $('.wp-products-post');
+    var popupContainer = $('#products-popup-container');
     var popupBox = $('#products-popup-box');
-    var popupBoxFrame = $('#products-popup-frame');
     var popupBoxCloseBtn = $('#products-popup-close');
 
     function displaySinglePostInfo(target) {
         var clonedContent = target.find('.wp-products-post-content').clone(true);
-        clonedContent.appendTo(popupBoxFrame);
-        popupBox.fadeIn(800);
+        clonedContent.appendTo(popupBox);
+        popupContainer.fadeIn(600);
     }
 
     function closePopupBox(){
-        var contentToDelete = popupBox.find('.wp-products-post-content');
-        popupBox.fadeOut(800, function(){
+        var contentToDelete = popupContainer.find('.wp-products-post-content');
+        popupContainer.fadeOut(600, function(){
             contentToDelete.remove();
         });
     }
@@ -202,7 +202,12 @@ $(function(){
         $(this).on('keydown', function(event){
             if (event.keyCode === 32 || event.keyCode === 13) {
                 event.preventDefault();
-                displaySinglePostInfo($(this));
+                if (popupContainer.is(':visible')) {
+                    closePopupBox();
+                } else {
+                    displaySinglePostInfo($(this));
+                }
+                
             }
         });
     });
@@ -218,8 +223,8 @@ $(function(){
         }
     });
 
-    popupBox.on('click', function(e){
-        if (!$(e.target).closest(popupBoxFrame).length){
+    popupContainer.on('click', function(e){
+        if (!$(e.target).closest(popupBox).length){
             closePopupBox();
         }
     });
