@@ -91,20 +91,12 @@
                 <?php the_title(); ?>
             </h3>
             <div class="paragraph-image-box">
-                <p>
-                    <?php 
-                    the_field('info_akapit_1');
-                    ?>
-                </p>
-                <div class="image-box" style="background-image: url(<?php the_field('info_zdjecie_1')?>)" id="about-01"></div>
+                <p><?php the_field('info_akapit_1'); ?></p>
+                <div class="image-box" style="background-image: url(<?php the_field('info_zdjecie_1')?>)"></div>
             </div>
             <div class="paragraph-image-box">
-                <p>
-                    <?php 
-                    the_field('info_akapit_2');
-                    ?>
-                </p>
-                <div class="image-box" style="background-image: url(<?php the_field('info_zdjecie_2')?>)"id="about-02"></div>
+                <p><?php the_field('info_akapit_2'); ?></p>
+                <div class="image-box" style="background-image: url(<?php the_field('info_zdjecie_2')?>)"></div>
             </div>
             <?php
             endwhile;

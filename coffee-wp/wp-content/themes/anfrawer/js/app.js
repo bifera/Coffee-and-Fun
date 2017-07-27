@@ -233,6 +233,25 @@ $(function(){
         }
     });
 
+    /**************************
+    ***************************
+    *** INFO POSTS HANDLING ***
+    ***************************
+    **************************/
+    
+    /* hiding wordpress generated paragraphs with no content from post-type 'informacje' */
+    var queriedParagraph = $('.paragraph-image-box>p');
+    
+    function hideEmptyParagraphs(){
+        queriedParagraph.each(function(ind, val){
+            if (queriedParagraph[ind].childNodes.length === 0) {
+                queriedParagraph[ind].parentElement.style.display = 'none';
+            }      
+        });   
+    }
+    
+    hideEmptyParagraphs();
+    
     /****************************
     *****************************
     *** CONTACT FORM HANDLING ***
