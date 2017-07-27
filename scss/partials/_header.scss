@@ -356,7 +356,11 @@ nav {
     animation-fill-mode: forwards;
 }
 
-.preload { /* simple spinner on page loading */
+/* simple spinner on page loading */
+
+$size: 50px;
+
+.preload { 
     width: 100vw;
     height: 100vh;
     background-color: $primaryColor;
@@ -366,13 +370,56 @@ nav {
     position: absolute;
     z-index: 5;
     .page-loader {
-        width: 15vh;
-        height: 15vh;
-        border-top: 10px solid $secondaryColor;
-        border-left: 10px solid $altColor;
-        border-bottom: 10px solid $secondaryColor;
-        border-right: 10px solid $altColor;
+        width: $size*5;
+        height: $size*5;
+        background-color: transparentize($altColor, .6);
         border-radius: 50%;
-        animation: spinner 1.5s ease-in-out infinite;
+        box-shadow: 0 0 20px transparentize($altColor, .6);
+        animation: spinner 4s ease-in-out infinite;
+    }
+    .bean {
+        position: relative;
+        border-bottom-left-radius: $size*1.5 $size*2;
+        border-top-left-radius: $size*1.5 $size*2;
+        border-top-right-radius: $size*1.5 $size*2;
+        border-bottom-right-radius: $size*1.5 $size*2;
+        .half-bean {
+            width: $size*.75;
+            height: $size*2;
+            background-color: desaturate($altColor, 15%);
+            position: absolute;
+            &:first-child {
+                border-bottom-left-radius: $size*1.5 $size*2;
+                border-top-left-radius: $size*1.5 $size*2;
+                left: 1px;
+            }
+            &:last-child {
+                border-top-right-radius: $size*1.5 $size*2;
+                border-bottom-right-radius: $size*1.5 $size*2;
+                left: $size*.75+2px;
+            }
+        }
+        .fill {
+            width: 3px;
+            height: $size*2;
+            background-color: transparentize($altColor, .4);
+            position: absolute;
+            left: $size*.75;
+        }
+        &:nth-of-type(1){
+            top: 0;
+            left: $size*1.25;
+            transform:rotate(-25deg);
+        }
+        &:nth-of-type(2){
+            top: $size*4.25;
+            left: $size*2.5;
+            transform: rotate(55deg);
+        }
+        &:nth-of-type(3){
+            top: $size*1;
+            left: -$size*1.5;
+            transform: rotate(-80deg);
+        }
     }
 }
