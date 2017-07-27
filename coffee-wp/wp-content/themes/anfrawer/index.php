@@ -57,8 +57,8 @@
     <?php
     $args = ['post_type' => 'galeria'];
     $loop = new WP_Query( $args ); 
-        if ( $loop->have_posts() ) :
-            while ( $loop->have_posts() ) : $loop->the_post();
+    if ( $loop->have_posts() ) :
+    while ( $loop->have_posts() ) : $loop->the_post();
     ?>
     <section class="gallery scrolled padded" id="gallery">
         <div>
@@ -73,29 +73,43 @@
         </div>
     </section>
     <?php
-            endwhile;
-        endif;
+    endwhile;
+                 endif;
     ?>
 
     <hr />
     <section class="padded scrolled" id="about">
         <h2>O nas</h2>
         <article>
+            <?php
+            $args = ['post_type' => 'informacje'];
+            $loop = new WP_Query( $args ); 
+            if ( $loop->have_posts() ) :
+            while ( $loop->have_posts() ) : $loop->the_post();
+            ?>
             <h3>
-                W poszukiwaniu dobrej kawy
+                <?php the_title(); ?>
             </h3>
             <div class="paragraph-image-box">
                 <p>
-                    Jestem bezpośrednim importerem zielonej kawy z Afryki. Aby kupić jak najlepszą kawę, osobiście jadę na plantacje i tam na miejscu sprawdzam jej jakość. Wybieram jedynie te kawy, które – choć czasem nie mają międzynarodowych certyfikatów – zawsze są uprawiane ekologicznie i w sposób zrównoważony, a lokalni rolnicy za swoją ciężką pracę otrzymują uczciwe wynagrodzenie.
+                    <?php 
+                    the_field('info_akapit_1');
+                    ?>
                 </p>
-                <div class="image-box paragraph-img01" id="about-01"></div>
+                <div class="image-box" style="background-image: url(<?php the_field('info_zdjecie_1')?>)" id="about-01"></div>
             </div>
             <div class="paragraph-image-box">
                 <p>
-                    Kawy szukam w Afryce i staram się znajdować miejsca dotychczas niekojarzone z taką produkcją. Docieram do miejsc, gdzie nie trafiają kupcy z wielkich firm i właśnie tam wyszukuję najciekawsze produkty. Każdy gatunek przed zakupem spróbowałem i jestem przekonany o jego dobrej jakości.
+                    <?php 
+                    the_field('info_akapit_2');
+                    ?>
                 </p>
-                <div class="image-box paragraph-img02" id="about-02"></div>
+                <div class="image-box" style="background-image: url(<?php the_field('info_zdjecie_2')?>)"id="about-02"></div>
             </div>
+            <?php
+            endwhile;
+            endif;
+            ?>
         </article>
         <?php
         $args = ['post_type' => 'miejsce'];
