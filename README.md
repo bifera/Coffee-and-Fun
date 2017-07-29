@@ -19,13 +19,13 @@ website project for Anfrawer
 ## Some screenshots
 
 Header
-![Header on mobile](/images/8.jpg) ![Header on tablet](/images/1.jpg)
+![Header on mobile](images/8.jpg) ![Header on tablet](images/1.jpg)
 Mobile menu
-![Menu on mobile](/images/2.jpg)
+![Menu on mobile](images/2.jpg)
 Products display
-![Products on mobile](/images/3.jpg) ![Single product on mobile](/images/4.jpg)
-![Products on tablet](/images/5.jpg) ![Single product on tablet](/images/7.jpg)
+![Products on mobile](images/3.jpg) ![Single product on mobile](images/4.jpg)
+![Products on tablet](images/5.jpg) ![Single product on tablet](images/7.jpg)
 Contact form
-![Contact form](/images/6.jpg)
+![Contact form](images/6.jpg)
 
 **Created with ~~love~~ caffeine.**
