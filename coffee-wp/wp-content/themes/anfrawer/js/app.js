@@ -229,7 +229,7 @@ $(function(){
         }
     });
 
-    /*=== clixk anywhere to close popup box ===*/
+    /*=== click anywhere to close popup box ===*/
     popupContainer.on('click', function(e){
         if (!$(e.target).closest(popupBox).length){
             closePopupBox();
