@@ -241,10 +241,10 @@ $(function(){
     *** INFO POSTS HANDLING ***
     ***************************
     **************************/
-    
+
     /* hiding wordpress generated paragraphs with no content from post-type 'informacje' */
     var queriedParagraph = $('.paragraph-image-box>p');
-    
+
     function hideEmptyParagraphs(){
         queriedParagraph.each(function(ind, val){
             if (queriedParagraph[ind].childNodes.length === 0) {
@@ -252,9 +252,9 @@ $(function(){
             }      
         });   
     }
-    
+
     hideEmptyParagraphs();
-    
+
     /****************************
     *****************************
     *** CONTACT FORM HANDLING ***
@@ -390,17 +390,21 @@ $(function(){
             url: $('form').attr('action'),
             data: postData
         }).done(function(response){
-            console.log(response);
-            sendingLoader.fadeOut(function(){
-                sendingInfoBox.addClass('success').text('Dziękujemy. Twoja wiadomość została wysłana.').fadeIn();
-                clearForm();
-            });
+            if (response === "Success") {
+                sendingLoader.fadeOut(function(){
+                    sendingInfoBox.addClass('success').text('Dziękujemy. Twoja wiadomość została wysłana.').fadeIn();
+                    clearForm();
+                });
+            } else {
+                sendingLoader.fadeOut(function(){
+                    sendingInfoBox.addClass('error').text('Podczas wysyłania wystąpił błąd. Spróbuj ponownie później.').fadeIn();
+                });
+            }
+
         }).fail(function(error){
-            console.log(error);
             sendingLoader.fadeOut(function(){
                 sendingInfoBox.addClass('error').text('Podczas wysyłania wystąpił błąd. Spróbuj ponownie później.').fadeIn();
             });
-
         });
     }
 
