@@ -390,6 +390,7 @@ $(function(){
             url: $('form').attr('action'),
             data: postData
         }).done(function(response){
+            console.log(response);
             sendingLoader.fadeOut(function(){
                 sendingInfoBox.addClass('success').text('Dziękujemy. Twoja wiadomość została wysłana.').fadeIn();
                 clearForm();
