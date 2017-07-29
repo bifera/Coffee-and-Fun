@@ -375,7 +375,7 @@ $size: 50px;
         background-color: transparentize($altColor, .6);
         border-radius: 50%;
         box-shadow: 0 0 20px transparentize($altColor, .6);
-        animation: spinner 4s ease-in-out infinite;
+        animation: spinner 4s linear infinite;
     }
     .bean {
         position: relative;
@@ -389,22 +389,19 @@ $size: 50px;
             background-color: desaturate($altColor, 15%);
             position: absolute;
             &:first-child {
+                border-top-right-radius: $size/10;
+                border-bottom-right-radius: $size/10;
                 border-bottom-left-radius: $size*1.5 $size*2;
                 border-top-left-radius: $size*1.5 $size*2;
-                left: 1px;
+                left: -1px;
             }
             &:last-child {
                 border-top-right-radius: $size*1.5 $size*2;
                 border-bottom-right-radius: $size*1.5 $size*2;
+                border-bottom-left-radius: $size/10;
+                border-top-left-radius: $size/10;
                 left: $size*.75+2px;
             }
-        }
-        .fill {
-            width: 3px;
-            height: $size*2;
-            background-color: transparentize($altColor, .4);
-            position: absolute;
-            left: $size*.75;
         }
         &:nth-of-type(1){
             top: 0;

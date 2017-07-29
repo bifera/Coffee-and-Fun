@@ -135,16 +135,19 @@ $(function(){
     }
 
     menuAnchors.each(function(){
-        $(this).on('click', function(){
+        $(this).on('click', function(e){
+            e.preventDefault();
             smoothScrolling($(this));
         });
     });
 
-    buttonToTop.find('a').on('click', function(){
+    buttonToTop.find('a').on('click', function(e){
+        e.preventDefault();
         smoothScrolling($(this));
     });
 
-    stickyLogo.on('click', function(){
+    stickyLogo.on('click', function(e){
+        e.preventDefault();
         smoothScrolling($(this));
     });
 

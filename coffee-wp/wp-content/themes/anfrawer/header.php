@@ -13,19 +13,14 @@
             <div class="page-loader" id="page-loader">
                 <div class="bean">
                     <div class="half-bean"></div>
-                    <div class="fill"></div>
                     <div class="half-bean"></div>
                 </div>
-
-
                 <div class="bean">
                     <div class="half-bean"></div>
-                    <div class="fill"></div>
                     <div class="half-bean"></div>
                 </div>
                 <div class="bean">
                     <span class="half-bean"></span>
-                    <div class="fill"></div>
                     <span class="half-bean"></span>
                 </div>
             </div>
