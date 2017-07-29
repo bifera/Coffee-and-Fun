@@ -131,7 +131,7 @@
             <h3>
                 Formularz kontaktowy
             </h3>
-            <form action="./contact-form/mailSender.php">
+            <form action="./mailSender.php">
                 <div>
                     <div>
                         <label>

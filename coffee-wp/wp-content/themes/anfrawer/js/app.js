@@ -396,6 +396,7 @@ $(function(){
                 clearForm();
             });
         }).fail(function(error){
+            console.log(error);
             sendingLoader.fadeOut(function(){
                 sendingInfoBox.addClass('error').text('Podczas wysyłania wystąpił błąd. Spróbuj ponownie później.').fadeIn();
             });
