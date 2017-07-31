@@ -1,7 +1,7 @@
 <footer class="scrolled">
     <section class="padded" id="contact">
         <h2>Kontakt</h2>
-        <article>
+        <address>
             <p>
                 Anfrawer Bartosz Bielicki <br />
                 Leśnych Skrzatów 1 <br />
@@ -9,10 +9,10 @@
             </p>
             <p>
                 <span class="fa fa-phone-square"></span> +48 601 422 422 <br />
-                <span class="fa fa-envelope-square"></span> bartosz@anfrawer.pl <br />
+                <a href="mailto:bartosz@anfrawer.pl"><span class="fa fa-envelope-square"></span> bartosz@anfrawer.pl</a> <br />
                 <a href="https://www.facebook.com/anfrawer/" target="_blank"><span class="fa fa-facebook-square"></span> anfrawer</a>
             </p>
-        </article>
+        </address>
     </section>
     <div>
         <div class="copyright">

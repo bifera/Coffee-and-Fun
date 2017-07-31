@@ -1,4 +1,67 @@
 <?php get_header();?>
+<div class="preload" id="preload">
+    <div class="page-loader" id="page-loader">
+        <div class="bean">
+            <div class="half-bean"></div>
+            <div class="half-bean"></div>
+        </div>
+        <div class="bean">
+            <div class="half-bean"></div>
+            <div class="half-bean"></div>
+        </div>
+        <div class="bean">
+            <span class="half-bean"></span>
+            <span class="half-bean"></span>
+        </div>
+    </div>
+</div>
+<header id="start">
+    <div></div>
+    <nav>
+        <a href="#start" id="logo" tabindex="-1"></a>
+        <div id="menu-bar">
+            <div class="menu-container" id="menu-container">
+                <div class="fixed-nav-border">
+                    <div class="mobile-menu-icon" id="menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <a href="#start" id="logo-sticky"></a>
+                <ul id="menu-content">
+                    <li>
+                        <a href="#start">Strona główna</a>
+                    </li>
+                    <li>
+                        <a href="#products">Produkty</a>
+                    </li>
+                    <li>
+                        <a href="#about">O nas</a>
+                    </li>
+                    <li>
+                        <a href="#b2b">B2B</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Kontakt</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section>
+        <h1>
+            Importer kawy&nbsp;zielonej
+        </h1>
+        <p>
+            Owocami naszej współpracy z lokalnymi farmerami jest wysokiej jakości ziarno kawy zielonej kupowane z uwzględnieniem zasad uczciwego handlu.
+        </p>
+        <hr />
+    </section>
+</header>
 <main>
     <div class="fixed-nav-border arrow-up" id="arrow-up">
         <a class="arrow-up-icon" href="#start"></a>
@@ -99,8 +162,8 @@
                 <div class="image-box" style="background-image: url(<?php the_field('info_zdjecie_2')?>)"></div>
             </div>
             <?php
-            endwhile;
-            endif;
+    endwhile;
+                     endif;
             ?>
         </article>
         <?php

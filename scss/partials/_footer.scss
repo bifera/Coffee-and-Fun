@@ -17,10 +17,9 @@ footer {
         }
     }
     h2 {
-        font-size: 1.8rem;
         margin-bottom: 1.2rem;
     }
-    article { /* split into two columns if not mobile portrait */
+    address { /* split into two columns if not mobile portrait */
         width: 100%;
         padding-left: 3vh;
         @include mobile-landscape {

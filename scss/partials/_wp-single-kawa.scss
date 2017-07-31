@@ -1,0 +1,80 @@
+/* single product page style */
+
+.return-banner {
+    width: 100%;
+    height: 20vh;
+    a {
+        background-size: 40vw;
+        @include mobile-landscape {
+            background-size: 20vw;
+        }
+        @include tablet-landscape {
+            background-size: 20vw;
+        }
+        @include desktop {
+            background-size: 20vw;
+        }
+    }
+}
+
+.wp-single-product-page {
+    @include tablet {
+        min-height: 80vh;
+    }
+    @include desktop {
+        min-height: 90vh;
+    }
+    article {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h2 {
+        margin-top: 1.5rem;
+        @include tablet {
+            margin-top: 2.5rem;
+        }
+        @include tablet-landscape {
+            margin-top: 2.5rem;
+        }
+        @include desktop {
+            margin-top: 2.5rem;
+        }
+    }
+    p {
+        width: 100%;
+        margin-top: 2rem;
+        @include tablet {
+            width: 80%;
+            margin-bottom: 2.5rem;
+        }
+        @include tablet-landscape {
+            margin-bottom: 2.5rem;
+        }
+        @include desktop {
+            width: 60%;
+            margin-bottom: 2.5rem;
+        }
+    }
+}
+
+.return-footer {
+    width: 100%;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    background-color: transparentize($secondaryColor, .6);
+    @include tablet {
+        height: 20vh;
+    }
+    @include desktop {
+        height: 10vh;
+    }
+    h3 {
+        text-align: center;
+    }
+    a {
+        color: $textColor;
+    }
+}
