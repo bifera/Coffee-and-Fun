@@ -65,10 +65,10 @@
             </nav>
             <section>
                 <h1>
-                    Importer zielonej&nbsp;kawy
+                    Importer kawy&nbsp;zielonej
                 </h1>
                 <p>
-                    Naszą misją jest dostarczanie wysokiej jakości zielonej kawy z Afryki na rynek europejski kupowanej tak, aby każdy farmer otrzymał uczciwą zapłatę.
+                    Owocami naszej współpracy z lokalnymi farmerami jest wysokiej jakości ziarno kawy zielonej kupowane z uwzględnieniem zasad uczciwego handlu.
                 </p>
                 <hr />
             </section>

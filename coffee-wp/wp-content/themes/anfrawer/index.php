@@ -13,7 +13,7 @@
             while ( $loop->have_posts() ) : $loop->the_post();
             ?>
             <article class="wp-products-post" tabindex="0">
-                <div class="wp-products-image-content" style="background-image: url(<?php the_field('wstaw_zdjecie')?>)">
+                <div class="wp-products-image-content" style="background-image: url(<?php the_field('zdjecie_kawy')?>)">
                     <div class="wp-products-image-shadow">
                         <h3>
                             <?php the_title(); ?>
@@ -30,8 +30,8 @@
                         <?php echo $terms[0]->name; echo " "; the_title();?>
                     </h3>
                     <div>
-                        <div class="wp-products-image-content" style="background-image: url(<?php the_field('wstaw_zdjecie')?>)"></div>
-                        <?php the_content(); ?>
+                        <div class="wp-products-image-content" style="background-image: url(<?php the_field('zdjecie_kawy')?>)"></div>
+                        <?php the_field('opis_kawy'); ?>
                     </div>
                     <hr />
                 </div>
