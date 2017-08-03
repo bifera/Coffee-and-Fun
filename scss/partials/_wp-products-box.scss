@@ -141,11 +141,10 @@
     .wp-products-post-content { /* style for product info cloned and appended to the popup box */
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         width: 100%;
-        height: 100%;
-        padding: .5rem 0;
+        height: 80%;
         font-size: .9rem;
         background-color: $primaryColor;
         @include mobile-landscape {
@@ -154,23 +153,15 @@
         > h3 {
             font-size: 1.3rem;
         }
-        > div { /* holds product photo and description */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            flex-grow: 2;
-            @include mobile-landscape {
-                display: block;
-                flex-grow: 0;
-            }
-        }
     }
     .wp-products-single-card {
+        width: 100%;
+        height: 90%;
         display: flex;
         flex-direction: column;
         align-items: center;
         > p {
+            height: 100%;
             font-size: 0.9rem;
             display: none;
             @include tablet {
@@ -185,8 +176,8 @@
         }
     }
     .wp-products-image-content {
-        width: 8rem;
-        height: 8rem;
+        width: 10rem;
+        height: 10rem;
         border-radius: 50%;
         background-position: center;
         background-repeat: no-repeat;
@@ -211,9 +202,12 @@
         }
     }
     .wp-products-back-of-pack {
-        margin: 1.5rem 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
         p {
-            display: block;
             span {
                 font-weight: bold;
             }
