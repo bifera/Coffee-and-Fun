@@ -179,11 +179,12 @@ $(function(){
     var popupContainer = $('#products-popup-container');
     var popupBox = $('#products-popup-box');
     var popupBoxCloseBtn = $('#products-popup-close');
+    var popupButtonMore = $('#products-button-more');
 
     /*=== clone, append and display cloned product info in popup box ===*/
     function displaySinglePostInfo(target) {
         var clonedContent = target.find('.wp-products-post-content').clone(true);
-        clonedContent.appendTo(popupBox);
+        clonedContent.insertBefore(popupButtonMore);
         popupContainer.fadeIn(600);
     }
 
@@ -216,6 +217,17 @@ $(function(){
             }
         });
     });
+    
+    /*=== show more info ===*/
+    popupButtonMore.on('click', function(){
+        var backOfPack = $(this).prev().find('.wp-products-back-of-pack');
+        var productDescription = backOfPack.next();
+        var productPhoto = backOfPack.prev();
+        backOfPack.fadeToggle();
+        productDescription.fadeToggle();
+        productPhoto.fadeToggle();
+        console.log(backOfPack, productDescription);
+    })
 
     /*=== events to trigger closing popup box ===*/
     popupBoxCloseBtn.on('click', function(){
