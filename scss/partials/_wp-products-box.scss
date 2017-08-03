@@ -169,9 +169,12 @@
                 height: auto;
             }
             @include tablet {
+                margin: 0 2rem;
+                height: auto;
                 font-size: 1rem;
             }
             @include tablet-landscape {
+                height: auto;
                 font-size: 1rem;
             }
             @include desktop {
@@ -179,7 +182,7 @@
             }
         }
     }
-    
+
     .wp-products-back-of-pack {
         height: 100%;
         display: flex;
@@ -187,6 +190,11 @@
         justify-content: space-around;
         align-items: center;
         @include mobile-landscape {
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        @include tablet-landscape {
             width: 100%;
             flex-direction: row;
             justify-content: space-around;
@@ -208,9 +216,8 @@
             height: 10rem;
         }
         @include tablet-landscape {
-            width: 10rem;
-            height: 10rem;
-            margin: 1.5rem 0;
+            width: 12rem;
+            height: 12rem;
         }
         @include desktop {
             width: 12rem;
@@ -220,6 +227,9 @@
     }
     .wp-products-details {
         @include mobile-landscape {
+            width: 60%;
+        }
+        @include tablet-landscape {
             width: 60%;
         }
     }
