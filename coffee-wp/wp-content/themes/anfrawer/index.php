@@ -106,9 +106,7 @@
                             </div>
                             <?php the_field('opis_kawy'); ?>
                         </div>
-                        <button>Zobacz opis...</button>
                     </div>
-                    <hr />
                 </div>
             </article>
             <?php
@@ -124,6 +122,8 @@
                     <span></span>
                     <span></span>
                 </div>
+                <button id="products-button-more">Zobacz opis...</button>
+                <hr />
             </div>
         </div>
     </div>
