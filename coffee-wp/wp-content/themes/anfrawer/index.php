@@ -93,8 +93,20 @@
                         <?php echo $terms[0]->name; echo " "; the_title();?>
                     </h3>
                     <div>
-                        <div class="wp-products-image-content" style="background-image: url(<?php the_field('zdjecie_kawy')?>)"></div>
-                        <?php the_field('opis_kawy'); ?>
+                        <div class="wp-products-single-card">
+                            <div class="wp-products-image-content" style="background-image: url(<?php the_field('zdjecie_kawy')?>)"></div>
+                            <div class="wp-products-back-of-pack">
+                                <p><span>Kontynent: </span><?php the_field('kawa_kontynent'); ?></p>
+                                <p><span>Państwo: </span><?php the_field('kawa_panstwo'); ?></p>
+                                <p><span>Region: </span><?php the_field('kawa_region'); ?></p>
+                                <p><span>Gatunek kawy: </span><?php the_field('kawa_gatunek'); ?></p>
+                                <p><span>Odmiana: </span><?php the_field('kawa_odmiana'); ?></p>
+                                <p><span>Obróbka: </span><?php the_field('kawa_obrobka'); ?></p>
+                                <p><span>Rok zbioru: </span><?php the_field('kawa_rok'); ?></p>
+                            </div>
+                            <?php the_field('opis_kawy'); ?>
+                        </div>
+                        <button>Zobacz opis...</button>
                     </div>
                     <hr />
                 </div>
