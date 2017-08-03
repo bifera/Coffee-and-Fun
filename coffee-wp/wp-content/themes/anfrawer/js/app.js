@@ -185,6 +185,7 @@ $(function(){
     function displaySinglePostInfo(target) {
         var clonedContent = target.find('.wp-products-post-content').clone(true);
         clonedContent.insertBefore(popupButtonMore);
+        popupButtonMore.text('Zobacz opis');
         popupContainer.fadeIn(600);
     }
 
