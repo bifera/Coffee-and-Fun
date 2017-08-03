@@ -165,25 +165,19 @@
         justify-content: space-around;
         align-items: center;
         > p {
-            height: 100%;
+            height: auto;
             font-size: 0.9rem;
             display: none;
-            @include mobile-landscape {
-                height: auto;
-            }
             @include tablet {
                 margin: 0 2rem;
-                height: auto;
                 font-size: 1rem;
             }
             @include tablet-landscape {
-                height: auto;
                 font-size: 1rem;
             }
             @include desktop {
                 display: block;
                 width: 100%;
-                height: auto;
                 justify-content: space-between;
                 padding: 0 3rem;
                 font-size: 1rem;

@@ -123,7 +123,7 @@
                     <span></span>
                     <span></span>
                 </div>
-                <button id="products-button-more">Zobacz opis...</button>
+                <button id="products-button-more">Zobacz opis</button>
                 <hr />
             </div>
         </div>

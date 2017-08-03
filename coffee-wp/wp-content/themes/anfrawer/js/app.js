@@ -217,16 +217,22 @@ $(function(){
             }
         });
     });
-    
+
     /*=== show more info ===*/
     popupButtonMore.on('click', function(){
         var backOfPack = $(this).prev().find('.wp-products-back-of-pack');
         var productDescription = backOfPack.next();
-        var productPhoto = backOfPack.prev();
-        backOfPack.fadeToggle();
-        productDescription.fadeToggle();
-        productPhoto.fadeToggle();
-        console.log(backOfPack, productDescription);
+        if (backOfPack.is(':visible')) {
+            backOfPack.fadeOut(300, function(){
+                productDescription.fadeIn();
+                popupButtonMore.text('Powrót');
+            });
+        } else {
+            productDescription.fadeOut(300, function(){
+                backOfPack.fadeIn();
+                popupButtonMore.text('Zobacz opis');
+            })
+        }
     })
 
     /*=== events to trigger closing popup box ===*/
