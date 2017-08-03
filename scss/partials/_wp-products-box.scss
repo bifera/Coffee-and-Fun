@@ -134,7 +134,7 @@
         padding: 1.5rem;
     }
     @include desktop {
-        max-width: 35rem;
+        max-width: 60vw;
         max-height: 70vh;
         padding: 1.5rem;
     }
@@ -149,6 +149,9 @@
         background-color: $primaryColor;
         @include mobile-landscape {
             padding: 0;
+        }
+        @include desktop {
+            height: 90%;
         }
         > h3 {
             font-size: 1.3rem;
@@ -178,6 +181,11 @@
                 font-size: 1rem;
             }
             @include desktop {
+                display: block;
+                width: 100%;
+                height: auto;
+                justify-content: space-between;
+                padding: 0 3rem;
                 font-size: 1rem;
             }
         }
@@ -198,6 +206,11 @@
             width: 100%;
             flex-direction: row;
             justify-content: space-around;
+        }
+        @include desktop {
+            width: 100%;
+            flex-direction: row-reverse;
+            justify-content: center;
         }
         p {
             span {
@@ -222,7 +235,6 @@
         @include desktop {
             width: 12rem;
             height: 12rem;
-            margin: 1.5rem 0 0;
         }
     }
     .wp-products-details {
@@ -241,7 +253,10 @@
         border-radius: 2%;
         font-family: $headerFont;
         text-align: center;
-        background-color: transparentize($secondaryColor, 0.3);   
+        background-color: transparentize($secondaryColor, 0.3);
+        @include desktop {
+            display: none;
+        }
     }
     hr {
         width: 45%;
