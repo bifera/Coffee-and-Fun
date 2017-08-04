@@ -99,6 +99,7 @@
                                 <p><span>Kontynent: </span><?php the_field('kawa_kontynent'); ?></p>
                                 <p><span>Państwo: </span><?php the_field('kawa_panstwo'); ?></p>
                                 <p><span>Region: </span><?php the_field('kawa_region'); ?></p>
+                                <p><span>Wysokość uprawy: </span><?php the_field('kawa_wysokosc'); ?></p>
                                 <p><span>Gatunek kawy: </span><?php the_field('kawa_gatunek'); ?></p>
                                 <p><span>Odmiana: </span><?php the_field('kawa_odmiana'); ?></p>
                                 <p><span>Obróbka: </span><?php the_field('kawa_obrobka'); ?></p>

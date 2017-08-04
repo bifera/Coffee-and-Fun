@@ -134,8 +134,10 @@
         padding: 1.5rem;
     }
     @include desktop {
-        max-width: 60vw;
-        max-height: 70vh;
+        width: 70vw;
+        max-width: 840px;
+        height: 90vh;
+        max-height: 690px;
         padding: 1.5rem;
     }
     .wp-products-post-content { /* style for product info cloned and appended to the popup box */
@@ -237,6 +239,9 @@
         }
         @include tablet-landscape {
             width: 60%;
+        }
+        @include desktop {
+            margin-right: 1.5rem;
         }
     }
     button {
