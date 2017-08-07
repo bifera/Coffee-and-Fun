@@ -19,6 +19,7 @@ $(function(){
     var menuContent = $('#menu-content');
     var stickyLogo = $('#logo-sticky');
     var menuAnchors = menuContent.find('a');
+    var contactLink = $('#about').find('a'); // link to b2b form in 'about' section
 
 
     /* ===== mobile menu ===== */
@@ -147,6 +148,11 @@ $(function(){
     });
 
     stickyLogo.on('click', function(e){
+        e.preventDefault();
+        smoothScrolling($(this));
+    });
+    
+    contactLink.on('click', function(e){
         e.preventDefault();
         smoothScrolling($(this));
     });
