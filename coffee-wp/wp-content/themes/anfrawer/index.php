@@ -177,10 +177,10 @@
         </article>
         <?php
         $args = array(
-                'post_type' => 'miejsce',
-                'orderby' => 'date',
-                'order' => 'ASC'
-            );
+            'post_type' => 'miejsce',
+            'orderby' => 'date',
+            'order' => 'ASC'
+        );
         $loop = new WP_Query( $args ); 
         while ( $loop->have_posts() ) : $loop->the_post();
         ?>
@@ -236,20 +236,22 @@
                     </div>
                 </div>
                 <div>
+                    <label>Dotyczy kaw (opcjonalnie):</label>
+                    <br />
+                    <?php
+                    $args = ['post_type' => 'kawa'];
+                    $loop = new WP_Query( $args ); 
+                    if ( $loop->have_posts() ) :
+                    while ( $loop->have_posts() ) : $loop->the_post();
+                    $terms = wp_get_post_terms( $post->ID, 'Kraj' ); ?>
                     <label>
-                        Dotyczy kaw (opcjonalnie): <br />
-                        <?php
-                        $args = ['post_type' => 'kawa'];
-                        $loop = new WP_Query( $args ); 
-                        if ( $loop->have_posts() ) :
-                        while ( $loop->have_posts() ) : $loop->the_post();
-                        $terms = wp_get_post_terms( $post->ID, 'Kraj' ); ?>
-                        <input class="form-products" type="checkbox" name="<?php echo $terms[0]->name; echo " "; the_title();?>" value="<?php echo $terms[0]->name; echo " "; the_title();?>">&nbsp;<?php echo $terms[0]->name; echo " "; the_title(); ?> <br />
-                        <?php
-                        endwhile;
-                        endif;
-                        ?>
+                        <input class="form-products" type="checkbox" name="<?php echo $terms[0]->name; echo " "; the_title();?>" value="<?php echo $terms[0]->name; echo " "; the_title();?>">&nbsp;<?php echo $terms[0]->name; echo ": "; the_title(); ?> 
                     </label>
+                    <br />
+                    <?php
+                    endwhile;
+                    endif;
+                    ?>
                 </div>
                 <div id="sending-loader"></div>
                 <div id="sending-info"></div>
