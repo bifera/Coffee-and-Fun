@@ -187,12 +187,6 @@ $(function(){
         clonedContent.insertBefore(popupButtonMore);
         popupButtonMore.text('Zobacz opis');
         popupContainer.fadeIn(600);
-        // hide 'more' button when no description provided
-        var singleCard = clonedContent.find('.wp-products-single-card');
-        var description = singleCard.children('p');
-        if (description.length === 0){
-            popupButtonMore.hide();
-        }
     }
 
     /*=== close and empty popup box ===*/
@@ -207,6 +201,9 @@ $(function(){
     products.each(function(){
         $(this).on('click', function(event){
             if (menuContainer.hasClass('menu-background-mobile')) {
+                event.preventDefault();
+                // disable if product info is still in preview mode
+            } else if($(this).find('.wp-products-image-shadow').children('h3').text() == "wkrótce"){
                 event.preventDefault();
             } else {
                 displaySinglePostInfo($(this));

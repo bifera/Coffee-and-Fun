@@ -78,9 +78,7 @@
             <article class="wp-products-post" tabindex="0">
                 <div class="wp-products-image-content" style="background-image: url(<?php the_field('zdjecie_kawy')?>)">
                     <div class="wp-products-image-shadow">
-                        <h3>
-                            <?php the_title(); ?>
-                        </h3>
+                        <h3><?php the_title(); ?></h3>
                     </div>
                 </div>
                 <p>
