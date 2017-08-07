@@ -87,9 +87,7 @@
                     ?>
                 </p>
                 <div class="wp-products-post-content">
-                    <h3>
-                        <?php echo $terms[0]->name; echo ": "; the_title();?>
-                    </h3>
+                    <h3><?php echo $terms[0]->name; echo ": "; the_title();?></h3>
                     <div class="wp-products-single-card">
                         <div class="wp-products-back-of-pack">
                             <div class="wp-products-image-content" style="background-image: url(<?php the_field('zdjecie_kawy')?>)"></div>
@@ -156,7 +154,11 @@
         <h2>O nas</h2>
         <article>
             <?php
-            $args = ['post_type' => 'informacje'];
+            $args = array(
+                'post_type' => 'informacje',
+                'orderby' => 'date',
+                'order' => 'ASC'
+            );
             $loop = new WP_Query( $args ); 
             if ( $loop->have_posts() ) :
             while ( $loop->have_posts() ) : $loop->the_post();
@@ -174,7 +176,11 @@
             ?>
         </article>
         <?php
-        $args = ['post_type' => 'miejsce'];
+        $args = array(
+                'post_type' => 'miejsce',
+                'orderby' => 'date',
+                'order' => 'ASC'
+            );
         $loop = new WP_Query( $args ); 
         while ( $loop->have_posts() ) : $loop->the_post();
         ?>
