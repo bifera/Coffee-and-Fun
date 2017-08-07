@@ -186,6 +186,14 @@ $(function(){
     var popupBox = $('#products-popup-box');
     var popupBoxCloseBtn = $('#products-popup-close');
     var popupButtonMore = $('#products-button-more');
+    var productImageShadow = $('.wp-products-image-shadow');
+    
+    /*=== change image shadow color if still in preview mode ===*/
+    productImageShadow.each(function(number, value){
+        if (productImageShadow.eq(number).children('h3').text() == "wkrótce") {
+            productImageShadow.eq(number).css('background-color', 'rgba(90,97,22,0.7)');
+        }
+    })
 
     /*=== clone, append and display cloned product info in popup box ===*/
     function displaySinglePostInfo(target) {
@@ -208,7 +216,7 @@ $(function(){
         $(this).on('click', function(event){
             if (menuContainer.hasClass('menu-background-mobile')) {
                 event.preventDefault();
-                // disable if product info is still in preview mode
+                // disable popup box if product info is still in preview mode
             } else if($(this).find('.wp-products-image-shadow').children('h3').text() == "wkrótce"){
                 event.preventDefault();
             } else {
