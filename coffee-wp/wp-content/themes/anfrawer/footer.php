@@ -4,8 +4,8 @@
         <address>
             <p>
                 Anfrawer Bartosz Bielicki <br />
-                Leśnych Skrzatów 1 <br />
-                60-193 Poznań
+                Lądecka 3 <br />
+                60-464 Poznań
             </p>
             <p>
                 <span class="fa fa-phone-square"></span> +48 601 422 422 <br />
@@ -16,7 +16,7 @@
     </section>
     <div>
         <div class="copyright">
-            <p>Anfrawer - Coffee and Cocoa Trade · Bartosz Bielicki ul. Leśnych Skrzatów 1 · 60-193 Poznań &copy;&nbsp;2016-2017 Anfrawer</p>
+            <p>Anfrawer - Coffee and Cocoa Trade &#8226; Bartosz Bielicki ul. Lądecka 3 &#8226; 60-464 Poznań &copy;&nbsp;2016-2017 Anfrawer</p>
         </div>
     </div>
 </footer>

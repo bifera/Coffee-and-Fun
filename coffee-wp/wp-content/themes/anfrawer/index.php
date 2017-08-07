@@ -90,7 +90,7 @@
                 </p>
                 <div class="wp-products-post-content">
                     <h3>
-                        <?php echo $terms[0]->name; echo " "; the_title();?>
+                        <?php echo $terms[0]->name; echo ": "; the_title();?>
                     </h3>
                     <div class="wp-products-single-card">
                         <div class="wp-products-back-of-pack">
@@ -105,7 +105,6 @@
                                 <p><span>Obróbka: </span><?php the_field('kawa_obrobka'); ?></p>
                                 <p><span>Rok zbioru: </span><?php the_field('kawa_rok'); ?></p>
                             </div>
-
                         </div>
                         <?php the_field('opis_kawy'); ?>
                     </div>
@@ -168,12 +167,8 @@
                 <?php the_title(); ?>
             </h3>
             <div class="paragraph-image-box">
-                <p><?php the_field('info_akapit_1'); ?></p>
+                <?php the_field('info_akapit_1'); ?>
                 <div class="image-box" style="background-image: url(<?php the_field('info_zdjecie_1')?>)"></div>
-            </div>
-            <div class="paragraph-image-box">
-                <p><?php the_field('info_akapit_2'); ?></p>
-                <div class="image-box" style="background-image: url(<?php the_field('info_zdjecie_2')?>)"></div>
             </div>
             <?php
     endwhile;

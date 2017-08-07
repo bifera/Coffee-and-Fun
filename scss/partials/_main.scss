@@ -45,6 +45,10 @@ main {
         @include desktop {
             width: 45%;
         }
+        a {
+            font-weight: bold;
+            color: $textColor;
+        }
     }
     .image-box { /* style for each image, whether added to paragraph or not */
         width: 100%;

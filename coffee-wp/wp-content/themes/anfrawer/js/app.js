@@ -187,6 +187,12 @@ $(function(){
         clonedContent.insertBefore(popupButtonMore);
         popupButtonMore.text('Zobacz opis');
         popupContainer.fadeIn(600);
+        // hide 'more' button when no description provided
+        var singleCard = clonedContent.find('.wp-products-single-card');
+        var description = singleCard.children('p');
+        if (description.length === 0){
+            popupButtonMore.hide();
+        }
     }
 
     /*=== close and empty popup box ===*/
@@ -234,7 +240,7 @@ $(function(){
                 popupButtonMore.text('Zobacz opis');
             })
         }
-    })
+    });
 
     /*=== events to trigger closing popup box ===*/
     popupBoxCloseBtn.on('click', function(){
@@ -255,24 +261,6 @@ $(function(){
         }
     });
 
-    /**************************
-    ***************************
-    *** INFO POSTS HANDLING ***
-    ***************************
-    **************************/
-
-    /* hiding wordpress generated paragraphs with no content from post-type 'informacje' */
-    var queriedParagraph = $('.paragraph-image-box>p');
-
-    function hideEmptyParagraphs(){
-        queriedParagraph.each(function(ind, val){
-            if (queriedParagraph[ind].childNodes.length === 0) {
-                queriedParagraph[ind].parentElement.style.display = 'none';
-            }      
-        });   
-    }
-
-    hideEmptyParagraphs();
 
     /****************************
     *****************************
