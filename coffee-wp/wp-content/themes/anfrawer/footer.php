@@ -4,12 +4,12 @@
         <address>
             <p>
                 Anfrawer Bartosz Bielicki <br />
-                Lądecka 3 <br />
+                ul. Lądecka 3 <br />
                 60-464 Poznań
             </p>
             <p>
                 <span class="fa fa-phone-square"></span> +48 601 422 422 <br />
-                <a href="mailto:bartosz@anfrawer.pl"><span class="fa fa-envelope-square"></span> bartosz@anfrawer.pl</a> <br />
+                <a href="mailto:biuro@anfrawer.pl"><span class="fa fa-envelope-square"></span> biuro@anfrawer.pl</a> <br />
                 <a href="https://www.facebook.com/anfrawer/" target="_blank"><span class="fa fa-facebook-square"></span> anfrawer</a>
             </p>
         </address>

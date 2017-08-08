@@ -57,7 +57,7 @@
             Importer kawy&nbsp;zielonej
         </h1>
         <p>
-            Owocami naszej współpracy z lokalnymi farmerami jest wysokiej jakości ziarno kawy zielonej kupowane z uwzględnieniem zasad uczciwego handlu.
+            Owocami naszej współpracy z lokalnymi farmerami jest wysokiej jakości ziarno kawy zielonej, kupowane z uwzględnieniem zasad uczciwego handlu.
         </p>
         <hr />
     </section>
