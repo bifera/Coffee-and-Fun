@@ -57,9 +57,11 @@ h1 {
         }
         @include tablet-landscape {
             font-size: 1.13rem;
+            max-width: 40em;
         }
         @include desktop {
             font-size: 1.33rem;
+            max-width: 40em;
         }
     }
 }
