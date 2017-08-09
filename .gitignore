@@ -11,8 +11,6 @@ dumped
 mailSender.php
 composer*
 vendor/
-coffee-wp/wp-admin/
-coffee-wp/wp-includes/
 
 
 # Logs
