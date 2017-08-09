@@ -208,12 +208,32 @@
             justify-content: center;
         }
         p {
+            font-size: .9rem;
+            @include tablet {
+                font-size: 1rem;
+            }
+            @include tablet-landscape {
+                font-size: 1rem;
+            }
+            @include desktop {
+                font-size: 1rem;
+            }
             span {
                 font-weight: bold;
             }
         }
     }
     .wp-products-image-content {
+        width: 8rem;
+        height: 8rem;
+        @include mobile-landscape {
+            width: 10rem;
+            height: 10rem;
+        }
+        @include tablet {
+            width: 12rem;
+            height: 12rem;
+        }
         @include tablet-landscape {
             width: 12rem;
             height: 12rem;

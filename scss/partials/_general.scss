@@ -91,8 +91,11 @@ a {
 
 hr {
     width: 30vw;
+    height: 1px;
     margin: 3vh auto;
-    color: $secondaryColor;
+    background-color: $secondaryColor;
+    border: none;
+    box-shadow: 1px 0 5px transparentize($secondaryColor, .7);
 }
 
 /* border used for mobile menu and arrow up */

@@ -37,13 +37,13 @@ main {
     }
     & > p { /* optional */
         @include tablet {
-            width: 50%;
+            width: 48%;
         }
         @include tablet-landscape {
-            width: 50%;
+            width: 48%;
         }
         @include desktop {
-            width: 45%;
+            width: 48%;
         }
         a {
             font-weight: bold;
@@ -62,7 +62,7 @@ main {
         }
         @include tablet {
             width: 49%;
-            height: 40vh;
+            height: 25vh;
             margin-top: .5rem;
         }
         @include tablet-landscape {

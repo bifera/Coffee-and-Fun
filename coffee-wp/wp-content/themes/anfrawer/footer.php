@@ -23,5 +23,6 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="<?php bloginfo('template_url')?>/js/app.js" type="text/javascript"></script>
 <script src="https://use.fontawesome.com/b416a3a8ab.js"></script>
+<?php wp_footer(); ?>
 </body>
 </html>
