@@ -11,6 +11,8 @@ dumped
 mailSender.php
 composer*
 vendor/
+wp-admin/
+wp-includes/
 
 
 # Logs
