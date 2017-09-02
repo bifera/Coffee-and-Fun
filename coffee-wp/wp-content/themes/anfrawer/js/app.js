@@ -16,7 +16,7 @@ $(function(){
     var menuBar = $('#menu-bar');
     var menuButton = $('#menu-toggle');
     var menuContainer = $('#menu-container');
-    var menuContent = $('#menu-content');
+    var menuContent = $('#menu-menu-glowne');
     var stickyLogo = $('#logo-sticky');
     var menuAnchors = menuContent.find('a');
     var contactLink = $('#about').find('a'); // link to b2b form in 'about' section
