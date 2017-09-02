@@ -3,20 +3,20 @@
         <h2>Kontakt</h2>
         <address>
             <p>
-                Anfrawer Bartosz Bielicki <br />
-                ul. Lądecka 3 <br />
-                60-464 Poznań
+                <?php the_field('footer_nazwa_firmy', 86);?><br />
+                <?php the_field('footer_adres_ulica', 86);?><br />
+                <?php the_field('footer_adres_kod_miasto', 86);?>
             </p>
             <p>
-                <span class="fa fa-phone-square"></span> +48 601 422 422 <br />
-                <a href="mailto:biuro@anfrawer.pl"><span class="fa fa-envelope-square"></span> biuro@anfrawer.pl</a> <br />
-                <a href="https://www.facebook.com/anfrawer/" target="_blank"><span class="fa fa-facebook-square"></span> anfrawer</a>
+                <a href="tel:<?php the_field('footer_telefon', 86);?>"><span class="fa fa-phone-square"></span> <?php the_field('footer_telefon', 86);?><br /></a>
+                <a href="mailto:<?php the_field('footer_email', 86);?>"><span class="fa fa-envelope-square"></span> <?php the_field('footer_email', 86);?></a> <br />
+                <a href="<?php the_field('footer_facebook', 86);?>" target="_blank"><span class="fa fa-facebook-square"></span> anfrawer</a>
             </p>
         </address>
     </section>
     <div>
         <div class="copyright">
-            <p>Anfrawer - Coffee and Cocoa Trade &#8226; Bartosz Bielicki ul. Lądecka 3 &#8226; 60-464 Poznań &copy;&nbsp;2016-2017 Anfrawer</p>
+            <p><?php the_field('footer_tresc_stopki', 86);?></p>
         </div>
     </div>
 </footer>
