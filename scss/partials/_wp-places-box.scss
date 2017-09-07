@@ -16,11 +16,6 @@
         flex-direction: column;
         align-items: center;
     }
-    @include desktop {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
     .wp-places-images-box {
         width: 100%;
         @include tablet {
@@ -31,9 +26,24 @@
             display: flex;
             justify-content: space-between;
         }
-        @include desktop {
-            display: flex;
-            justify-content: space-between;
+    }
+}
+
+@include desktop {
+    .wp-places-box {
+        display: block;
+    }
+    .wp-places-images-box {
+        display: block;
+        &::after {
+            clear: both;
+            display: block;
+            content: "";
+        }
+        .image-box {
+            &:first-child {
+                margin-right: 2%;
+            }
         }
     }
 }

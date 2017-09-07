@@ -65,7 +65,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
         <h2>Produkty</h2>
         <div class="wp-products-posts-box">
             <?php
-            $args = ['post_type' => 'kawa'];
+            $args = array('post_type' => 'kawa');
             $loop = new WP_Query( $args ); 
             if ( $loop->have_posts() ) :
             while ( $loop->have_posts() ) : $loop->the_post();
@@ -122,7 +122,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
     <hr />
 
     <?php
-    $args = ['post_type' => 'galeria'];
+    $args = array('post_type' => 'galeria');
     $loop = new WP_Query( $args ); 
     if ( $loop->have_posts() ) :
     while ( $loop->have_posts() ) : $loop->the_post();
@@ -181,15 +181,15 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
         ?>
         <article>
             <h3>Miejsca - <?php the_title();?></h3>
-            <div class="paragraph-image-box">
+            <!--<div class="paragraph-image-box">-->
                 <div class="wp-places-box">
-                    <?php the_content(); ?>
+                    <div><?php the_content(); ?></div>
                     <div class="wp-places-images-box">
                         <div class="image-box" style="background-image: url(<?php the_field('wstaw_zdjecie')?>)"></div>
                         <div class="image-box" style="background-image: url(<?php the_field('wstaw_kolejne_zdjecie')?>)"></div>
                     </div>
                 </div>
-            </div>
+            <!--</div>-->
         </article>
         <?php
     endwhile;
@@ -202,7 +202,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
             <h3>
                 Formularz kontaktowy
             </h3>
-            <form action="./mailSender.php">
+            <form action="./mailSender.php" method="post">
                 <div>
                     <div>
                         <label>
@@ -234,7 +234,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
                     <label>Dotyczy kaw (opcjonalnie):</label>
                     <br />
                     <?php
-                    $args = ['post_type' => 'kawa'];
+                    $args = array('post_type' => 'kawa');
                     $loop = new WP_Query( $args ); 
                     if ( $loop->have_posts() ) :
                     while ( $loop->have_posts() ) : $loop->the_post();

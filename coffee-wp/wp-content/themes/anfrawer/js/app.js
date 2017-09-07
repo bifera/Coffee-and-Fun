@@ -137,8 +137,11 @@ $(function(){
 
     menuAnchors.each(function(){
         $(this).on('click', function(e){
-            e.preventDefault();
-            smoothScrolling($(this));
+            if ($(this).attr('href') !== "http://www.anfrawer.pl/en") {
+                e.preventDefault();
+                smoothScrolling($(this));
+            }
+
         });
     });
 
@@ -151,7 +154,7 @@ $(function(){
         e.preventDefault();
         smoothScrolling($(this));
     });
-    
+
     contactLink.on('click', function(e){
         e.preventDefault();
         smoothScrolling($(this));
@@ -187,13 +190,16 @@ $(function(){
     var popupBoxCloseBtn = $('#products-popup-close');
     var popupButtonMore = $('#products-button-more');
     var productImageShadow = $('.wp-products-image-shadow');
-    
+
     /*=== change image shadow color if still in preview mode ===*/
     productImageShadow.each(function(number, value){
         if (productImageShadow.eq(number).children('h3').text() == "wkrótce") {
             productImageShadow.eq(number).css('background-color', 'rgba(90,97,22,0.7)');
         }
-    })
+        if (productImageShadow.eq(number).children('h3').text() == "soon") {
+            productImageShadow.eq(number).css('background-color', 'rgba(90,97,22,0.7)');
+        }
+    });
 
     /*=== clone, append and display cloned product info in popup box ===*/
     function displaySinglePostInfo(target) {
@@ -218,6 +224,8 @@ $(function(){
                 event.preventDefault();
                 // disable popup box if product info is still in preview mode
             } else if($(this).find('.wp-products-image-shadow').children('h3').text() == "wkrótce"){
+                event.preventDefault();
+            } else if ($(this).find('.wp-products-image-shadow').children('h3').text() == "soon"){
                 event.preventDefault();
             } else {
                 displaySinglePostInfo($(this));
@@ -420,6 +428,7 @@ $(function(){
             }
 
         }).fail(function(error){
+            console.log(error);
             sendingLoader.fadeOut(function(){
                 sendingInfoBox.addClass('error').text('Podczas wysyłania wystąpił błąd. Spróbuj ponownie później.').fadeIn();
             });

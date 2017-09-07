@@ -1,6 +1,10 @@
 /* ----------------- main style --------------------*/
 /* products, image gallery and form are in separate stylesheets */
 
+em {
+    font-style: italic;
+}
+
 main {
     section {
         h3 {
@@ -30,10 +34,16 @@ main {
         align-items: flex-start;
     }
     @include desktop {
-        flex-direction: row;
+        /*flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
-        margin: auto;
+        margin: auto;*/
+        display: block;
+        &::after {
+            clear: both;
+            display: block;
+            content: "";
+        }
     }
     & > p { /* optional */
         @include tablet {
@@ -43,14 +53,18 @@ main {
             width: 48%;
         }
         @include desktop {
-            width: 48%;
+            width: 49%;
+            float: left;
+            margin-right: 2%;
         }
         a {
             font-weight: bold;
             color: $secondaryColor;
         }
     }
-    .image-box { /* style for each image, whether added to paragraph or not */
+}
+
+.image-box { /* style for each image, whether added to paragraph or not */
         width: 100%;
         height: 40vh;
         margin-bottom: 1.5rem;
@@ -74,7 +88,6 @@ main {
             width: 49%;
             height: 40vh;
             margin-top: .5rem;
+            float: left;
         }
     }
-}
-

@@ -12,7 +12,8 @@ mailSender.php
 composer*
 vendor/
 updraft
-coffee-wp/en/
+coffee-wp/en/*
+*.zip
 
 # Logs
 logs
