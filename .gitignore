@@ -12,6 +12,7 @@ mailSender.php
 composer*
 vendor/
 updraft
+coffee-wp/en/
 
 # Logs
 logs
