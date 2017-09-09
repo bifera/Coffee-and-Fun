@@ -34,10 +34,6 @@ main {
         align-items: flex-start;
     }
     @include desktop {
-        /*flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin: auto;*/
         display: block;
         &::after {
             clear: both;

@@ -162,7 +162,26 @@ nav {
         @include desktop {
             height: auto;
             margin-top: 0;
+            /* animated middle-out-underline effect on hover for desktop */
+            a {
+                &::before {
+                    display: block;
+                    content: '';
+                    width: 0;
+                    height: 2px;
+                    margin: auto;
+                    background: transparent;
+                    position: relative;
+                    top: 26px;
+                    transition: width .5s ease-in-out, background-color .5s ease-in-out;
+                }
+                &:hover::before {
+                    width: 100%;
+                    background-color: $primaryColor;
+                }
+            }
         }
+        /* global style for menu anchors */
         a {
             font-family: $headerFont;
             text-transform: uppercase;
@@ -172,20 +191,37 @@ nav {
             @include tablet-landscape {
                 font-size: 1.1rem;
             }
-            /* animated middle-out-underline effect on hover */
-            &::after {
-                display: block;
-                content: '';
-                width: 0;
-                height: 2px;
-                margin: auto;
-                background: transparent;
-                transition: width .5s ease-in-out, background-color .5s ease-in-out;
-            }
-            &:hover::after {
-                width: 100%;
-                background-color: $primaryColor;
-            }
+        }
+    }
+    /* flags for anchors leading to language version */
+    a[href="http://www.anfrawer.pl/en"] {
+        &::after {
+            display: inline-block;
+            width: 24px;
+            height: 16px;
+            content: "";
+            position: relative;
+            left: 8px;
+            top: 1px;
+            background-image: url(./img/flags/if_United-Kingdom_flat_92402.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+    a[href="http://www.anfrawer.pl"] {
+        &::after {
+            display: inline-block;
+            width: 24px;
+            height: 16px;
+            content: "";
+            position: relative;
+            left: 8px;
+            top: 1px;
+            background-image: url(./img/flags/if_Poland_92289.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
         }
     }
 }
@@ -419,4 +455,11 @@ $size: 50px;
             transform: rotate(-80deg);
         }
     }
+}
+
+/* ----- error 404 page anchor style ----- */
+
+.error-404 {
+    color: $secondaryColor;
+    font-weight: bold;
 }
