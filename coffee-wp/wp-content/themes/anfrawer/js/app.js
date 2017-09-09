@@ -21,7 +21,6 @@ $(function(){
     var menuAnchors = menuContent.find('a');
     var contactLink = $('#about').find('a'); // link to b2b form in 'about' section
 
-
     /* ===== mobile menu ===== */
 
     function openMobileMenu(){

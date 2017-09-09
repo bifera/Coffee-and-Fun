@@ -11,6 +11,11 @@ function register_my_menu() {
 }
 add_action( 'after_setup_theme', 'register_my_menu' );
 
+function register_additional_menu() {
+  register_nav_menu( 'secondary', __( 'Alternative Menu', 'anfrawer' ) );
+}
+add_action( 'after_setup_theme', 'register_additional_menu' );
+
 include 'post-types/kawa.php';
 include 'post-types/miejsce.php';
 include 'post-types/galeria.php';

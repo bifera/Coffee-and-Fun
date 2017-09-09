@@ -181,7 +181,6 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
         ?>
         <article>
             <h3>Miejsca - <?php the_title();?></h3>
-            <!--<div class="paragraph-image-box">-->
                 <div class="wp-places-box">
                     <div><?php the_content(); ?></div>
                     <div class="wp-places-images-box">
@@ -189,7 +188,6 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
                         <div class="image-box" style="background-image: url(<?php the_field('wstaw_kolejne_zdjecie')?>)"></div>
                     </div>
                 </div>
-            <!--</div>-->
         </article>
         <?php
     endwhile;
